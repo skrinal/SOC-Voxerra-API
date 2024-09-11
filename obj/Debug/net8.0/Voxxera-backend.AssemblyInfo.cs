@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Voxxera-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99b2b4ed5a52429de240072dca1abb10b986fbd5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0a05f83b905e7ca0c348cfdb3024022615e4e05")]
 [assembly: System.Reflection.AssemblyProductAttribute("Voxxera-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Voxxera-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

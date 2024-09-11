@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\SOC-Voxerra\\Voxxera-backend\\",
+  "WorkspaceRootPath": "C:\\SOC-Voxerra-backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F428BD7-E47C-4638-9EF7-289F6E94B5C7}|Voxxera-backend.csproj|c:\\soc-voxerra\\voxxera-backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F428BD7-E47C-4638-9EF7-289F6E94B5C7}|Voxxera-backend.csproj|c:\\soc-voxerra-backend\\voxxera-backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{5F428BD7-E47C-4638-9EF7-289F6E94B5C7}|Voxxera-backend.csproj|solutionrelative:voxxera-backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F428BD7-E47C-4638-9EF7-289F6E94B5C7}|Voxxera-backend.csproj|c:\\soc-voxerra-backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F428BD7-E47C-4638-9EF7-289F6E94B5C7}|Voxxera-backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F428BD7-E47C-4638-9EF7-289F6E94B5C7}|Voxxera-backend.csproj|c:\\soc-voxerra-backend\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F428BD7-E47C-4638-9EF7-289F6E94B5C7}|Voxxera-backend.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,15 +35,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra\\Voxxera-backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\SOC-Voxerra\\Voxxera-backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
+              "Title": "Voxxera-backend.http",
+              "DocumentMoniker": "C:\\SOC-Voxerra-backend\\Voxxera-backend.http",
+              "RelativeDocumentMoniker": "Voxxera-backend.http",
+              "ToolTip": "C:\\SOC-Voxerra-backend\\Voxxera-backend.http",
+              "RelativeToolTip": "Voxxera-backend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-09-11T14:18:34.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-backend\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\SOC-Voxerra-backend\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T14:14:36.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T14:16:18.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\SOC-Voxerra-backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T14:14:36.269Z"
             }
           ]
         },
@@ -54,10 +86,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
             }
           ]
         }
