@@ -1,4 +1,4 @@
-using Voxxera_backend;
+using Voxerra_API.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSignalR();
+
+builder.Services.AddDbContext<ChatAppContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration["ConnectionString"]);
+});
+
+builder.Services.AddTransient<IUserFunction, UserFunction>();
+
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -19,10 +27,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
+app.UseHttpsRedirection();
 app.UseAuthorization();
+app.UseRouting();
 
 app.MapControllers();
-app.MapHub<ChatHub>("/chathub");
 
 app.Run();

@@ -1,0 +1,9 @@
+@Voxerra_API_HostAddress = http://localhost:5068
+
+GET {{Voxerra_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{Voxerra_API_HostAddress}}/Authenticate/Authenticate
+Accept: application/json

@@ -1,4 +1,4 @@
-namespace Voxxera_backend
+namespace Voxerra_API
 {
     public class WeatherForecast
     {

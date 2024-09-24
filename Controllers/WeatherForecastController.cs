@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Voxxera_backend.Controllers
+namespace Voxerra_API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
