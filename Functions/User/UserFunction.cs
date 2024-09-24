@@ -20,14 +20,9 @@ namespace Voxerra_API.Functions.User
             try
             {
                 var entity = _chatAppContext.TblUsers.Single(x => x.LoginId == loginId);
-
-                Console.WriteLine($"User Found: ID={entity.Id}, LoginId={entity.LoginId}, UserName={entity.UserName} salt={entity.StoredSalt}, password={entity.Password} ");
-                Console.WriteLine("Entity: " + entity == null);
                 if (entity == null) return null;
 
-
                 var isPasswordMatched = VerifityPassword(password, entity.StoredSalt, entity.Password);
-                Console.WriteLine("isPasswordMatched: " + isPasswordMatched == null);
                 if (!isPasswordMatched) return null;
 
                 var token = GenerateJwtToken(entity);
@@ -61,8 +56,6 @@ namespace Voxerra_API.Functions.User
             
             return encryptyedPassword.Equals(storedPassword);
         }
-
-        
         private string GenerateJwtToken(TblUser user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
