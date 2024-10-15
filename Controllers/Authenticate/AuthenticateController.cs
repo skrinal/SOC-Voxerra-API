@@ -1,4 +1,4 @@
-﻿namespace Voxerra_API.Controllers
+﻿namespace Voxerra_API.Controllers.Authenticate
 {
     [ApiController]
     [Route("[controller]")]
