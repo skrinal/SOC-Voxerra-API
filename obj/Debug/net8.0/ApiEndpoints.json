@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Voxerra_API.Controllers.AuthenticateController",
+    "ContainingType": "Voxerra_API.Controllers.Authenticate.AuthenticateController",
     "Method": "Authenticate",
     "RelativePath": "Authenticate/Authenticate",
     "HttpMethod": "POST",
@@ -9,7 +9,23 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Voxerra_API.Controllers.AuthenticateRequest",
+        "Type": "Voxerra_API.Controllers.Authenticate.AuthenticateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.MessageCenter.MessageCenterController",
+    "Method": "Initialize",
+    "RelativePath": "MessageCenter/Initialize",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

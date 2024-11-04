@@ -43,7 +43,20 @@ namespace Voxerra_API.Functions.User
 
         public User GetUserById(int id)
         {
-            throw new NotImplementedException();
+            var entity = _chatAppContext.TblUsers
+                .Where(x => x.Id == id)
+                .FirstOrDefault();
+
+            if (entity == null) return new User();
+
+            return new User
+            {
+                UserName = entity.UserName,
+                Id = entity.Id,
+                AvatarSourceName = entity.AvatarSourceName,
+                IsOnline = entity.IsOnline,
+                LastLogonTime = entity.LastLogonTime
+            };
         }
         private bool VerifityPassword(string enteredPassword, byte[] storedSalt, string storedPassword)
         {
