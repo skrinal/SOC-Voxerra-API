@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Voxerra_API.Controllers.Message.MessageController",
+    "Method": "Initialize",
+    "RelativePath": "Message/Initialize",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.Message.MessageInitializeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Voxerra_API.Controllers.MessageCenter.MessageCenterController",
     "Method": "Initialize",
     "RelativePath": "MessageCenter/Initialize",

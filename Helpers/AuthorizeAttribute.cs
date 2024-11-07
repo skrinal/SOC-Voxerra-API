@@ -2,7 +2,7 @@
 
 namespace Voxerra_API.Helpers
 {
-    public class AuthorizeAttribute:Attribute, IAuthorizationFilter
+    public class AuthorizeAttribute : Attribute, IAuthorizationFilter
     {
         public void OnAuthorization(AuthorizationFilterContext context)
         {

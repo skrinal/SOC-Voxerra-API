@@ -1,7 +1,4 @@
-﻿using Voxerra_API.Functions.Message;
-using Voxerra_API.Functions.UserFriend;
-using Voxerra_API.Helpers;
-
+﻿
 namespace Voxerra_API.Controllers.MessageCenter
 {
     [ApiController]
@@ -27,7 +24,7 @@ namespace Voxerra_API.Controllers.MessageCenter
             {
                 User = _userFunction.GetUserById(userId),
                 UserFriends = await _userFriendFunction.GetListUserFriend(userId),
-                LastestMessages = await _messageFunction.GetLastestMessage(userId)
+                LastestMessages = await _messageFunction.GetLatestMessage(userId)
             };
 
             return Ok(response);

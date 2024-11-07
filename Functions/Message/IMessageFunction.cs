@@ -2,6 +2,8 @@
 {
     public interface IMessageFunction
     {
-        Task<IEnumerable <LastestMessage>> GetLastestMessage(int userId);
+        Task<IEnumerable<LastestMessage>> GetLatestMessage(int userId);
+
+        Task<IEnumerable<Message>> GetMessages(int fromUserId, int toUserId);
     }
 }
