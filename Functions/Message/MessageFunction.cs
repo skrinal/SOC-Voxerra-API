@@ -47,7 +47,7 @@ namespace Voxerra_API.Functions.Message
         {
             var entities = await _chatAppContext.TblMessages
                 .Where(x => (x.FromUserId == fromUserId && x.ToUserId == toUserId)
-                || (x.FromUserId == fromUserId && x.ToUserId == toUserId))
+                || (x.FromUserId == toUserId && x.ToUserId == fromUserId))
                 .OrderBy(x => x.SendDateTime)
                 .ToListAsync();
 
