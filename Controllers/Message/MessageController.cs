@@ -5,7 +5,7 @@ namespace Voxerra_API.Controllers.Message
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize]
+    [Authorize]
     public class MessageController : Controller
     {
         IMessageFunction _messageFunction;

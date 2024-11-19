@@ -3,7 +3,7 @@ namespace Voxerra_API.Controllers.MessageCenter
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize]
+    [Authorize]
     public class MessageCenterController : Controller
     {
         IUserFunction _userFunction;

@@ -1,3 +1,4 @@
+using Voxerra_API.Controllers.ChatHub;
 using Voxerra_API.Entities;
 using Voxerra_API.Functions.Message;
 using Voxerra_API.Functions.UserFriend;
@@ -21,6 +22,8 @@ builder.Services.AddDbContext<ChatAppContext>(options =>
 builder.Services.AddTransient<IUserFunction, UserFunction>();
 builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
 builder.Services.AddTransient<IMessageFunction, MessageFunction>();
+builder.Services.AddScoped<UserOperator>();
+builder.Services.AddScoped<ChatHub>();
 
 builder.Services.AddHttpContextAccessor();
 
@@ -35,10 +38,17 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
-
-//app.UseAuthorization();
+app.UseRouting();
 app.UseMiddleware<JwtMiddleware>();
 
-app.MapControllers();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapHub<ChatHub>("/ChatHub");
+});
+
+//app.MapControllers();
+//app.MapHub<ChatHub>("/ChatHub");
 
 app.Run();
