@@ -15,7 +15,7 @@ namespace Voxerra_API.Controllers.ChatHub
 
         public async Task SendMessage(string message)
         {
-            await Clients.All.SendAsync(message);
+            await Clients.All.SendAsync("ReceiveMessage", message);
         }
 
         public async Task SendMessageToUser(int fromUserId, int toUserId, string message)
@@ -26,7 +26,7 @@ namespace Voxerra_API.Controllers.ChatHub
             await _messageFunction.AddMessage(fromUserId, toUserId, message);
 
             await Clients.Clients(connectionIds)
-                .SendAsync("ReceiveMessage", fromUserId, toUserId, message);
+                .SendAsync("ReceiveMessage", fromUserId, message);
 
         }
 
