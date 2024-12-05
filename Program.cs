@@ -1,6 +1,8 @@
+using Microsoft.EntityFrameworkCore.Internal;
 using Voxerra_API.Controllers.ChatHub;
 using Voxerra_API.Entities;
 using Voxerra_API.Functions.Message;
+using Voxerra_API.Functions.Registration;
 using Voxerra_API.Functions.UserFriend;
 using Voxerra_API.Helpers;
 
@@ -22,6 +24,7 @@ builder.Services.AddDbContext<ChatAppContext>(options =>
 builder.Services.AddTransient<IUserFunction, UserFunction>();
 builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
 builder.Services.AddTransient<IMessageFunction, MessageFunction>();
+builder.Services.AddTransient<IUserRegistrationFunction, UserRegistrationFunction>();
 builder.Services.AddScoped<UserOperator>();
 builder.Services.AddScoped<ChatHub>();
 

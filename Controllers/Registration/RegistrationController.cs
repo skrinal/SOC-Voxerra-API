@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Voxerra_API.Controllers.Message;
+using Voxerra_API.Functions.Registration;
 
 namespace Voxerra_API.Controllers.Registration
 {
@@ -6,13 +8,22 @@ namespace Voxerra_API.Controllers.Registration
     [Route("[controller]")]
     public class RegistrationController : Controller
     {
-        public RegistrationController() 
-        { 
-        
-        }
-        public IActionResult Index()
+        IUserRegistrationFunction _userRegistrationFunction;
+        public RegistrationController(IUserRegistrationFunction userRegistrationFunction)
         {
-            return View();
+            _userRegistrationFunction = userRegistrationFunction;
+        }
+        [HttpPost("Register")]
+        public async Task<ActionResult> Initialize([FromBody] RegistrationRequest request)
+        {
+            var response = await _userRegistrationFunction.Registration(request.Username, request.Password, request.Email);
+
+            if (response == 0)
+            {
+                return BadRequest(new { message = "User registation failed" });
+            }
+
+            return Ok(response);
         }
     }
 }

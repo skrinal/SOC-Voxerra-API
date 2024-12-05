@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\SOC-Voxerra-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\entities\\tbluser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:entities\\tbluser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\controllers\\registration\\registrationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:controllers\\registration\\registrationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\controllers\\registration\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:controllers\\registration\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\registration\\userregistrationfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\registration\\userregistrationfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\user\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\user\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\user\\iuserfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\user\\iuserfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\entities\\tbluser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:entities\\tbluser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\user\\userfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\user\\userfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\registration\\userregistrationfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\registration\\userregistrationfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\message\\messagefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\message\\messagefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\registration\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,8 +35,12 @@
       "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:controllers\\authenticate\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\migrations\\20241127230457_xd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:migrations\\20241127230457_xd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\userfriend\\userfriendfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\userfriend\\userfriendfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\message\\imessagefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\message\\imessagefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,8 +49,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 591,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 1593,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,28 +62,68 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TblUser.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Entities\\TblUser.cs",
+              "RelativeDocumentMoniker": "Entities\\TblUser.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Entities\\TblUser.cs",
+              "RelativeToolTip": "Entities\\TblUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T23:13:33.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\User\\User.cs",
+              "RelativeDocumentMoniker": "Functions\\User\\User.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\User\\User.cs",
+              "RelativeToolTip": "Functions\\User\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T22:57:49.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRegistrationFunction.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\Registration\\UserRegistrationFunction.cs",
+              "RelativeDocumentMoniker": "Functions\\Registration\\UserRegistrationFunction.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\Registration\\UserRegistrationFunction.cs",
+              "RelativeToolTip": "Functions\\Registration\\UserRegistrationFunction.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T22:50:01.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "RegistrationController.cs",
               "DocumentMoniker": "C:\\SOC-Voxerra-API\\Controllers\\Registration\\RegistrationController.cs",
               "RelativeDocumentMoniker": "Controllers\\Registration\\RegistrationController.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Controllers\\Registration\\RegistrationController.cs",
               "RelativeToolTip": "Controllers\\Registration\\RegistrationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-27T22:44:30.395Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserRegistrationFunction.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\Registration\\UserRegistrationFunction.cs",
-              "RelativeDocumentMoniker": "Functions\\Registration\\UserRegistrationFunction.cs",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\Registration\\UserRegistrationFunction.cs",
-              "RelativeToolTip": "Functions\\Registration\\UserRegistrationFunction.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAcAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "RegistrationRequest.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Controllers\\Registration\\RegistrationRequest.cs",
+              "RelativeDocumentMoniker": "Controllers\\Registration\\RegistrationRequest.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Controllers\\Registration\\RegistrationRequest.cs",
+              "RelativeToolTip": "Controllers\\Registration\\RegistrationRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:50:01.495Z"
+              "WhenOpened": "2024-12-04T12:55:01.467Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -91,74 +135,27 @@
               "RelativeToolTip": "Functions\\Registration\\UserRegistration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:51:11.497Z"
+              "WhenOpened": "2024-11-27T22:51:11.497Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 1103,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 839,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "20241127230457_xd.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Migrations\\20241127230457_xd.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241127230457_xd.cs",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Migrations\\20241127230457_xd.cs",
-              "RelativeToolTip": "Migrations\\20241127230457_xd.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "MessageFunction.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\Message\\MessageFunction.cs",
+              "RelativeDocumentMoniker": "Functions\\Message\\MessageFunction.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\Message\\MessageFunction.cs",
+              "RelativeToolTip": "Functions\\Message\\MessageFunction.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAIwBwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T23:04:57.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TblUser.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Entities\\TblUser.cs",
-              "RelativeDocumentMoniker": "Entities\\TblUser.cs",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Entities\\TblUser.cs",
-              "RelativeToolTip": "Entities\\TblUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T23:04:07.667Z",
+              "WhenOpened": "2024-12-04T22:35:47.979Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUserFunction.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\User\\IUserFunction.cs",
-              "RelativeDocumentMoniker": "Functions\\User\\IUserFunction.cs",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\User\\IUserFunction.cs",
-              "RelativeToolTip": "Functions\\User\\IUserFunction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:47:43.855Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\User\\User.cs",
-              "RelativeDocumentMoniker": "Functions\\User\\User.cs",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\User\\User.cs",
-              "RelativeToolTip": "Functions\\User\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:46:46.313Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserFunction.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\User\\UserFunction.cs",
-              "RelativeDocumentMoniker": "Functions\\User\\UserFunction.cs",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\User\\UserFunction.cs",
-              "RelativeToolTip": "Functions\\User\\UserFunction.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowBwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:46:54.024Z"
             },
             {
               "$type": "Document",
@@ -168,9 +165,36 @@
               "RelativeDocumentMoniker": "Controllers\\Authenticate\\AuthenticateController.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Controllers\\Authenticate\\AuthenticateController.cs",
               "RelativeToolTip": "Controllers\\Authenticate\\AuthenticateController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T22:37:51.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IMessageFunction.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\Message\\IMessageFunction.cs",
+              "RelativeDocumentMoniker": "Functions\\Message\\IMessageFunction.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\Message\\IMessageFunction.cs",
+              "RelativeToolTip": "Functions\\Message\\IMessageFunction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T22:35:37.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserFriendFunction.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\UserFriend\\UserFriendFunction.cs",
+              "RelativeDocumentMoniker": "Functions\\UserFriend\\UserFriendFunction.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\UserFriend\\UserFriendFunction.cs",
+              "RelativeToolTip": "Functions\\UserFriend\\UserFriendFunction.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:40:18.902Z"
+              "WhenOpened": "2024-12-04T13:11:36.247Z",
+              "EditorCaption": ""
             }
           ]
         },

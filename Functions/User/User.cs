@@ -1,7 +1,12 @@
-﻿namespace Voxerra_API.Functions.User
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace Voxerra_API.Functions.User
 {
     public class User
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string UserName { get; set; } = null!;
         public string Password { get; set; } = null!;

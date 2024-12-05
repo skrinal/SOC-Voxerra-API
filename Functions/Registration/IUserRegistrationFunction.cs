@@ -2,6 +2,6 @@
 {
     public interface IUserRegistrationFunction
     {
-        
+        Task<int> Registration(string userName, string password, string email);
     }
 }
