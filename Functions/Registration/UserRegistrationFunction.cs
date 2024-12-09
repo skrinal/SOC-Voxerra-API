@@ -8,43 +8,61 @@ namespace Voxerra_API.Functions.Registration
     public class UserRegistrationFunction : IUserRegistrationFunction
     {
         private readonly ChatAppContext _chatAppContext;
-
-        public UserRegistrationFunction(ChatAppContext chatAppContext)
+        //private readonly EmailMessage _emailMessage;
+        private int verificationCode;
+        public UserRegistrationFunction(ChatAppContext chatAppContext/*, EmailMessage emailMessage*/)
         {
             _chatAppContext = chatAppContext;
+            //_emailMessage = emailMessage;
         }
 
-        public async Task<int> Registration(string userName, string password, string email)
+      
+        public async Task<bool> IsEmailUnique(string email)
+        {
+            return !await _chatAppContext.TblUsers.AnyAsync(x => x.Email == email);
+        }
+
+        public async Task<bool> Registration(string loginId, string userName, string password, string email)
         {
             try
             {
-                var entity = _chatAppContext.TblUsers.SingleOrDefault(x => x.Email == email);
-                if (entity != null) return 0;
-
                 var (encryptedPassword, salt) = EncryptPassword(password);
                 
                 var newUser = new TblUser
                 {
-                    Id = 1, //hj8yuh8uyh8yh78
+                    LoginId = loginId,
                     UserName = userName,
                     Email = email,
                     Password = encryptedPassword,
                     StoredSalt = salt,
-                    AvatarSourceName = "default.png"
+                    AvatarSourceName = "default.png" // Pridat defualt image 
                 };
+
+
+                //var verificationCode = GenerateCode();
+               // _emailMessage.SendEmail(email, verificationCode, userName);
+                
+                // treba spravit input od Clienta
 
                 _chatAppContext.TblUsers.Add(newUser);
                 var result = await _chatAppContext.SaveChangesAsync();
 
-                return result;
+                return result == 1 ? true : false;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return 0;
+                return false;
             }
         }
-        public static (string encryptedPassword, byte[] salt) EncryptPassword(string password)
+
+        public int GenerateCode()
+        {
+            Random random = new Random();
+            return verificationCode = random.Next(1000000, 9999999);
+        }
+
+        public (string encryptedPassword, byte[] salt) EncryptPassword(string password)
         {
             byte[] salt = new byte[128 / 8];
             RandomNumberGenerator.Fill(salt);

@@ -49,8 +49,24 @@
   },
   {
     "ContainingType": "Voxerra_API.Controllers.Registration.RegistrationController",
-    "Method": "Initialize",
-    "RelativePath": "Registration/Register",
+    "Method": "IsEmailUnique",
+    "RelativePath": "Registration/IsEmailUnique",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.Registration.IsEmailUniqueRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.Registration.RegistrationController",
+    "Method": "RegisterUser",
+    "RelativePath": "Registration/RegisterUser",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

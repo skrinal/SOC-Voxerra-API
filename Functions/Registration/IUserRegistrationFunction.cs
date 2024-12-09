@@ -2,6 +2,7 @@
 {
     public interface IUserRegistrationFunction
     {
-        Task<int> Registration(string userName, string password, string email);
+        Task<bool> Registration(string loginId, string userName, string password, string email);
+        Task<bool> IsEmailUnique(string email);
     }
 }

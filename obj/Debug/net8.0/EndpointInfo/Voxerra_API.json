@@ -101,7 +101,7 @@
         }
       }
     },
-    "/Registration/Register": {
+    "/Registration/RegisterUser": {
       "post": {
         "tags": [
           "Registration"
@@ -121,6 +121,37 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/RegistrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Registration/IsEmailUnique": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IsEmailUniqueRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IsEmailUniqueRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IsEmailUniqueRequest"
               }
             }
           }
@@ -188,6 +219,16 @@
         },
         "additionalProperties": false
       },
+      "IsEmailUniqueRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "MessageInitializeRequest": {
         "type": "object",
         "properties": {
@@ -205,6 +246,10 @@
       "RegistrationRequest": {
         "type": "object",
         "properties": {
+          "loginId": {
+            "type": "string",
+            "nullable": true
+          },
           "username": {
             "type": "string",
             "nullable": true

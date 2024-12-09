@@ -26,6 +26,7 @@ builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
 builder.Services.AddTransient<IMessageFunction, MessageFunction>();
 builder.Services.AddTransient<IUserRegistrationFunction, UserRegistrationFunction>();
 builder.Services.AddScoped<UserOperator>();
+builder.Services.AddScoped<EmailMessage>();
 builder.Services.AddScoped<ChatHub>();
 
 builder.Services.AddHttpContextAccessor();

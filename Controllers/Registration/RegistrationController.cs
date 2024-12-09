@@ -13,17 +13,46 @@ namespace Voxerra_API.Controllers.Registration
         {
             _userRegistrationFunction = userRegistrationFunction;
         }
-        [HttpPost("Register")]
-        public async Task<ActionResult> Initialize([FromBody] RegistrationRequest request)
-        {
-            var response = await _userRegistrationFunction.Registration(request.Username, request.Password, request.Email);
 
-            if (response == 0)
+        [HttpPost("RegisterUser")]
+        public async Task<ActionResult> RegisterUser([FromBody] RegistrationRequest request)
+        {
+
+
+            var response = new RegistrationResponse
             {
-                return BadRequest(new { message = "User registation failed" });
+                Successful = await _userRegistrationFunction.Registration(request.LoginId, request.Username, request.Password, request.Email)
+            };
+
+
+            if (response.Successful == false)
+            {
+                return StatusCode(500, new { message = "User registration failed due to server error" });
             }
 
             return Ok(response);
         }
+
+        [HttpPost("IsEmailUnique")]
+        public async Task<ActionResult> IsEmailUnique([FromBody] IsEmailUniqueRequest request)
+        {
+
+            var response = new IsEmailUniqueResponse
+            {
+                IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(request.Email)
+            };
+
+            //var response = new MessageInitializeResponse
+
+            if (response.IsEmailUnique == false)
+            {
+                return BadRequest(new { message = "User email is not Unique" });
+            }
+
+            return Ok(response);
+        }
+
+        
+        
     }
 }

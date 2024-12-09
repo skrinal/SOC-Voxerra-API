@@ -2,6 +2,7 @@
 {
     public class RegistrationRequest
     {
+        public string LoginId { get; set; } = null!;
         public string Username { get; set; } = null!;
         public string Password { get; set; } = null!;
         public string Email { get; set; } = null!;
