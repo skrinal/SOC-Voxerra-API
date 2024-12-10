@@ -22,6 +22,11 @@ namespace Voxerra_API.Functions.Registration
             return !await _chatAppContext.TblUsers.AnyAsync(x => x.Email == email);
         }
 
+        public async Task<bool> IsUserNameUnique(string userName)
+        {
+            return !await _chatAppContext.TblUsers.AnyAsync(x => x.UserName == userName);
+        }
+
         public async Task<bool> Registration(string loginId, string userName, string password, string email)
         {
             try
@@ -40,7 +45,7 @@ namespace Voxerra_API.Functions.Registration
 
 
                 //var verificationCode = GenerateCode();
-               // _emailMessage.SendEmail(email, verificationCode, userName);
+                // _emailMessage.SendEmail(email, verificationCode, userName);
                 
                 // treba spravit input od Clienta
 

@@ -42,7 +42,6 @@ namespace Voxerra_API.Controllers.Registration
                 IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(request.Email)
             };
 
-            //var response = new MessageInitializeResponse
 
             if (response.IsEmailUnique == false)
             {
@@ -52,7 +51,24 @@ namespace Voxerra_API.Controllers.Registration
             return Ok(response);
         }
 
-        
-        
+        [HttpPost("IsUserNameUnique")]
+        public async Task<ActionResult> IsUserNameUnique([FromBody] IsUserNameUniqueRequest request)
+        {
+
+            var response = new IsUserNameUniqueResponse
+            {
+                IsUserNameUnique = await _userRegistrationFunction.IsUserNameUnique(request.UserName)
+            };
+
+            if (response.IsUserNameUnique == false)
+            {
+                return BadRequest(new { message = "UserName is not Unique" });
+            }
+
+            return Ok(response);
+        }
+
+
+
     }
 }
