@@ -27,7 +27,7 @@ namespace Voxerra_API.Functions.Registration
             return !await _chatAppContext.TblUsers.AnyAsync(x => x.UserName == userName);
         }
 
-        public async Task<bool> Registration(string loginId, string userName, string password, string email)
+        public async Task<bool> Registration(string userName, string password, string email)
         {
             try
             {
@@ -35,7 +35,6 @@ namespace Voxerra_API.Functions.Registration
                 
                 var newUser = new TblUser
                 {
-                    LoginId = loginId,
                     UserName = userName,
                     Email = email,
                     Password = encryptedPassword,

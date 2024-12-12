@@ -2,7 +2,7 @@
 {
     public interface IUserFunction
     {
-        User? Authenticate(string loginId, string password);
+        User? Authenticate(string userName, string password);
         User GetUserById(int id);
     }
 }

@@ -14,6 +14,7 @@ namespace Voxerra_API.Helpers
         public async Task Invoke(HttpContext context, IUserFunction userFunction)
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(' ').Last();
+
             if (token == null)
                 token = context.Request.Headers["ChatHubBearer"].FirstOrDefault()?.Split(' ').Last();
 
@@ -28,7 +29,7 @@ namespace Voxerra_API.Helpers
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes("rweofkwurtihonmoiurwhbnrtwrgwrgjge");
+                var key = Encoding.ASCII.GetBytes("rweofkwurtihonmoiurwhbngrgegegrtwrgwrgjge");
                 tokenHandler.ValidateToken(token, new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,

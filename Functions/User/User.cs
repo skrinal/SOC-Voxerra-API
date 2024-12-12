@@ -13,5 +13,6 @@ namespace Voxerra_API.Functions.User
         public bool IsOnline { get; set; } 
         public DateTime LastLogonTime { get; set; }
         public string Token { get; set; } = null!;
+        public string RefreshToken { get; set; }
     }
 }

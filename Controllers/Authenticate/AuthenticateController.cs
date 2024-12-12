@@ -1,4 +1,5 @@
-﻿namespace Voxerra_API.Controllers.Authenticate
+﻿
+namespace Voxerra_API.Controllers.Authenticate
 {
     [ApiController]
     [Route("[controller]")]
@@ -16,15 +17,24 @@
         [HttpPost("Authenticate")]
         public IActionResult Authenticate(AuthenticateRequest request)
         {
-            var response = _userFunction.Authenticate(request.LoginId, request.Password);
+            var response = _userFunction.Authenticate(request.UserName, request.Password);
 
             if (response == null)
             {
-                _logger.LogWarning("Authentication failed for user: {LoginId}", request.LoginId);
+                _logger.LogWarning("Authentication failed for user: {UserName}", request.UserName);
                 return Unauthorized(new { message = "Invalid credentials" });
             }
 
             return Ok(response);
+            //  Returns 
+            //{
+            //    Id = entity.Id,
+            //    UserName = entity.UserName,
+            //    Token = accesToken,
+            //    RefreshToken = refreshToken
+            //};
         }
+
+        
     }
 }

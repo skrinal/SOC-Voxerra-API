@@ -1,10 +1,9 @@
-using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Voxerra_API.Controllers.ChatHub;
 using Voxerra_API.Entities;
-using Voxerra_API.Functions.Message;
 using Voxerra_API.Functions.Registration;
-using Voxerra_API.Functions.UserFriend;
-using Voxerra_API.Helpers;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +17,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ChatAppContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration["ConnectionString"]);
+    options.UseMySql(builder.Configuration["ConnectionString"],
+        new MySqlServerVersion(new Version(8, 0, 21)));
+  
 });
+
 
 builder.Services.AddTransient<IUserFunction, UserFunction>();
 builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
