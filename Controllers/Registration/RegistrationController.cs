@@ -21,7 +21,7 @@ namespace Voxerra_API.Controllers.Registration
 
             var response = new RegistrationResponse
             {
-                Successful = await _userRegistrationFunction.Registration(request.LoginId, request.Username, request.Password, request.Email)
+                Successful = await _userRegistrationFunction.Registration(request.Username, request.Password, request.Email)
             };
 
 

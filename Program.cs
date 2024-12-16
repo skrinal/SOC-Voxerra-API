@@ -18,7 +18,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ChatAppContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration["ConnectionString"]);
+    options.UseMySql(builder.Configuration["ConnectionString"],
+        new MySqlServerVersion(new Version(8, 0, 21)));
+
 });
 
 builder.Services.AddTransient<IUserFunction, UserFunction>();

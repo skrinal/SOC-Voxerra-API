@@ -239,7 +239,7 @@
       "AuthenticateRequest": {
         "type": "object",
         "properties": {
-          "loginId": {
+          "userName": {
             "type": "string",
             "nullable": true
           },
@@ -287,10 +287,6 @@
       "RegistrationRequest": {
         "type": "object",
         "properties": {
-          "loginId": {
-            "type": "string",
-            "nullable": true
-          },
           "username": {
             "type": "string",
             "nullable": true

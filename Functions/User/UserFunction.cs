@@ -15,11 +15,11 @@ namespace Voxerra_API.Functions.User
         {
             _chatAppContext = chatAppContext;
         }
-        public User? Authenticate(string loginId, string password)
+        public User? Authenticate(string userName, string password)
         {
             try
             {
-                var entity = _chatAppContext.TblUsers.Single(x => x.LoginId == loginId);
+                var entity = _chatAppContext.TblUsers.Single(x => x.UserName == userName);
                 if (entity == null) return null;
 
                 var isPasswordMatched = VerifityPassword(password, entity.StoredSalt, entity.Password);

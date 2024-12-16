@@ -4,6 +4,6 @@
     {
         Task<bool> IsUserNameUnique(string userName);
         Task<bool> IsEmailUnique(string email);
-        Task<bool> Registration(string loginId, string userName, string password, string email);
+        Task<bool> Registration(string userName, string password, string email);
     }
 }
