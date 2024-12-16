@@ -28,14 +28,14 @@ namespace Voxerra_API.Functions.User
 
 
                 var accesToken = GenerateJwtToken(entity);
-                var refreshToken = GenerateRefreshToken();
+                //var refreshToken = GenerateRefreshToken();
 
-                var tokenStore = new TblRefreshTokens
-                {
-                    UserId = entity.Id,
-                    RefreshToken = refreshToken,
-                    ExpiryDate = DateTime.UtcNow.AddDays(12)
-                };
+                //var tokenStore = new TblRefreshTokens
+                //{
+                //    UserId = entity.Id,
+                //    RefreshToken = refreshToken,
+                //    ExpiryDate = DateTime.UtcNow.AddDays(12)
+                //};
                 //_chatAppContext.TblRefreshTokens.Add(tokenStore);
                 //_chatAppContext.SaveChanges();
 
@@ -45,7 +45,7 @@ namespace Voxerra_API.Functions.User
                     Id = entity.Id,
                     UserName = entity.UserName,
                     Token = accesToken,
-                    RefreshToken = refreshToken
+                    //RefreshToken = refreshToken
                 };
             }
             catch (Exception ex) 
@@ -55,48 +55,48 @@ namespace Voxerra_API.Functions.User
             }
         }
 
-        public User RefreshToken(string refreshToken)
-        {
-            try
-            {
-                // Look for the refresh token in the database
-                var storedToken = _chatAppContext.TblRefreshTokens
-                    .SingleOrDefault(rt => rt.RefreshToken == refreshToken && rt.ExpiryDate > DateTime.UtcNow);
+        //public User RefreshToken(string refreshToken)
+        //{
+        //    try
+        //    {
+        //        // Look for the refresh token in the database
+        //        var storedToken = _chatAppContext.TblRefreshTokens
+        //            .SingleOrDefault(rt => rt.RefreshToken == refreshToken && rt.ExpiryDate > DateTime.UtcNow);
 
-                if (storedToken == null)
-                {
-                    return null;  // Invalid or expired refresh token
-                }
+        //        if (storedToken == null)
+        //        {
+        //            return null;  // Invalid or expired refresh token
+        //        }
 
-                var user = _chatAppContext.TblUsers.SingleOrDefault(u => u.Id == storedToken.UserId);
-                if (user == null)
-                {
-                    return null;  // No user found for the refresh token
-                }
+        //        var user = _chatAppContext.TblUsers.SingleOrDefault(u => u.Id == storedToken.UserId);
+        //        if (user == null)
+        //        {
+        //            return null;  // No user found for the refresh token
+        //        }
 
-                // Generate new access and refresh tokens
-                var newAccessToken = GenerateJwtToken(user);
-                var newRefreshToken = GenerateRefreshToken();
+        //        // Generate new access and refresh tokens
+        //        var newAccessToken = GenerateJwtToken(user);
+        //        var newRefreshToken = GenerateRefreshToken();
 
-                // Update the refresh token in the database
-                storedToken.RefreshToken = newRefreshToken;
-                storedToken.ExpiryDate = DateTime.UtcNow.AddDays(7);  // Set new expiry date
-                _chatAppContext.SaveChanges();
+        //        // Update the refresh token in the database
+        //        storedToken.RefreshToken = newRefreshToken;
+        //        storedToken.ExpiryDate = DateTime.UtcNow.AddDays(7);  // Set new expiry date
+        //        _chatAppContext.SaveChanges();
 
-                return new User
-                {
-                    Id = user.Id,
-                    UserName = user.UserName,
-                    Token = newAccessToken,
-                    RefreshToken = newRefreshToken
-                };
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return null;
-            }
-        }
+        //        return new User
+        //        {
+        //            Id = user.Id,
+        //            UserName = user.UserName,
+        //            Token = newAccessToken,
+        //            RefreshToken = newRefreshToken
+        //        };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex);
+        //        return null;
+        //    }
+        //}
 
         public User GetUserById(int id)
         {
@@ -129,7 +129,7 @@ namespace Voxerra_API.Functions.User
         private string GenerateJwtToken(TblUser user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("rweofkwurtihonmoiurwhbnrtgwrgjge");
+            var key = Encoding.ASCII.GetBytes("N4itx1Ly4GXMkFQek8gQH6oNoeKITfMF");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity([new Claim("id", user.Id.ToString())]),
@@ -143,15 +143,15 @@ namespace Voxerra_API.Functions.User
             return tokenHandler.WriteToken(token);
         }
 
-        private string GenerateRefreshToken()
-        {
-            var randomNumber = new byte[32];  // 32 bytes = 256 bits
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(randomNumber);
-            }
-            return Convert.ToBase64String(randomNumber);  // Returns the random refresh token
-        }
+        //private string GenerateRefreshToken()
+        //{
+        //    var randomNumber = new byte[32];  // 32 bytes = 256 bits
+        //    using (var rng = RandomNumberGenerator.Create())
+        //    {
+        //        rng.GetBytes(randomNumber);
+        //    }
+        //    return Convert.ToBase64String(randomNumber);  // Returns the random refresh token
+        //}
 
     }
 }

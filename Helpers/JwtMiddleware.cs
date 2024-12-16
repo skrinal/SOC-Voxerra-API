@@ -29,7 +29,7 @@ namespace Voxerra_API.Helpers
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes("rweofkwurtihonmoiurwhbngrgegegrtwrgwrgjge");
+                var key = Encoding.ASCII.GetBytes("N4itx1Ly4GXMkFQek8gQH6oNoeKITfMF");
                 tokenHandler.ValidateToken(token, new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
@@ -43,10 +43,11 @@ namespace Voxerra_API.Helpers
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 context.Items["User"] = userFunction.GetUserById(userId);
-            }
-            catch
-            {
 
+            }
+            catch ( Exception ex ) 
+            {
+                Console.WriteLine(ex.ToString() );
             }
         }
     }
