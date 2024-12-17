@@ -1,4 +1,6 @@
-﻿namespace Voxerra_API.Controllers.Authenticate
+﻿using Microsoft.Extensions.Logging;
+
+namespace Voxerra_API.Controllers.Authenticate
 {
     [ApiController]
     [Route("[controller]")]
@@ -24,7 +26,9 @@
                 return Unauthorized(new { message = "Invalid credentials" });
             }
 
+            _logger.LogInformation($"User {request.UserName} has been logged in");
             return Ok(response);
+            
         }
     }
 }
