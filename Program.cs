@@ -23,6 +23,11 @@ builder.Services.AddDbContext<ChatAppContext>(options =>
 
 });
 
+//builder.WebHost.ConfigureKestrel(options =>
+//{
+//    options.ListenAnyIP(5000); // Bind to all network interfaces
+//});
+
 builder.Services.AddTransient<IUserFunction, UserFunction>();
 builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
 builder.Services.AddTransient<IMessageFunction, MessageFunction>();

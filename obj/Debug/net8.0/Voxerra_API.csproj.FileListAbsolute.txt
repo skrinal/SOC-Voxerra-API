@@ -257,7 +257,6 @@ C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets\msbuild.Voxerra_API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SOC-Voxerra-API\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\SOC-Voxerra-API\bin\Debug\net8.0\google-services.json
 C:\SOC-Voxerra-API\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\SOC-Voxerra-API\bin\Debug\net8.0\MailKit.dll
 C:\SOC-Voxerra-API\bin\Debug\net8.0\MimeKit.dll

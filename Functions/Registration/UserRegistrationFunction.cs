@@ -39,7 +39,7 @@ namespace Voxerra_API.Functions.Registration
                     Email = email,
                     Password = encryptedPassword,
                     StoredSalt = salt,
-                    AvatarSourceName = "default.png" // Pridat defualt image 
+                    AvatarSourceName = "defaulticon.png" // Pridat defualt image 
                 };
 
 
