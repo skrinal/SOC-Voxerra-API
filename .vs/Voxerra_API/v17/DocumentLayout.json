@@ -7,20 +7,12 @@
       "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1588,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,51 +35,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\SOC-Voxerra-API\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-04T23:32:13.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "serviceDependencies.json",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Properties\\serviceDependencies.json",
-              "RelativeDocumentMoniker": "Properties\\serviceDependencies.json",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Properties\\serviceDependencies.json",
-              "RelativeToolTip": "Properties\\serviceDependencies.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-04T23:32:01.888Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\SOC-Voxerra-API\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
               "ToolTip": "C:\\SOC-Voxerra-API\\appsettings.Development.json",
               "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-01-03T17:17:00.498Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAowCQAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-03T17:00:38.725Z"
             },
             {
               "$type": "Document",
@@ -97,9 +53,22 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T16:53:56.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-03T17:00:38.725Z",
               "EditorCaption": ""
             }
           ]

@@ -25,7 +25,6 @@ builder.Services.AddDbContext<ChatAppContext>(options =>
 });
 
 
-
 builder.Services.AddTransient<IUserFunction, UserFunction>();
 builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
 builder.Services.AddTransient<IMessageFunction, MessageFunction>();
