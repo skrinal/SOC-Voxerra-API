@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.Extensions.Configuration;
 using Voxerra_API.Controllers.ChatHub;
 using Voxerra_API.Entities;
 using Voxerra_API.Functions.Message;
@@ -19,13 +20,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ChatAppContext>(options =>
 {
     options.UseMySql(builder.Configuration["ConnectionString"],
-        new MySqlServerVersion(new Version(8, 0, 21)));
+        new MySqlServerVersion(new Version(8, 0, 40)));
 
 });
 
-builder.Logging
-    .AddConsole()     // Logs to the console
-    .AddDebug();
 
 
 builder.Services.AddTransient<IUserFunction, UserFunction>();
@@ -52,11 +50,6 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseMiddleware<JwtMiddleware>();
 
-app.MapGet("/", (ILogger<Program> logger) =>
-{
-    logger.LogInformation("Received a request at the root endpoint.");
-    return Results.Ok("Hello, World!");
-});
 
 app.UseEndpoints(endpoints =>
 {
