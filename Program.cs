@@ -23,6 +23,10 @@ builder.Services.AddDbContext<ChatAppContext>(options =>
 
 });
 
+builder.Logging
+    .AddConsole()     // Logs to the console
+    .AddDebug();
+
 
 builder.Services.AddTransient<IUserFunction, UserFunction>();
 builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
@@ -48,6 +52,11 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseMiddleware<JwtMiddleware>();
 
+app.MapGet("/", (ILogger<Program> logger) =>
+{
+    logger.LogInformation("Received a request at the root endpoint.");
+    return Results.Ok("Hello, World!");
+});
 
 app.UseEndpoints(endpoints =>
 {

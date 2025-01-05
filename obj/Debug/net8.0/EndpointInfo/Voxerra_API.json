@@ -194,6 +194,18 @@
         }
       }
     },
+    "/": {
+      "get": {
+        "tags": [
+          "Voxerra_API"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
