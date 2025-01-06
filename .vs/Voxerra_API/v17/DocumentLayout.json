@@ -34,21 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1588,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChatAppContext.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Entities\\ChatAppContext.cs",
-              "RelativeDocumentMoniker": "Entities\\ChatAppContext.cs",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Entities\\ChatAppContext.cs",
-              "RelativeToolTip": "Entities\\ChatAppContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T23:57:55.924Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -59,13 +46,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChatAppContext.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Entities\\ChatAppContext.cs",
+              "RelativeDocumentMoniker": "Entities\\ChatAppContext.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Entities\\ChatAppContext.cs",
+              "RelativeToolTip": "Entities\\ChatAppContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T23:57:55.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "UserFunction.cs",
               "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\User\\UserFunction.cs",
               "RelativeDocumentMoniker": "Functions\\User\\UserFunction.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\User\\UserFunction.cs",
               "RelativeToolTip": "Functions\\User\\UserFunction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAowEMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-05T23:57:39.019Z",
               "EditorCaption": ""
@@ -80,8 +80,7 @@
               "RelativeToolTip": "Controllers\\Authenticate\\AuthenticateController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T23:57:30.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T23:57:30.333Z"
             },
             {
               "$type": "Document",
@@ -93,8 +92,7 @@
               "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-03T17:17:00.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T17:17:00.498Z"
             },
             {
               "$type": "Document",
@@ -106,8 +104,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T16:53:56.484Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T16:53:56.484Z"
             },
             {
               "$type": "Document",
@@ -119,8 +116,7 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-03T17:00:38.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T17:00:38.725Z"
             }
           ]
         },

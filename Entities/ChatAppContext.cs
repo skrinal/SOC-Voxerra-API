@@ -5,8 +5,8 @@
         public ChatAppContext (DbContextOptions<ChatAppContext> options) : base(options) 
         { }
 
-        public virtual DbSet<TblUser> tblusers { get; set; } = null!;
-        public virtual DbSet<TblUserFriend> tbluserfriends { get; set; } = null!;
-        public virtual DbSet<TblMessage> tblmessages { get; set; } = null!;
+        public virtual DbSet<TblUser> Tblusers { get; set; } = null!;
+        public virtual DbSet<TblUserFriend> Tbluserfriends { get; set; } = null!;
+        public virtual DbSet<TblMessage> Tblmessages { get; set; } = null!;
     }
 }
