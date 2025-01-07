@@ -5,8 +5,8 @@ namespace Voxerra_API.Functions.UserFriend
 {
     public class UserFriendFunction : IUserFriendFunction
     {
-        ChatAppContext _chatAppContext;
-        IUserFunction _userFunction;
+        readonly ChatAppContext _chatAppContext;
+        readonly IUserFunction _userFunction;
         public UserFriendFunction(ChatAppContext chatAppContext, IUserFunction userFunction)
         {
             _chatAppContext = chatAppContext;
@@ -15,7 +15,7 @@ namespace Voxerra_API.Functions.UserFriend
 
         public async Task<IEnumerable<User.User>> GetListUserFriend(int userId)
         {
-            var entities = await _chatAppContext.TblUserFriends
+            var entities = await _chatAppContext.Tbluserfriends
                 .Where(x => x.UserId == userId)
                 .ToListAsync();
 

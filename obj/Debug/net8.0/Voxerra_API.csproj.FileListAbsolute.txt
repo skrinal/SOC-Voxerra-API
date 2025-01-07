@@ -258,7 +258,16 @@ C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets\msbuild.Voxerra_API.Microsof
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SOC-Voxerra-API\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\SOC-Voxerra-API\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
-C:\SOC-Voxerra-API\bin\Debug\net8.0\MailKit.dll
 C:\SOC-Voxerra-API\bin\Debug\net8.0\MimeKit.dll
 C:\SOC-Voxerra-API\bin\Debug\net8.0\MySqlConnector.dll
 C:\SOC-Voxerra-API\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\credentials.json
+C:\SOC-Voxerra-API\bin\Debug\net8.0\Google.Apis.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\Google.Apis.Gmail.v1.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\System.Management.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\SOC-Voxerra-API\bin\Debug\net8.0\MailKit.dll

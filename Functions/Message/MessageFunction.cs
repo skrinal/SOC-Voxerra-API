@@ -4,8 +4,8 @@ namespace Voxerra_API.Functions.Message
 {
     public class MessageFunction : IMessageFunction
     {
-        ChatAppContext _chatAppContext;
-        IUserFunction _userFunction;
+        readonly ChatAppContext _chatAppContext;
+        readonly IUserFunction _userFunction;
         public MessageFunction(ChatAppContext chatAppContext, IUserFunction userFunction)
         {
             _chatAppContext = chatAppContext;
@@ -23,7 +23,7 @@ namespace Voxerra_API.Functions.Message
                 IsRead = false
             };
 
-            _chatAppContext.TblMessages.Add(entity);
+            _chatAppContext.Tblmessages.Add(entity);
             var result = await _chatAppContext.SaveChangesAsync();
 
             return result;
@@ -33,12 +33,12 @@ namespace Voxerra_API.Functions.Message
         {
             var result = new List<LastestMessage>();
 
-            var userFriends = await _chatAppContext.TblUserFriends
+            var userFriends = await _chatAppContext.Tbluserfriends
                 .Where(x => x.UserId == userId).ToListAsync();
 
             foreach (var userFriend in userFriends)
             {
-                var lastMessage = await _chatAppContext.TblMessages
+                var lastMessage = await _chatAppContext.Tblmessages
                     .Where(x => (x.FromUserId == userId && x.ToUserId == userFriend.FriendId)
                              || (x.FromUserId == userFriend.FriendId && x.ToUserId == userId))
                     .OrderByDescending(x => x.SendDateTime)
@@ -62,7 +62,7 @@ namespace Voxerra_API.Functions.Message
 
         public async Task<IEnumerable<Message>> GetMessages(int fromUserId, int toUserId)
         {
-            var entities = await _chatAppContext.TblMessages
+            var entities = await _chatAppContext.Tblmessages
                 .Where(x => (x.FromUserId == fromUserId && x.ToUserId == toUserId)
                 || (x.FromUserId == toUserId && x.ToUserId == fromUserId))
                 .OrderBy(x => x.SendDateTime)

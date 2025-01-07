@@ -50,13 +50,13 @@ app.UseRouting();
 app.UseMiddleware<JwtMiddleware>();
 
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-    endpoints.MapHub<ChatHub>("/ChatHub");
-});
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllers();
+//    endpoints.MapHub<ChatHub>("/ChatHub");
+//});
 
-//app.MapControllers();
-//app.MapHub<ChatHub>("/ChatHub");
+app.MapControllers();
+app.MapHub<ChatHub>("/ChatHub");
 
 app.Run();

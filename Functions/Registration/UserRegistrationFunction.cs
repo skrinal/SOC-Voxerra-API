@@ -19,12 +19,12 @@ namespace Voxerra_API.Functions.Registration
       
         public async Task<bool> IsEmailUnique(string email)
         {
-            return !await _chatAppContext.TblUsers.AnyAsync(x => x.Email == email);
+            return !await _chatAppContext.Tblusers.AnyAsync(x => x.Email == email);
         }
 
         public async Task<bool> IsUserNameUnique(string userName)
         {
-            return !await _chatAppContext.TblUsers.AnyAsync(x => x.UserName == userName);
+            return !await _chatAppContext.Tblusers.AnyAsync(x => x.UserName == userName);
         }
 
         public async Task<bool> Registration(string userName, string password, string email)
@@ -48,7 +48,7 @@ namespace Voxerra_API.Functions.Registration
                 
                 // treba spravit input od Clienta
 
-                _chatAppContext.TblUsers.Add(newUser);
+                _chatAppContext.Tblusers.Add(newUser);
                 var result = await _chatAppContext.SaveChangesAsync();
 
                 return result == 1 ? true : false;
@@ -62,7 +62,7 @@ namespace Voxerra_API.Functions.Registration
 
         public int GenerateCode()
         {
-            Random random = new Random();
+            Random random = new();
             return verificationCode = random.Next(1000000, 9999999);
         }
 

@@ -19,7 +19,7 @@ namespace Voxerra_API.Functions.User
         {
             try
             {
-                var entity = _chatAppContext.TblUsers.Single(x => x.UserName == userName);
+                var entity = _chatAppContext.Tblusers.Single(x => x.UserName == userName);
                 if (entity == null) return null;
 
                 var isPasswordMatched = VerifityPassword(password, entity.StoredSalt, entity.Password);
@@ -43,7 +43,7 @@ namespace Voxerra_API.Functions.User
 
         public User GetUserById(int id)
         {
-            var entity = _chatAppContext.TblUsers
+            var entity = _chatAppContext.Tblusers
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
 
