@@ -1,25 +1,32 @@
+using Voxerra_API.Entities;
+using Voxerra_API.Functions.Password;
 
 namespace Voxerra_API.Controllers.Password
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
-    public class PasswordController(IUserFunction userFunction, EmailMessage emailMessage) : Controller
+    public class PasswordController(IEmailFunction emailMessage, IPasswordFunction passwordFunction, ChatAppContext chatAppContext) : Controller
     {
-        IUserFunction _userFunction = userFunction;
-        EmailMessage _emailMessage = emailMessage;
+        private readonly IEmailFunction _emailMessage = emailMessage;
+        private readonly IPasswordFunction _passwordFunction = passwordFunction;
+        private readonly ChatAppContext _chatAppContext = chatAppContext;
 
-        [HttpPost("PasswordReset")]
-        public async Task<ActionResult> PasswordReset([FromBody] string email)
+        [HttpPost("ResetPassword")]
+        public async Task<ActionResult> ResetPassword([FromBody] string email)
         {
-            var response = new MessageCenterInitializeResponse
+            var validEmail = _chatAppContext.Tblusers.FirstOrDefault(x => x.Email == email);
+            if (validEmail == null)
             {
-                User = _userFunction.GetUserById(userId),
-                UserFriends = await _userFriendFunction.GetListUserFriend(userId),
-                LastestMessages = await _messageFunction.GetLatestMessage(userId)
-            };
+                return NotFound("The email address is not registered.");
+            }
+            var resetToken = _passwordFunction.GeneratePasswordResetToken(email);
+            
+            var resetUrl = Url.Page("/Account/ChangePassword", "Account", new { token = resetToken }, Request.Scheme);
 
-            return Ok(response);
+            await _emailMessage.SendEmail(email, "Password Reset", $"To reset your password, click the link: <a href='{resetUrl}'>Reset Password</a>");
+
+
+            return Ok("Password reset email sent.");
         }
     }
 }

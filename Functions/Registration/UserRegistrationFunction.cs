@@ -5,18 +5,12 @@ using Voxerra_API.Functions.Message;
 
 namespace Voxerra_API.Functions.Registration
 {
-    public class UserRegistrationFunction : IUserRegistrationFunction
+    public class UserRegistrationFunction(ChatAppContext chatAppContext, IEmailFunction emailMessage) : IUserRegistrationFunction
     {
-        private readonly ChatAppContext _chatAppContext;
-        //private readonly EmailMessage _emailMessage;
+        private readonly ChatAppContext _chatAppContext = chatAppContext;
+        private readonly IEmailFunction _emailMessage = emailMessage;
         private int verificationCode;
-        public UserRegistrationFunction(ChatAppContext chatAppContext/*, EmailMessage emailMessage*/)
-        {
-            _chatAppContext = chatAppContext;
-            //_emailMessage = emailMessage;
-        }
 
-      
         public async Task<bool> IsEmailUnique(string email)
         {
             return !await _chatAppContext.Tblusers.AnyAsync(x => x.Email == email);
@@ -31,27 +25,46 @@ namespace Voxerra_API.Functions.Registration
         {
             try
             {
-                var (encryptedPassword, salt) = EncryptPassword(password);
+                int verificationCode;
+                var existingPendingUser = await _chatAppContext.Tblpendingusers.FirstOrDefaultAsync(x => x.Email == email);
+
                 
-                var newUser = new TblUser
+                if (existingPendingUser != null)
                 {
-                    UserName = userName,
-                    Email = email,
-                    Password = encryptedPassword,
-                    StoredSalt = salt,
-                    AvatarSourceName = "defaulticon.png" // Pridat defualt image 
-                };
+                    existingPendingUser.UserName = userName;
+                    existingPendingUser.Password = EncryptPassword(password).encryptedPassword;
+                    existingPendingUser.StoredSalt = EncryptPassword(password).salt;
 
+                    verificationCode = GenerateCode();
+                    
+                    existingPendingUser.VerificationCode = verificationCode;
+                    existingPendingUser.CreatedAt = DateTime.UtcNow; 
+                }
+                else
+                {
+                    var (encryptedPassword, salt) = EncryptPassword(password);
+                    verificationCode = GenerateCode();
 
-                //var verificationCode = GenerateCode();
-                // _emailMessage.SendEmail(email, verificationCode, userName);
-                
-                // treba spravit input od Clienta
+                    var pendingUser = new TblPendingUser
+                    {
+                        UserName = userName,
+                        Email = email,
+                        Password = encryptedPassword,
+                        StoredSalt = salt,
+                        VerificationCode = verificationCode,
+                        CreatedAt = DateTime.UtcNow
+                    };
 
-                _chatAppContext.Tblusers.Add(newUser);
-                var result = await _chatAppContext.SaveChangesAsync();
+                    _chatAppContext.Tblpendingusers.Add(pendingUser);
+                }
 
-                return result == 1 ? true : false;
+                await _chatAppContext.SaveChangesAsync();
+
+                string codeAsString = verificationCode.ToString();
+
+                _emailMessage.SendEmail(email, "Verification Code", codeAsString);
+
+                return true;
             }
             catch (Exception ex)
             {

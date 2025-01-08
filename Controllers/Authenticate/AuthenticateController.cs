@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
+﻿
 namespace Voxerra_API.Controllers.Authenticate
 {
     [ApiController]
