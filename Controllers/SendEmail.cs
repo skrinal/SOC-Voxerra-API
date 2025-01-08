@@ -2,7 +2,7 @@
 using Voxerra_API.Controllers.Registration;
 using Voxerra_API.Functions.Registration;
 
-namespace Voxerra_API.Controllers
+namespace Voxerra_API.Helpers
 {
     [ApiController]
     [Route("[controller]")]
