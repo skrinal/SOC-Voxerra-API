@@ -89,6 +89,10 @@
               "target": "Package",
               "version": "[4.9.0, )"
             },
+            "OpenPop.NET": {
+              "target": "Package",
+              "version": "[2.0.6.1120, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.2, )"

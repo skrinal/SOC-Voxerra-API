@@ -60,9 +60,9 @@ namespace Voxerra_API.Functions.Registration
 
                 await _chatAppContext.SaveChangesAsync();
 
-                string codeAsString = verificationCode.ToString();
+                //string codeAsString = verificationCode.ToString();
 
-                _emailMessage.SendEmail(email, "Verification Code", codeAsString);
+                _emailMessage.SendEmail(email, "Verification Code", verificationCode);
 
                 return true;
             }

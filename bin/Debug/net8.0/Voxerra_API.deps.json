@@ -17,6 +17,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "8.0.11",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
           "MimeKit": "4.9.0",
+          "OpenPop.NET": "2.0.6.1120",
           "Pomelo.EntityFrameworkCore.MySql": "8.0.2",
           "Swashbuckle.AspNetCore": "7.2.0",
           "System.IdentityModel.Tokens.Jwt": "8.3.0"
@@ -1632,6 +1633,14 @@
           }
         }
       },
+      "OpenPop.NET/2.0.6.1120": {
+        "runtime": {
+          "lib/net40/OpenPop.dll": {
+            "assemblyVersion": "2.0.6.1120",
+            "fileVersion": "2.0.6.1120"
+          }
+        }
+      },
       "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "8.0.11",
@@ -2865,6 +2874,13 @@
       "sha512": "sha512-v/GGlIj2dd7svplFmASWEueu62veKW0MrMtBaZ7QG8aJTSGv2yE+pgUGhXRcQ4nxNOEq/wLBrz1vkth/1SND7A==",
       "path": "nuget.versioning/6.11.0",
       "hashPath": "nuget.versioning.6.11.0.nupkg.sha512"
+    },
+    "OpenPop.NET/2.0.6.1120": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NKgNRQAMJOTSnefCt3yfoQ8fPYml46Mwzq6m9OPwzmtKbXLXptUKaMnUjOoISpSowv8EclRVuv6DJXtZPJfcKQ==",
+      "path": "openpop.net/2.0.6.1120",
+      "hashPath": "openpop.net.2.0.6.1120.nupkg.sha512"
     },
     "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
       "type": "package",

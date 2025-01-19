@@ -49,6 +49,22 @@
   },
   {
     "ContainingType": "Voxerra_API.Controllers.Password.PasswordController",
+    "Method": "IbaEmail",
+    "RelativePath": "Password/IbaEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.Password.PasswordController",
     "Method": "ResetPassword",
     "RelativePath": "Password/ResetPassword",
     "HttpMethod": "POST",

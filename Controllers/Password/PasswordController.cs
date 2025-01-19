@@ -15,18 +15,24 @@ namespace Voxerra_API.Controllers.Password
         public async Task<ActionResult> ResetPassword([FromBody] string email)
         {
             var validEmail = _chatAppContext.Tblusers.FirstOrDefault(x => x.Email == email);
-            if (validEmail == null)
+            if (validEmail != null)
             {
-                return NotFound("The email address is not registered.");
+                var resetToken = _passwordFunction.GeneratePasswordResetToken(email);
+
+                //await _emailMessage.SendEmail(email, "Password Reset", $"To reset your password, click the link: <a href='{resetUrl}'>Reset Password</a>");
+
+                //await _emailMessage.SendEmail(email, "Password Reset", $"To reset your password, use this code: {resetToken}");
             }
+            return Ok();
+        }
+
+        [HttpPost("IbaEmail")]
+        public async Task<ActionResult> IbaEmail([FromBody] string email)
+        {
             var resetToken = _passwordFunction.GeneratePasswordResetToken(email);
-            
-            var resetUrl = Url.Page("/Account/ChangePassword", "Account", new { token = resetToken }, Request.Scheme);
+            await _emailMessage.SendEmail(email, "Password Reset", resetToken);
 
-            await _emailMessage.SendEmail(email, "Password Reset", $"To reset your password, click the link: <a href='{resetUrl}'>Reset Password</a>");
-
-
-            return Ok("Password reset email sent.");
+            return Ok();
         }
     }
 }

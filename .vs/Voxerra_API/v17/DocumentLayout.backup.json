@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\SOC-Voxerra-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\pages\\account\\changepassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:pages\\account\\changepassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\password\\passwordfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\password\\passwordfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\pages\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:pages\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\email\\emailfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\email\\emailfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\controllers\\password\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:controllers\\password\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\registration\\userregistrationfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\registration\\userregistrationfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\voxerra_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:voxerra_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\functions\\registration\\iuserregistrationfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:functions\\registration\\iuserregistrationfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|c:\\soc-voxerra-api\\controllers\\password\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D51B989-B2ED-4C44-965D-D6A35FB3FC7E}|Voxerra_API.csproj|solutionrelative:controllers\\password\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1827,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,55 +50,88 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUserRegistrationFunction.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\Registration\\IUserRegistrationFunction.cs",
+              "RelativeDocumentMoniker": "Functions\\Registration\\IUserRegistrationFunction.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\Registration\\IUserRegistrationFunction.cs",
+              "RelativeToolTip": "Functions\\Registration\\IUserRegistrationFunction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T21:13:21.543Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Voxerra_API.csproj",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Voxerra_API.csproj",
+              "RelativeDocumentMoniker": "Voxerra_API.csproj",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Voxerra_API.csproj",
+              "RelativeToolTip": "Voxerra_API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-14T18:52:05.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRegistrationFunction.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\Registration\\UserRegistrationFunction.cs",
+              "RelativeDocumentMoniker": "Functions\\Registration\\UserRegistrationFunction.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\Registration\\UserRegistrationFunction.cs",
+              "RelativeToolTip": "Functions\\Registration\\UserRegistrationFunction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T17:54:46.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmailFunction.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\Email\\EmailFunction.cs",
+              "RelativeDocumentMoniker": "Functions\\Email\\EmailFunction.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\Email\\EmailFunction.cs",
+              "RelativeToolTip": "Functions\\Email\\EmailFunction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T17:37:39.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PasswordFunction.cs",
+              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Functions\\Password\\PasswordFunction.cs",
+              "RelativeDocumentMoniker": "Functions\\Password\\PasswordFunction.cs",
+              "ToolTip": "C:\\SOC-Voxerra-API\\Functions\\Password\\PasswordFunction.cs",
+              "RelativeToolTip": "Functions\\Password\\PasswordFunction.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T12:50:20.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\SOC-Voxerra-API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T20:34:46.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-08T20:34:46.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChangePassword.cshtml.cs",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Pages\\Account\\ChangePassword.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Account\\ChangePassword.cshtml.cs",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Pages\\Account\\ChangePassword.cshtml.cs",
-              "RelativeToolTip": "Pages\\Account\\ChangePassword.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T20:34:02.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChangePassword.cshtml",
-              "DocumentMoniker": "C:\\SOC-Voxerra-API\\Pages\\Account\\ChangePassword.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Account\\ChangePassword.cshtml",
-              "ToolTip": "C:\\SOC-Voxerra-API\\Pages\\Account\\ChangePassword.cshtml",
-              "RelativeToolTip": "Pages\\Account\\ChangePassword.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-08T20:33:30.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "PasswordController.cs",
               "DocumentMoniker": "C:\\SOC-Voxerra-API\\Controllers\\Password\\PasswordController.cs",
               "RelativeDocumentMoniker": "Controllers\\Password\\PasswordController.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Controllers\\Password\\PasswordController.cs",
               "RelativeToolTip": "Controllers\\Password\\PasswordController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T19:44:29.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-08T19:44:29.808Z"
             }
           ]
         },

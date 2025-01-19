@@ -2,7 +2,7 @@
 {
     public interface IPasswordFunction
     {
-        string GeneratePasswordResetToken(string email);
-        Task<bool> ResetPassword(string token, string newPassword);
+        int GeneratePasswordResetToken(string email);
+        Task<bool> ResetPassword(int token, string newPassword);
     }
 }

@@ -397,5 +397,4 @@ C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Voxerra_API.props
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\SOC-Voxerra-API\obj\Debug\net8.0\Voxerra_API.RazorAssemblyInfo.cache
-C:\SOC-Voxerra-API\obj\Debug\net8.0\Voxerra_API.RazorAssemblyInfo.cs
+C:\SOC-Voxerra-API\bin\Debug\net8.0\OpenPop.dll

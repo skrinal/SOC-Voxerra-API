@@ -1,5 +1,6 @@
 ﻿using MailKit.Net.Smtp;
 using MimeKit;
+using OpenPop.Mime.Header;
 
 namespace Voxerra_API.Functions.Email
 {
@@ -11,7 +12,8 @@ namespace Voxerra_API.Functions.Email
         private const string GmailSmtpServer = "smtp.gmail.com";
         private const int GmailSmtpPort = 587;
         
-        public async Task SendEmail(string toEmail, string subject, string body)
+
+        public async Task SendEmail(string toEmail, string subject, int code)
         {
             var emailMessage = new MimeMessage();
             emailMessage.From.Add(new MailboxAddress("Voxerra support", supportEmail));
@@ -20,10 +22,91 @@ namespace Voxerra_API.Functions.Email
 
             var bodyBuilder = new BodyBuilder
             {
-                HtmlBody = body,
-                TextBody = "Please view this email in an HTML-compatible email client."
-
+                HtmlBody = $@"
+                            <!DOCTYPE html>
+                            <html lang='en'>
+                            <head>
+                                <meta charset='UTF-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                                <title>Email Template</title>
+                                <style>
+                                    body {{
+                                        margin: 0;
+                                        padding: 0;
+                                        background-color: #f8f8f9;
+                                        font-family: 'Montserrat', sans-serif;
+                                    }}
+                                    .container {{
+                                        width: 100%;
+                                        max-width: 600px;
+                                        margin: auto;
+                                        background-color: #ffffff;
+                                        border-radius: 8px;
+                                        overflow: hidden;
+                                    }}
+                                    .header {{
+                                        background-color: #2b303a;
+                                        padding: 20px;
+                                        text-align: center;
+                                    }}
+                                    .header img {{
+                                        max-width: 100%;
+                                        height: auto;
+                                    }}
+                                    .content {{
+                                        padding: 20px;
+                                        text-align: center;
+                                    }}
+                                    .footer {{
+                                        background-color: #2b303a;
+                                        color: white;
+                                        text-align: center;
+                                        padding: 10px;
+                                    }}
+                                    @media (max-width: 600px) {{
+                                        .container {{
+                                            width: 100%;
+                                        }}
+                                    }}
+                                    .code{{
+                                        color: rgb(132, 0, 255);
+                                        font-weight: 1000;
+                                        font-size: 25px;
+                                    }}
+                                </style>
+                            </head>
+                            <body>
+                                <div class='container'>
+                                    <div class='header'>
+                                        <img src='cid:logo_voxerra_image' alt='Logo' />
+                                    </div>
+                                    <div class='content'>
+                                        <h2>Verification code</h2>
+                                        <p class='code'>{code}</p>
+                                        <p>This code will expire within 5 minutes.</p>
+                                    </div>
+                                    <div class='footer'>
+                                        <p>Voxerra Copyright © 2025</p>
+                                    </div>
+                                </div>
+                            </body>
+                            </html>"
             };
+
+            var logoPath = "Resources/logo_voxerra_whitev2.png"; // Replace with the actual file path
+            var logoAttachment = new MimePart("image", "png")
+            {
+                Content = new MimeContent(File.OpenRead(logoPath)),
+                ContentDisposition = new ContentDisposition(ContentDisposition.Inline),
+                ContentTransferEncoding = (ContentEncoding)ContentTransferEncoding.Base64,
+                FileName = "logo_voxerra_whitev2.png",
+                Headers = { { "Content-ID", "<logo_voxerra_image>" } } // This matches the CID in the HTML content
+            };
+
+            //bodyBuilder.Attachments.Add(logoAttachment);
+            bodyBuilder.LinkedResources.Add(logoAttachment);
+
+
 
             emailMessage.Body = bodyBuilder.ToMessageBody();
 
