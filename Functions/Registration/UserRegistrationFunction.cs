@@ -70,7 +70,7 @@ namespace Voxerra_API.Functions.Registration
                     RegistrationEmail = true
                 };
 
-                _emailMessage.SendEmail(EmailDetails);
+                _emailMessage.SendEmail(details);
 
                 return true;
             }

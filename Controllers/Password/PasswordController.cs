@@ -5,16 +5,17 @@ namespace Voxerra_API.Controllers.Password
 {
     [ApiController]
     [Route("[controller]")]
-    public class PasswordController(IEmailFunction emailMessage) : Controller
+    public class PasswordController(IEmailFunction emailMessage, IPasswordFunction passwordFunction) : Controller
     {
         private readonly IEmailFunction _emailMessage = emailMessage;
+        private IPasswordFunction _passwordFunction = passwordFunction;
 
         [HttpPost("ResetPassword")]
         public async Task<ActionResult> ResetPassword([FromBody] string email)
         {
             var reset = _passwordFunction.ResetPassword(email);
 
-            if (reset == true)
+            if (reset.Result == true)
             {
                 return Ok();
             }
@@ -26,7 +27,7 @@ namespace Voxerra_API.Controllers.Password
         {
             var changePass = _passwordFunction.ChangePasswordUsingToken(request.Email, request.Token, request.NewPassword);
 
-            if (changePass == true)
+            if (changePass.Result == true)
             {
                 var details = new EmailDetails
                 {
@@ -34,7 +35,7 @@ namespace Voxerra_API.Controllers.Password
                     Subject = "Password Changed",
                     PasswordEmail = true
                 };
-                _emailMessage.SendEmail(EmailDetails);
+                await _emailMessage.SendEmail(details);
                 return Ok();
             }
             return BadRequest(new { message = "Failed to changed User password." });

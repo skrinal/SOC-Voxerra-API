@@ -132,7 +132,7 @@
         }
       }
     },
-    "/Password/IbaEmail": {
+    "/Password/ResetPasswordConfirmation": {
       "post": {
         "tags": [
           "Password"
@@ -141,17 +141,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/PasswordResetConfirmationRequest"
               }
             },
             "text/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/PasswordResetConfirmationRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/PasswordResetConfirmationRequest"
               }
             }
           }
@@ -332,6 +332,24 @@
             "format": "int32"
           },
           "toUserId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PasswordResetConfirmationRequest": {
+        "type": "object",
+        "properties": {
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
             "type": "integer",
             "format": "int32"
           }

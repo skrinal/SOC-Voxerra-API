@@ -19,7 +19,7 @@ namespace Voxerra_API.Functions.Password
 
             if (user != null)
             {
-                var resetToken = _passwordFunction.GeneratePasswordResetToken(email);
+                var resetToken = GeneratePasswordResetToken(email);
 
                 var details = new EmailDetails
                 {
@@ -29,9 +29,8 @@ namespace Voxerra_API.Functions.Password
                     PasswordEmail = true
                 };
 
-                //_emailMessage.SendEmail(email, "Reset Password Code", resetToken);
-                //var user = _chatAppContext.Tblusers.FirstOrDefault(x => )
-
+                //await _emailMessage.SendEmail(details);
+                
                 return true;
             }
 
@@ -49,8 +48,8 @@ namespace Voxerra_API.Functions.Password
                 ValidUntil = DateTime.UtcNow.AddMinutes(5)
             };
 
-            //_chatAppContext.Tblpendingpassword.Add(pendingPassword);
-            //_chatAppContext.SaveChanges();
+            _chatAppContext.Tblpendingpassword.Add(pendingPassword);
+            _chatAppContext.SaveChanges();
 
             return token;
         }
