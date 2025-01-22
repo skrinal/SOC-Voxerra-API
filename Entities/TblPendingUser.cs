@@ -8,6 +8,6 @@
         public string Password { get; set; } = null!;
         public byte[] StoredSalt { get; set; } = null!;
         public int VerificationCode { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime ValidUntil { get; set; }
     }
 }

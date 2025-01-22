@@ -38,7 +38,7 @@ namespace Voxerra_API.Functions.Registration
                     verificationCode = GenerateCode();
                     
                     existingPendingUser.VerificationCode = verificationCode;
-                    existingPendingUser.CreatedAt = DateTime.UtcNow; 
+                    existingPendingUser.ValidUntil = DateTime.UtcNow.AddMinutes(5);
                 }
                 else
                 {
@@ -52,7 +52,7 @@ namespace Voxerra_API.Functions.Registration
                         Password = encryptedPassword,
                         StoredSalt = salt,
                         VerificationCode = verificationCode,
-                        CreatedAt = DateTime.UtcNow
+                        ValidUntil = DateTime.UtcNow.AddMinutes(5)
                     };
 
                     _chatAppContext.Tblpendingusers.Add(pendingUser);
@@ -76,7 +76,7 @@ namespace Voxerra_API.Functions.Registration
         public int GenerateCode()
         {
             Random random = new();
-            return verificationCode = random.Next(1000000, 9999999);
+            return verificationCode = random.Next(10000, 99999);
         }
 
         public (string encryptedPassword, byte[] salt) EncryptPassword(string password)

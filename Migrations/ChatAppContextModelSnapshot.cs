@@ -51,7 +51,7 @@ namespace Voxerra_API.Migrations
                     b.ToTable("Tblmessages");
                 });
 
-            modelBuilder.Entity("Voxerra_API.Entities.TblPendingUser", b =>
+            modelBuilder.Entity("Voxerra_API.Entities.TblPendingPassword", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,8 +59,28 @@ namespace Voxerra_API.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Token")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ValidUntil")
                         .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tblpendingpassword");
+                });
+
+            modelBuilder.Entity("Voxerra_API.Entities.TblPendingUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -77,6 +97,9 @@ namespace Voxerra_API.Migrations
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<DateTime>("ValidUntil")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("VerificationCode")
                         .HasColumnType("int");

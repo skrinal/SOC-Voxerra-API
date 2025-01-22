@@ -12,8 +12,8 @@ using Voxerra_API.Entities;
 namespace Voxerra_API.Migrations
 {
     [DbContext(typeof(ChatAppContext))]
-    [Migration("20241216213909_init")]
-    partial class init
+    [Migration("20250120131104_validuntil")]
+    partial class validuntil
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,7 +51,65 @@ namespace Voxerra_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TblMessages");
+                    b.ToTable("Tblmessages");
+                });
+
+            modelBuilder.Entity("Voxerra_API.Entities.TblPendingPassword", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Token")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ValidUntil")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tblpendingpassword");
+                });
+
+            modelBuilder.Entity("Voxerra_API.Entities.TblPendingUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<byte[]>("StoredSalt")
+                        .IsRequired()
+                        .HasColumnType("longblob");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("ValidUntil")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("VerificationCode")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tblpendingusers");
                 });
 
             modelBuilder.Entity("Voxerra_API.Entities.TblUser", b =>
@@ -90,7 +148,7 @@ namespace Voxerra_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TblUsers");
+                    b.ToTable("Tblusers");
                 });
 
             modelBuilder.Entity("Voxerra_API.Entities.TblUserFriend", b =>
@@ -109,7 +167,7 @@ namespace Voxerra_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TblUserFriends");
+                    b.ToTable("Tbluserfriends");
                 });
 #pragma warning restore 612, 618
         }

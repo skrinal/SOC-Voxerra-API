@@ -89,7 +89,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Voxerra_API.Controllers.Registration.ConfirmRegistrationRequest",
+        "Type": "Voxerra_API.Controllers.Registration.RegistrationConfirmationRequest",
         "IsRequired": true
       }
     ],

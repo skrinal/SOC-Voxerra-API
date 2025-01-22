@@ -30,12 +30,12 @@ namespace Voxerra_API.Controllers.Registration
                 return StatusCode(500, new { message = "User registration failed due to server error" });
             }
 
-            return Ok(response);
+            return Ok();
         }
 
 
         [HttpPost("ConfirmRegistration")]
-        public async Task<ActionResult> ConfirmRegistration([FromBody] ConfirmRegistrationRequest request)
+        public async Task<ActionResult> ConfirmRegistration([FromBody] RegistrationConfirmationRequest request)
         {
             var pendingUser = await _chatAppContext.Tblpendingusers
                 .FirstOrDefaultAsync(x => x.Email == request.Email && x.VerificationCode == request.Code);
@@ -45,7 +45,7 @@ namespace Voxerra_API.Controllers.Registration
                 return BadRequest(new { message = "Invalid verification code or email." });
             }
 
-            if (pendingUser.CreatedAt.AddMinutes(10) < DateTime.UtcNow)
+            if (DateTime.UtcNow > pendingUser.ValidUntil)
             {
                 return BadRequest(new { message = "Verification code has expired." });
             }
@@ -70,36 +70,27 @@ namespace Voxerra_API.Controllers.Registration
         [HttpPost("IsEmailUnique")]
         public async Task<ActionResult> IsEmailUnique([FromBody] IsEmailUniqueRequest request)
         {
-
-            var response = new IsEmailUniqueResponse
-            {
-                IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(request.Email)
-            };
-
-
-            if (response.IsEmailUnique == false)
+            var IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(request.Email);
+            
+            if (IsEmailUnique == false)
             {
                 return BadRequest(new { message = "User email is not Unique" });
             }
 
-            return Ok(response);
+            return Ok();
         }
 
         [HttpPost("IsUserNameUnique")]
         public async Task<ActionResult> IsUserNameUnique([FromBody] IsUserNameUniqueRequest request)
         {
+            var IsUserNameUnique = await _userRegistrationFunction.IsUserNameUnique(request.UserName);
 
-            var response = new IsUserNameUniqueResponse
-            {
-                IsUserNameUnique = await _userRegistrationFunction.IsUserNameUnique(request.UserName)
-            };
-
-            if (response.IsUserNameUnique == false)
+            if (IsUserNameUnique == false)
             {
                 return BadRequest(new { message = "UserName is not Unique" });
             }
 
-            return Ok(response);
+            return Ok();
         }
 
 

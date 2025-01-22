@@ -203,17 +203,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ConfirmRegistrationRequest"
+                "$ref": "#/components/schemas/RegistrationConfirmationRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ConfirmRegistrationRequest"
+                "$ref": "#/components/schemas/RegistrationConfirmationRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ConfirmRegistrationRequest"
+                "$ref": "#/components/schemas/RegistrationConfirmationRequest"
               }
             }
           }
@@ -304,20 +304,6 @@
         },
         "additionalProperties": false
       },
-      "ConfirmRegistrationRequest": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "code": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "IsEmailUniqueRequest": {
         "type": "object",
         "properties": {
@@ -346,6 +332,20 @@
             "format": "int32"
           },
           "toUserId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistrationConfirmationRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
             "type": "integer",
             "format": "int32"
           }
