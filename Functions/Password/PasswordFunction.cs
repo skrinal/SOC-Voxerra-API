@@ -13,12 +13,16 @@ namespace Voxerra_API.Functions.Password
 
         
 
-        public async Task<bool> ChangePasswordUsingToken(int token, string newPassword)
+        public async Task<bool> ResetPassword(string email)
         {
-            var pendingChange = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => x.Token == token);
+            var user = _chatAppContext.Tblusers.FirstOrDefault(x => x.Email == email);
 
-            if (pendingChange != null)
+            if (user != null)
             {
+                var resetToken = _passwordFunction.GeneratePasswordResetToken(email);
+
+                _emailMessage.SendEmail(email, "Reset Password Code", resetToken);
+                
                 //var user = _chatAppContext.Tblusers.FirstOrDefault(x => )
 
                 
@@ -45,9 +49,9 @@ namespace Voxerra_API.Functions.Password
             return token;
         }
 
-        public async Task<bool> ResetPassword(int token, string newPassword)
+        public async Task<bool> ChangePasswordUsingToken(string email, int token, string newPassword)
         {
-            var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => x.Token == token);
+            var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => x.Token == token && y => y.Email == email);
 
             //
             if (resetToken == null || resetToken.ValidUntil < DateTime.UtcNow)

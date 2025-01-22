@@ -5,27 +5,37 @@ namespace Voxerra_API.Controllers.Password
 {
     [ApiController]
     [Route("[controller]")]
-    public class PasswordController(IEmailFunction emailMessage, IPasswordFunction passwordFunction, ChatAppContext chatAppContext) : Controller
+    public class PasswordController(IEmailFunction emailMessage) : Controller
     {
         private readonly IEmailFunction _emailMessage = emailMessage;
-        private readonly IPasswordFunction _passwordFunction = passwordFunction;
-        private readonly ChatAppContext _chatAppContext = chatAppContext;
 
         [HttpPost("ResetPassword")]
         public async Task<ActionResult> ResetPassword([FromBody] string email)
         {
-            var validEmail = _chatAppContext.Tblusers.FirstOrDefault(x => x.Email == email);
-            if (validEmail != null)
+
+            var reset = _passwordFunction.ResetPassword(email);
+
+            if (reset == true)
             {
-                var resetToken = _passwordFunction.GeneratePasswordResetToken(email);
-
-                //await _emailMessage.SendEmail(email, "Password Reset", $"To reset your password, click the link: <a href='{resetUrl}'>Reset Password</a>");
-
-                //await _emailMessage.SendEmail(email, "Password Reset", $"To reset your password, use this code: {resetToken}");
+                return Ok();
             }
-            return Ok();
+            return BadRequest(new { message = "User email doesn't exist." });
         }
 
+        [HttpPost("ResetPasswordConfirmation")]
+        public async Task<ActionResult> ResetPasswordConfirmation([FromBody] PasswordResetConfirmationRequest request)
+        {
+            var changePass = _passwordFunction.ChangePasswordUsingToken(request.Email, request.Token, request.NewPassword)
+
+            if (changePass == true)
+            {
+                _emailMessage.SendEmail(request.Email, "Password Changed", )
+                return Ok();
+            }
+            return BadRequest(new { message = "Failed to changed User password." });
+        }
+
+        /*TEST TEST
         [HttpPost("IbaEmail")]
         public async Task<ActionResult> IbaEmail([FromBody] string email)
         {
@@ -34,5 +44,6 @@ namespace Voxerra_API.Controllers.Password
 
             return Ok();
         }
+        */
     }
 }
