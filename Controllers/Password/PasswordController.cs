@@ -12,7 +12,6 @@ namespace Voxerra_API.Controllers.Password
         [HttpPost("ResetPassword")]
         public async Task<ActionResult> ResetPassword([FromBody] string email)
         {
-
             var reset = _passwordFunction.ResetPassword(email);
 
             if (reset == true)
@@ -29,7 +28,13 @@ namespace Voxerra_API.Controllers.Password
 
             if (changePass == true)
             {
-                _emailMessage.SendEmail(request.Email, "Password Changed", )
+                var details = new EmailDetails
+                {
+                    ToEmail = request.Email,
+                    Subject = "Password Changed",
+                    PasswordEmail = true;
+                };
+                _emailMessage.SendEmail(EmailDetails)
                 return Ok();
             }
             return BadRequest(new { message = "Failed to changed User password." });

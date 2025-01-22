@@ -1,6 +1,6 @@
 namespace Voxerra_API.Functions.Email
 {
     public interface IEmailFunction {
-        Task SendEmail(string toEmail, string subject, int code);
+        Task SendEmail(EmailDetails emailDetails);
     }
 }

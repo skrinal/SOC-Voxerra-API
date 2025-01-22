@@ -21,11 +21,17 @@ namespace Voxerra_API.Functions.Password
             {
                 var resetToken = _passwordFunction.GeneratePasswordResetToken(email);
 
-                _emailMessage.SendEmail(email, "Reset Password Code", resetToken);
-                
+                var details = new EmailDetails
+                {
+                    Code = resetToken,
+                    ToEmail = email,
+                    Subject = "Reset Password Code",
+                    PasswordEmail = true;
+                };
+
+                //_emailMessage.SendEmail(email, "Reset Password Code", resetToken);
                 //var user = _chatAppContext.Tblusers.FirstOrDefault(x => )
 
-                
                 return true;
             }
 

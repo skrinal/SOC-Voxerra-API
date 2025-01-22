@@ -62,7 +62,15 @@ namespace Voxerra_API.Functions.Registration
 
                 //string codeAsString = verificationCode.ToString();
 
-                _emailMessage.SendEmail(email, "Verification Code", verificationCode);
+                var details = new EmailDetails
+                {
+                    Code = verificationCode,
+                    ToEmail = email,
+                    Subject = "Verification Code",
+                    RegistrationEmail = true;
+                };
+
+                _emailMessage.SendEmail(EmailDetails);
 
                 return true;
             }

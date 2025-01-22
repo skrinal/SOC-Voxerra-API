@@ -1,4 +1,4 @@
-﻿namespace Voxerra_API.Controllers
+﻿namespace Voxerra_API.Functions.Email
 {
     public class EmailRequest
     {

@@ -13,86 +13,94 @@ namespace Voxerra_API.Functions.Email
         private const int GmailSmtpPort = 587;
         
 
-        public async Task SendEmail(string toEmail, string subject, int code)
+        public async Task SendEmail(EmailDetails emailDetails)
         {
             var emailMessage = new MimeMessage();
             emailMessage.From.Add(new MailboxAddress("Voxerra support", supportEmail));
-            emailMessage.To.Add(new MailboxAddress("", toEmail));
-            emailMessage.Subject = subject;
+            emailMessage.To.Add(new MailboxAddress("", emailDetails.ToEmail));
+            emailMessage.Subject = emailDetails.Subject;
 
-            var bodyBuilder = new BodyBuilder
+            if (emailDetails.RegistrationEmail == true)
             {
-                HtmlBody = $@"
-                            <!DOCTYPE html>
-                            <html lang='en'>
-                            <head>
-                                <meta charset='UTF-8'>
-                                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                                <title>Email Template</title>
-                                <style>
-                                    body {{
-                                        margin: 0;
-                                        padding: 0;
-                                        background-color: #f8f8f9;
-                                        font-family: 'Montserrat', sans-serif;
-                                    }}
-                                    .container {{
-                                        width: 100%;
-                                        max-width: 600px;
-                                        margin: auto;
-                                        background-color: #ffffff;
-                                        border-radius: 8px;
-                                        overflow: hidden;
-                                    }}
-                                    .header {{
-                                        background-color: #2b303a;
-                                        padding: 20px;
-                                        text-align: center;
-                                    }}
-                                    .header img {{
-                                        max-width: 100%;
-                                        height: auto;
-                                    }}
-                                    .content {{
-                                        padding: 20px;
-                                        text-align: center;
-                                    }}
-                                    .footer {{
-                                        background-color: #2b303a;
-                                        color: white;
-                                        text-align: center;
-                                        padding: 10px;
-                                    }}
-                                    @media (max-width: 600px) {{
+                var bodyBuilder = new BodyBuilder
+                {
+                    HtmlBody = $@"
+                                <!DOCTYPE html>
+                                <html lang='en'>
+                                <head>
+                                    <meta charset='UTF-8'>
+                                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                                    <title>Email Template</title>
+                                    <style>
+                                        body {{
+                                            margin: 0;
+                                            padding: 0;
+                                            background-color: #f8f8f9;
+                                            font-family: 'Montserrat', sans-serif;
+                                        }}
                                         .container {{
                                             width: 100%;
+                                            max-width: 600px;
+                                            margin: auto;
+                                            background-color: #ffffff;
+                                            border-radius: 8px;
+                                            overflow: hidden;
                                         }}
-                                    }}
-                                    .code{{
-                                        color: rgb(132, 0, 255);
-                                        font-weight: 1000;
-                                        font-size: 25px;
-                                    }}
-                                </style>
-                            </head>
-                            <body>
-                                <div class='container'>
-                                    <div class='header'>
-                                        <img src='cid:logo_voxerra_image' alt='Logo' />
+                                        .header {{
+                                            background-color: #2b303a;
+                                            padding: 20px;
+                                            text-align: center;
+                                        }}
+                                        .header img {{
+                                            max-width: 100%;
+                                            height: auto;
+                                        }}
+                                        .content {{
+                                            padding: 20px;
+                                            text-align: center;
+                                        }}
+                                        .footer {{
+                                            background-color: #2b303a;
+                                            color: white;
+                                            text-align: center;
+                                            padding: 10px;
+                                        }}
+                                        @media (max-width: 600px) {{
+                                            .container {{
+                                                width: 100%;
+                                            }}
+                                        }}
+                                        .code{{
+                                            color: rgb(132, 0, 255);
+                                            font-weight: 1000;
+                                            font-size: 25px;
+                                        }}
+                                    </style>
+                                </head>
+                                <body>
+                                    <div class='container'>
+                                        <div class='header'>
+                                            <img src='cid:logo_voxerra_image' alt='Logo' />
+                                        </div>
+                                        <div class='content'>
+                                            <h2>Verification code</h2>
+                                            <p class='code'>{emailDetails.Code}</p>
+                                            <p>This code will expire within 5 minutes.</p>
+                                        </div>
+                                        <div class='footer'>
+                                            <p>Voxerra Copyright © 2025</p>
+                                        </div>
                                     </div>
-                                    <div class='content'>
-                                        <h2>Verification code</h2>
-                                        <p class='code'>{code}</p>
-                                        <p>This code will expire within 5 minutes.</p>
-                                    </div>
-                                    <div class='footer'>
-                                        <p>Voxerra Copyright © 2025</p>
-                                    </div>
-                                </div>
-                            </body>
-                            </html>"
-            };
+                                </body>
+                                </html>"
+                };
+            }
+            else 
+            {
+                // spravit email template -> ked sa zmeni heslo tak sa posle tento email
+            }
 
+            
             var logoPath = "Resources/logo_voxerra_whitev2.png"; // Replace with the actual file path
             var logoAttachment = new MimePart("image", "png")
             {
@@ -105,7 +113,6 @@ namespace Voxerra_API.Functions.Email
 
             //bodyBuilder.Attachments.Add(logoAttachment);
             bodyBuilder.LinkedResources.Add(logoAttachment);
-
 
 
             emailMessage.Body = bodyBuilder.ToMessageBody();
