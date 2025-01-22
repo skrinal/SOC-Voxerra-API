@@ -24,7 +24,7 @@ namespace Voxerra_API.Controllers.Password
         [HttpPost("ResetPasswordConfirmation")]
         public async Task<ActionResult> ResetPasswordConfirmation([FromBody] PasswordResetConfirmationRequest request)
         {
-            var changePass = _passwordFunction.ChangePasswordUsingToken(request.Email, request.Token, request.NewPassword)
+            var changePass = _passwordFunction.ChangePasswordUsingToken(request.Email, request.Token, request.NewPassword);
 
             if (changePass == true)
             {
@@ -32,9 +32,9 @@ namespace Voxerra_API.Controllers.Password
                 {
                     ToEmail = request.Email,
                     Subject = "Password Changed",
-                    PasswordEmail = true;
+                    PasswordEmail = true
                 };
-                _emailMessage.SendEmail(EmailDetails)
+                _emailMessage.SendEmail(EmailDetails);
                 return Ok();
             }
             return BadRequest(new { message = "Failed to changed User password." });

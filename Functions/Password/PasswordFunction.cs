@@ -5,7 +5,7 @@ using Voxerra_API.Functions.Registration;
 
 namespace Voxerra_API.Functions.Password
 {
-    public class PasswordFunction(IUserRegistrationFunction userRegistrationFunction, IEmailFunction emailMessage, ChatAppContext chatAppContext) : IPasswordFunction
+    public class PasswordFunction(IUserRegistrationFunction userRegistrationFunction, IEmailFunction emailMessage, ChatAppContext chatAppContext) : IPasswordFunction    
     {
         private readonly IUserRegistrationFunction _userRegistrationFunction = userRegistrationFunction;
         private readonly IEmailFunction _emailMessage = emailMessage;
@@ -26,7 +26,7 @@ namespace Voxerra_API.Functions.Password
                     Code = resetToken,
                     ToEmail = email,
                     Subject = "Reset Password Code",
-                    PasswordEmail = true;
+                    PasswordEmail = true
                 };
 
                 //_emailMessage.SendEmail(email, "Reset Password Code", resetToken);
@@ -57,7 +57,7 @@ namespace Voxerra_API.Functions.Password
 
         public async Task<bool> ChangePasswordUsingToken(string email, int token, string newPassword)
         {
-            var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => x.Token == token && y => y.Email == email);
+            var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => (x.Token == token && x.Email == email));
 
             //
             if (resetToken == null || resetToken.ValidUntil < DateTime.UtcNow)

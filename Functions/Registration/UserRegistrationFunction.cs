@@ -67,7 +67,7 @@ namespace Voxerra_API.Functions.Registration
                     Code = verificationCode,
                     ToEmail = email,
                     Subject = "Verification Code",
-                    RegistrationEmail = true;
+                    RegistrationEmail = true
                 };
 
                 _emailMessage.SendEmail(EmailDetails);
