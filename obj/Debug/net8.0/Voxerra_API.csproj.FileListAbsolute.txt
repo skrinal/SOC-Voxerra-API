@@ -396,7 +396,6 @@ C:/SOC-Voxerra-API/obj/Debug/net8.0/staticwebassets/msbuild.build.Voxerra_API.pr
 C:/SOC-Voxerra-API/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Voxerra_API.props
 C:/SOC-Voxerra-API/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Voxerra_API.props
 C:/SOC-Voxerra-API/obj/Debug/net8.0/staticwebassets.pack.json
-C:/SOC-Voxerra-API/obj/Debug/net8.0/staticwebassets.upToDateCheck.txt
 C:/SOC-Voxerra-API/bin/Debug/net8.0/OpenPop.dll
 /home/skrinal/Desktop/SOC-Voxerra-API/obj/Debug/net8.0/Voxerra_API.csproj.AssemblyReference.cache
 /home/skrinal/Desktop/SOC-Voxerra-API/obj/Debug/net8.0/Voxerra_API.GeneratedMSBuildEditorConfig.editorconfig
@@ -667,7 +666,6 @@ C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets\msbuild.build.Voxerra_API.pr
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Voxerra_API.props
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Voxerra_API.props
 C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets.pack.json
-C:\SOC-Voxerra-API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SOC-Voxerra-API\obj\Debug\net8.0\Voxerra_.A3E2E8E5.Up2Date
 C:\SOC-Voxerra-API\obj\Debug\net8.0\Voxerra_API.genruntimeconfig.cache
 C:\SOC-Voxerra-API\obj\Debug\net8.0\ref\Voxerra_API.dll
