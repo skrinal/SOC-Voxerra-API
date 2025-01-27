@@ -16,6 +16,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Voxerra_API.Controllers.FriendAdd.FriendAddController",
+    "Method": "FriendRequest",
+    "RelativePath": "FriendAdd/FriendRequest",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controller.FriendAdd.FriendAddRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.FriendAdd.FriendAddController",
+    "Method": "SearchUsers",
+    "RelativePath": "FriendAdd/Search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Voxerra_API.Controllers.Message.MessageController",
     "Method": "Initialize",
     "RelativePath": "Message/Initialize",

@@ -25,6 +25,7 @@ builder.Services.AddTransient<IMessageFunction, MessageFunction>();
 builder.Services.AddTransient<IUserRegistrationFunction, UserRegistrationFunction>();
 builder.Services.AddTransient<IEmailFunction, EmailFunction>();
 builder.Services.AddTransient<IPasswordFunction, PasswordFunction>();
+builder.Services.AddTransient<IFriendAddFunction, FriendAddFunction>();
 builder.Services.AddScoped<UserOperator>();
 builder.Services.AddScoped<ChatHub>();
 

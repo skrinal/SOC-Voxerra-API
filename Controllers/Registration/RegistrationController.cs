@@ -7,7 +7,7 @@ namespace Voxerra_API.Controllers.Registration
 {
     [ApiController]
     [Route("[controller]")]
-    public class RegistrationController(IUserRegistrationFunction userRegistrationFunction, ChatAppContext chatAppContext) : Controller
+    public class RegistrationController(IUserRegistrationFunction userRegistrationFunction, ChatAppContext chatAppContext) : MvcController
     {
         IUserRegistrationFunction _userRegistrationFunction = userRegistrationFunction;
         private readonly ChatAppContext _chatAppContext = chatAppContext;

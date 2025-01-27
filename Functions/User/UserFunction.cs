@@ -7,22 +7,19 @@ using Voxerra_API.Entities;
 
 namespace Voxerra_API.Functions.User
 {
-    public class UserFunction : IUserFunction
+    public class UserFunction(ChatAppContext chatAppContext) : IUserFunction
     {
-        private readonly ChatAppContext _chatAppContext;
-
-        public UserFunction(ChatAppContext chatAppContext)
-        {
-            _chatAppContext = chatAppContext;
-        }
-        public User? Authenticate(string userName, string password)
+        private readonly ChatAppContext _chatAppContext = chatAppContext;
+        public async Task<User?> Authenticate(string userName, string password)
         {
             try
             {
-                var entity = _chatAppContext.Tblusers.Single(x => x.UserName == userName);
+                var entity = await _chatAppContext.Tblusers
+                    .FirstOrDefaultAsync(x => x.UserName == userName);
+
                 if (entity == null) return null;
 
-                var isPasswordMatched = VerifityPassword(password, entity.StoredSalt, entity.Password);
+                var isPasswordMatched = VerifyPassword(password, entity.StoredSalt, entity.Password);
                 if (!isPasswordMatched) return null;
 
                 var token = GenerateJwtToken(entity);
@@ -43,9 +40,7 @@ namespace Voxerra_API.Functions.User
 
         public User GetUserById(int id)
         {
-            var entity = _chatAppContext.Tblusers
-                .Where(x => x.Id == id)
-                .FirstOrDefault();
+            var entity = _chatAppContext.Tblusers.FirstOrDefault(x => x.Id == id);
 
             if (entity == null) return new User();
 
@@ -58,18 +53,21 @@ namespace Voxerra_API.Functions.User
                 LastLogonTime = entity.LastLogonTime
             };
         }
-        private bool VerifityPassword(string enteredPassword, byte[] storedSalt, string storedPassword)
+        private static bool VerifyPassword(string enteredPassword, byte[] storedSalt, string storedPassword)
         {
-            string encryptyedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+            const int iterationCount = 10000; 
+            const int keySize = 256 / 8;
+            
+            var encryptedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: enteredPassword,
                 salt: storedSalt,
-                prf: KeyDerivationPrf.HMACSHA1,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8));
+                prf: KeyDerivationPrf.HMACSHA1, //HMACSHA1 / HMACSHA256
+                iterationCount: iterationCount,
+                numBytesRequested: keySize));
             
-            return encryptyedPassword.Equals(storedPassword);
+            return encryptedPassword.Equals(storedPassword);
         }
-        private string GenerateJwtToken(TblUser user)
+        private static string GenerateJwtToken(TblUser user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes("rweofkwurtihonmoiurwhbnrtwrgwrgjge");

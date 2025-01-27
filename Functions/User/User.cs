@@ -9,7 +9,7 @@ namespace Voxerra_API.Functions.User
         public string UserName { get; set; } = null!;
         public string Password { get; set; } = null!;
         public string Email { get; set; }/* = null!;*/
-        public string AvatarSourceName { get; set; } = null!;
+        public string AvatarSourceName { get; set; }
         public bool IsOnline { get; set; } 
         public DateTime LastLogonTime { get; set; }
         public string Token { get; set; } = null!;

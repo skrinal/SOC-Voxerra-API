@@ -4,7 +4,7 @@ namespace Voxerra_API.Controllers.MessageCenter
     [ApiController]
     [Route("[controller]")]
     [Authorize]
-    public class MessageCenterController : Controller
+    public class MessageCenterController : MvcController
     {
         IUserFunction _userFunction;
         IUserFriendFunction _userFriendFunction;

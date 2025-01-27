@@ -1,4 +1,5 @@
 ﻿global using Microsoft.EntityFrameworkCore;
+global using MvcController = Microsoft.AspNetCore.Mvc.Controller;
 global using Microsoft.AspNetCore.Mvc;
 global using Voxerra_API.Functions.User;
 global using Voxerra_API.Functions.Message;
@@ -6,3 +7,7 @@ global using Voxerra_API.Functions.UserFriend;
 global using Voxerra_API.Helpers;
 global using Voxerra_API.Functions.Email;
 global using Microsoft.AspNetCore.SignalR;
+global using Voxerra_API.Entities;
+global using Voxerra_API.Functions.FriendAdd;
+global using Voxerra_API.Controller;
+global using Voxerra_API.Controller.FriendAdd;

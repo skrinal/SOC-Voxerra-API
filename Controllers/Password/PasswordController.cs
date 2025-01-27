@@ -5,7 +5,7 @@ namespace Voxerra_API.Controllers.Password
 {
     [ApiController]
     [Route("[controller]")]
-    public class PasswordController(IEmailFunction emailMessage, IPasswordFunction passwordFunction) : Controller
+    public class PasswordController(IEmailFunction emailMessage, IPasswordFunction passwordFunction) : MvcController
     {
         private readonly IEmailFunction _emailMessage = emailMessage;
         private IPasswordFunction _passwordFunction = passwordFunction;

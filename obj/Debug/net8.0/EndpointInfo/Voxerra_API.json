@@ -36,6 +36,68 @@
         }
       }
     },
+    "/FriendAdd/Search": {
+      "post": {
+        "tags": [
+          "FriendAdd"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/FriendAdd/FriendRequest": {
+      "post": {
+        "tags": [
+          "FriendAdd"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FriendAddRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FriendAddRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FriendAddRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Message/Initialize": {
       "post": {
         "tags": [
@@ -300,6 +362,20 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FriendAddRequest": {
+        "type": "object",
+        "properties": {
+          "fromUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestToIUserId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
