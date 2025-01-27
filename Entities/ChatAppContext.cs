@@ -7,5 +7,6 @@
         public virtual DbSet<TblMessage> Tblmessages { get; set; } = null!;
         public virtual DbSet<TblPendingUser> Tblpendingusers { get; set; } = null!;
         public virtual DbSet<TblPendingPassword> Tblpendingpassword { get; set;} = null!;
+        public virtual DbSet<TblPendingFriendRequest> Tblpendingfriendrequest { get; set; } = null!;
     }
 }

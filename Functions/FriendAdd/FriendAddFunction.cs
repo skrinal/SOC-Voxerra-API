@@ -25,5 +25,21 @@ namespace Voxerra_API.Functions.FriendAdd
             
             return users;
         }
+
+        public async Task<int> FriendAddRequset(int FromUser, int ToUser)
+        {
+            var entity = new TblPendingFriendRequest 
+            { 
+                FromUserId = FromUser, 
+                ToUserId = ToUser,
+            };
+
+            _chatAppContext.Tblpendingfriendrequest.Add(entity);
+            var result = await _chatAppContext.SaveChangesAsync();
+
+            // treba poslat nieco druhemu klientovy pokial je online aby to videl hned
+
+            return result;
+        }
     }
 }

@@ -5,6 +5,6 @@ namespace Voxerra_API.Controller.FriendAdd
         //REMAKE
 
         public int FromUserId { get; set; }
-        public int RequestToIUserId { get; set; }
+        public int ToUserId { get; set; }
     }
 }
