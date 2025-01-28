@@ -9,11 +9,11 @@ namespace Voxerra_API.Controllers.FriendAdd
 
 
         [HttpPost("Search")]
-        public async Task<ActionResult> SearchUsers([FromBody] String request)
+        public async Task<ActionResult> SearchUsers([FromBody] FriendSearchRequest request)
         {
             var response = new FriendSearchResponse
             {
-                Users = await _friendAddFunction.SearchUsers(request)
+                Users = await _friendAddFunction.SearchUsers(request.Search, request.IdOfUser)
             }; 
 
             return Ok(response);

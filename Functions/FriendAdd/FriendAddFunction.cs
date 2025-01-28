@@ -5,13 +5,12 @@ namespace Voxerra_API.Functions.FriendAdd
     {
         ChatAppContext _chatAppContext = chatAppContext;
 
-        public async Task<IEnumerable<UserSearch>> SearchUsers(string query)
+        public async Task<IEnumerable<UserSearch>> SearchUsers(string query, int userIdToExclude)
         {
             var users = await _chatAppContext.Tblusers
-                .Where(x => x.UserName.Contains(query))
+                .Where(x => x.UserName.Contains(query) && x.Id != userIdToExclude)
                 .OrderBy(x => x.UserName)
                 .ThenBy(x => x.UserName.Length)
-                //.ThenBy(x => x.UserName) // asi zle ??
                 .Take(8)
                 .Select(x => new UserSearch
                 {
