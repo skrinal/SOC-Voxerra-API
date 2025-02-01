@@ -1,43 +1,55 @@
+//{
+//  "profiles": {
+//    "Voxerra_API": {
+//      "commandName": "Project",
+//      "launchBrowser": true,
+//      "launchUrl": "swagger",
+//      "environmentVariables": {
+//        "ASPNETCORE_ENVIRONMENT": "Development",
+//        "ASPNETCORE_URLS": "https://0.0.0.0:7264;http://0.0.0.0:5068"
+//      },
+//      "dotnetRunMessages": true,
+//      "applicationUrl": "https://0.0.0.0:7264;http://0.0.0.0:5068",
+//      "sqlDebugging": true
+//    },
+//    "IIS Express": {
+//      "commandName": "IISExpress",
+//      "launchBrowser": true,
+//      "launchUrl": "swagger",
+//      "environmentVariables": {
+//        "ASPNETCORE_ENVIRONMENT": "Production"
+//      }
+//    },
+//    "WSL": {
+//      "commandName": "WSL2",
+//      "launchBrowser": true,
+//      "launchUrl": "https://0.0.0.0:7264/swagger",
+//      "environmentVariables": {
+//        "ASPNETCORE_ENVIRONMENT": "Production",
+//        "ASPNETCORE_URLS": "https://0.0.0.0:7264;http://0.0.0.0:5068"
+//      },
+//      "distributionName": ""
+//    }
+//  },
+//  "$schema": "http://json.schemastore.org/launchsettings.json",
+//  "iisSettings": {
+//    "windowsAuthentication": false,
+//    "anonymousAuthentication": true,
+//    "iisExpress": {
+//      "applicationUrl": "http://0.0.0.0:61877",
+//      "sslPort": 44385
+//    }
+//  }
+//}
 {
-  "profiles": {
-    "Voxerra_API": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "https://0.0.0.0:7264;http://0.0.0.0:5068"
+  "Kestrel": {
+    "Endpoints": {
+      "Http": {
+        "Url": "http://0.0.0.0:5000"
       },
-      "dotnetRunMessages": true,
-      "applicationUrl": "https://0.0.0.0:7264;http://0.0.0.0:5068",
-      "sqlDebugging": true
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Production"
+      "Https": {
+        "Url": "https://0.0.0.0:5001"
       }
-    },
-    "WSL": {
-      "commandName": "WSL2",
-      "launchBrowser": true,
-      "launchUrl": "https://0.0.0.0:7264/swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Production",
-        "ASPNETCORE_URLS": "https://0.0.0.0:7264;http://0.0.0.0:5068"
-      },
-      "distributionName": ""
-    }
-  },
-  "$schema": "http://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://0.0.0.0:61877",
-      "sslPort": 44385
     }
   }
 }

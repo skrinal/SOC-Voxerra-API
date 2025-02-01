@@ -5,7 +5,7 @@ using Voxerra_API.Functions.Registration;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.WebHost.UseKestrel();
 builder.Services.AddControllers();
 builder.Services.AddSignalR();
 
