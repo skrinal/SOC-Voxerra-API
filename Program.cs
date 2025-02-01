@@ -40,12 +40,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseMiddleware<JwtMiddleware>();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
+app.Use(async (context, next) =>
+{
+    Console.WriteLine($"Request received: {context.Request.Method} {context.Request.Path}");
+    await next();
+});
 app.MapControllers();
 app.MapHub<ChatHub>("/ChatHub");
 
