@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\SOC-Voxerra-API\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2025-02-01T22:48:45.2573867Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

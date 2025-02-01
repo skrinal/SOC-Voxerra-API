@@ -33,8 +33,8 @@ builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
-app.Urls.Add("https://0.0.0.0:7264");
-app.Urls.Add("http://0.0.0.0:5068");
+app.Urls.Add("https://0.0.0.0:42069");
+app.Urls.Add("http://0.0.0.0:42070");
 
 if (app.Environment.IsDevelopment())
 {
