@@ -67,6 +67,40 @@
         }
       }
     },
+    "/FriendAdd/PublicProfile": {
+      "post": {
+        "tags": [
+          "FriendAdd"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/FriendAdd/FriendRequest": {
       "post": {
         "tags": [
@@ -98,6 +132,40 @@
         }
       }
     },
+    "/FriendAdd/FriendRequestList": {
+      "post": {
+        "tags": [
+          "FriendAdd"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/FriendAdd/FriendRequestDecision": {
       "post": {
         "tags": [
@@ -107,17 +175,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendRequest"
+                "$ref": "#/components/schemas/FriendDecisionRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendRequest"
+                "$ref": "#/components/schemas/FriendDecisionRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendRequest"
+                "$ref": "#/components/schemas/FriendDecisionRequest"
               }
             }
           }
@@ -149,6 +217,37 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/MessageInitializeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Message/OldMessages": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OldMessagesRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OldMessagesRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OldMessagesRequest"
               }
             }
           }
@@ -397,6 +496,23 @@
         },
         "additionalProperties": false
       },
+      "FriendDecisionRequest": {
+        "type": "object",
+        "properties": {
+          "userRequestToId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userRequestFromId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "decision": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "FriendRequest": {
         "type": "object",
         "properties": {
@@ -453,6 +569,24 @@
             "format": "int32"
           },
           "toUserId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OldMessagesRequest": {
+        "type": "object",
+        "properties": {
+          "fromUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "toUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastMessageId": {
             "type": "integer",
             "format": "int32"
           }

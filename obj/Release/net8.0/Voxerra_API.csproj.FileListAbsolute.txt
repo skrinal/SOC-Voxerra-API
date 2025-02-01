@@ -15,8 +15,6 @@ C:\SOC-Voxerra-API\bin\Release\net8.0\Humanizer.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\MailKit.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\SOC-Voxerra-API\bin\Release\net8.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\SOC-Voxerra-API\bin\Release\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\Microsoft.Build.dll
@@ -62,7 +60,6 @@ C:\SOC-Voxerra-API\bin\Release\net8.0\MimeKit.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\Mono.TextTemplating.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\MySqlConnector.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\Newtonsoft.Json.dll
-C:\SOC-Voxerra-API\bin\Release\net8.0\Newtonsoft.Json.Bson.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\NuGet.Common.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\NuGet.Configuration.dll
 C:\SOC-Voxerra-API\bin\Release\net8.0\NuGet.DependencyResolver.Core.dll
@@ -243,8 +240,6 @@ C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.AssemblyInfo.cs
 C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.csproj.CoreCompileInputs.cache
 C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.MvcApplicationPartsAssemblyInfo.cs
 C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.MvcApplicationPartsAssemblyInfo.cache
-C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.RazorAssemblyInfo.cache
-C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.RazorAssemblyInfo.cs
 C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.sourcelink.json
 C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_.A3E2E8E5.Up2Date
 C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.dll
@@ -252,3 +247,16 @@ C:\SOC-Voxerra-API\obj\Release\net8.0\refint\Voxerra_API.dll
 C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.pdb
 C:\SOC-Voxerra-API\obj\Release\net8.0\Voxerra_API.genruntimeconfig.cache
 C:\SOC-Voxerra-API\obj\Release\net8.0\ref\Voxerra_API.dll
+C:\SOC-Voxerra-API\bin\Release\net8.0\Voxerra_API.staticwebassets.endpoints.json
+C:\SOC-Voxerra-API\bin\Release\net8.0\OpenPop.dll
+C:\SOC-Voxerra-API\obj\Release\net8.0\scopedcss\bundle\Voxerra_API.styles.css
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets.build.json
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets.development.json
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets.build.endpoints.json
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets\msbuild.Voxerra_API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets\msbuild.Voxerra_API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets\msbuild.build.Voxerra_API.props
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets\msbuild.buildMultiTargeting.Voxerra_API.props
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets\msbuild.buildTransitive.Voxerra_API.props
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets.pack.json
+C:\SOC-Voxerra-API\obj\Release\net8.0\staticwebassets.upToDateCheck.txt

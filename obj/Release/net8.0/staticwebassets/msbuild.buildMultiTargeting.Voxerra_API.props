@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Voxerra_API.props" />
+</Project>

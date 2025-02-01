@@ -41,7 +41,39 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Voxerra_API.Controller.FriendAdd.FriendRequest",
+        "Type": "Voxerra_API.Controllers.FriendAdd.FriendDecisionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.FriendAdd.FriendAddController",
+    "Method": "FriendRequestList",
+    "RelativePath": "FriendAdd/FriendRequestList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdOfUser",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.FriendAdd.FriendAddController",
+    "Method": "PublicProfile",
+    "RelativePath": "FriendAdd/PublicProfile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdOfUser",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -74,6 +106,22 @@
       {
         "Name": "request",
         "Type": "Voxerra_API.Controllers.Message.MessageInitializeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.Message.MessageController",
+    "Method": "GetOldMessages",
+    "RelativePath": "Message/OldMessages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.Message.OldMessagesRequest",
         "IsRequired": true
       }
     ],
