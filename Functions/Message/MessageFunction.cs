@@ -34,7 +34,8 @@ namespace Voxerra_API.Functions.Message
             var result = new List<LastestMessage>();
 
             var userFriends = await _chatAppContext.Tbluserfriends
-                .Where(x => x.UserId == userId).ToListAsync();
+                .Where(x => x.UserId == userId)
+                .ToListAsync();
 
             foreach (var userFriend in userFriends)
             {
@@ -42,6 +43,7 @@ namespace Voxerra_API.Functions.Message
                     .Where(x => (x.FromUserId == userId && x.ToUserId == userFriend.FriendId)
                              || (x.FromUserId == userFriend.FriendId && x.ToUserId == userId))
                     .OrderByDescending(x => x.SendDateTime)
+                    .Take(10)
                     .FirstOrDefaultAsync();
 
                 if (lastMessage != null)
@@ -56,6 +58,19 @@ namespace Voxerra_API.Functions.Message
                         SendDateTime = lastMessage.SendDateTime,
                     });
                 }
+                else
+                {
+                    // If there is no message, add a default LastestMessage with an empty content
+                    result.Add(new LastestMessage
+                    {
+                        UserId = userId,
+                        Content = "",  // or "No messages yet" if you want a more descriptive text
+                        UserFriendInfo = _userFunction.GetUserById(userFriend.FriendId),
+                        //Id = 0, // or some other default value indicating no message ID
+                        IsRead = false, // or true, depending on your requirements
+                        SendDateTime = DateTime.MinValue // or another default date
+                    });
+                }
             }
             return result;
         }
@@ -65,8 +80,34 @@ namespace Voxerra_API.Functions.Message
             var entities = await _chatAppContext.Tblmessages
                 .Where(x => (x.FromUserId == fromUserId && x.ToUserId == toUserId)
                 || (x.FromUserId == toUserId && x.ToUserId == fromUserId))
-                .OrderBy(x => x.SendDateTime)
+                .OrderByDescending(x => x.SendDateTime)
+                .Take(12)
                 .ToListAsync();
+
+            return entities
+                .OrderBy(x => x.SendDateTime)
+                .Select(x => new Message
+            {
+                Id = x.Id,
+                Content = x.Content,
+                FromUserId = x.FromUserId,
+                ToUserId = x.ToUserId,
+                SendDateTime = x.SendDateTime,
+                IsRead = x.IsRead,
+            });
+        }
+        
+        public async Task<IEnumerable<Message>> GetOldMessages(int fromUserId, int toUserId, int lastMessageId)
+        {
+            var entities = await _chatAppContext.Tblmessages
+                .Where(x => ((x.FromUserId == fromUserId && x.ToUserId == toUserId)
+                            || (x.FromUserId == toUserId && x.ToUserId == fromUserId))
+                            && x.Id < lastMessageId)
+                .OrderBy(x => x.SendDateTime)
+                .Take(10)
+                .ToListAsync();
+
+
 
             return entities.Select(x => new Message
             {
@@ -76,7 +117,7 @@ namespace Voxerra_API.Functions.Message
                 ToUserId = x.ToUserId,
                 SendDateTime = x.SendDateTime,
                 IsRead = x.IsRead,
-            });
+            }).Reverse();
         }
     }
 }

@@ -95,7 +95,7 @@ namespace Voxerra_API.Functions.Registration
             var encryptedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: password,
                 salt: salt,
-                prf: KeyDerivationPrf.HMACSHA256, // HMACSHA256 - HMACSHA1
+                prf: KeyDerivationPrf.HMACSHA1, // HMACSHA256 - HMACSHA1
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
 

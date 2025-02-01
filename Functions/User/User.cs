@@ -12,6 +12,7 @@ namespace Voxerra_API.Functions.User
         public string AvatarSourceName { get; set; }
         public bool IsOnline { get; set; } 
         public DateTime LastLogonTime { get; set; }
+        public string CreationYear { get; set; }
         public string Token { get; set; } = null!;
     }
 }

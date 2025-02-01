@@ -50,7 +50,8 @@ namespace Voxerra_API.Functions.User
                 Id = entity.Id,
                 AvatarSourceName = entity.AvatarSourceName,
                 IsOnline = entity.IsOnline,
-                LastLogonTime = entity.LastLogonTime
+                LastLogonTime = entity.LastLogonTime,
+                CreationYear = entity.CreationDate.Year.ToString()
             };
         }
         private static bool VerifyPassword(string enteredPassword, byte[] storedSalt, string storedPassword)

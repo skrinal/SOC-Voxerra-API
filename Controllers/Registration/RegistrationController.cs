@@ -53,10 +53,13 @@ namespace Voxerra_API.Controllers.Registration
             var newUser = new TblUser
             {
                 UserName = pendingUser.UserName,
-                Email = pendingUser.Email,
                 Password = pendingUser.Password,
+                Email = pendingUser.Email,
                 StoredSalt = pendingUser.StoredSalt,
-                AvatarSourceName = "defaulticon.png"
+                AvatarSourceName = "defaulticon.png",
+                IsOnline = false,
+                LastLogonTime = DateTime.UtcNow,
+                CreationDate = DateTime.UtcNow
             };
 
             _chatAppContext.Tblusers.Add(newUser);

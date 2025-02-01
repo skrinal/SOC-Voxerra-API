@@ -19,25 +19,42 @@ namespace Voxerra_API.Controllers.FriendAdd
             return Ok(response);
         }
 
-
-        [HttpPost("FriendRequest")]
-        public async Task<ActionResult> FriendRequest([FromBody] FriendAddRequest request)
+        [HttpPost("PublicProfile")]
+        public async Task<ActionResult> PublicProfile([FromBody] int IdOfUser)
         {
+            var result = await _friendAddFunction.PublicProfile(IdOfUser);
             
-            var result = _friendAddFunction.FriendAddRequset(request.FromUserId, request.ToUserId);
+            return Ok(result);
+        }
+        
+        
+        [HttpPost("FriendRequest")]
+        public async Task<ActionResult> FriendRequest([FromBody] FriendRequest request)
+        {
+            var result = await _friendAddFunction.FriendAddRequset(request.FromUserId, request.ToUserId);
             
-
             return Ok();
         }
 
-        [HttpPost("FriendRequestDecision")]
-        public async Task<ActionResult> FriendRequestDecision([FromBody] FriendAddRequest request)
+        [HttpPost("FriendRequestList")]
+        public async Task<ActionResult> FriendRequestList([FromBody] int IdOfUser)
         {
+            var result = new FriendSearchResponse
+            {
+                Users = await _friendAddFunction.PendingRequestList(IdOfUser)
+            }; 
             
+            return Ok(result);
+        }
         
+        
+        [HttpPost("FriendRequestDecision")]
+        public async Task<ActionResult> FriendRequestDecision([FromBody] FriendDecisionRequest request)
+        {
+            var result = await _friendAddFunction.FriendRequestDecision
+                (request.UserRequestFromId, request.UserRequestToId, request.Decision);
             
-    
-            return Ok();
+            return Ok(result);
         }
 
     }

@@ -6,17 +6,11 @@ namespace Voxerra_API.Controllers.Message
     [ApiController]
     [Route("[controller]")]
     [Authorize]
-    public class MessageController : MvcController
+    public class MessageController(IMessageFunction messageFunction, IUserFunction userFunction) : MvcController
     {
-        IMessageFunction _messageFunction;
-        IUserFunction _userFunction;
-
-        public MessageController(IMessageFunction messageFunction, IUserFunction userFunction)
-        {
-            _messageFunction = messageFunction;
-            _userFunction = userFunction;
-        }
-
+        IMessageFunction _messageFunction = messageFunction;
+        IUserFunction  _userFunction= userFunction;
+        
         [HttpPost("Initialize")]
         public async Task<ActionResult> Initialize([FromBody] MessageInitializeRequest request)
         {
@@ -24,6 +18,17 @@ namespace Voxerra_API.Controllers.Message
             {
                 FriendInfo = _userFunction.GetUserById(request.ToUserId),
                 Messages = await _messageFunction.GetMessages(request.FromUserId, request.ToUserId),
+            };
+
+            return Ok(response);
+        }
+        
+        [HttpPost("OldMessages")]
+        public async Task<ActionResult> GetOldMessages([FromBody] OldMessagesRequest request)
+        {
+            var response = new OldMessagesResponse
+            {
+                Messages = await _messageFunction.GetOldMessages(request.FromUserId, request.ToUserId, request.LastMessageId)
             };
 
             return Ok(response);

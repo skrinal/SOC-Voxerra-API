@@ -12,8 +12,8 @@ using Voxerra_API.Entities;
 namespace Voxerra_API.Migrations
 {
     [DbContext(typeof(ChatAppContext))]
-    [Migration("20250120131104_validuntil")]
-    partial class validuntil
+    [Migration("20250131220727_test")]
+    partial class test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,6 +52,25 @@ namespace Voxerra_API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tblmessages");
+                });
+
+            modelBuilder.Entity("Voxerra_API.Entities.TblPendingFriendRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("FromUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ToUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tblpendingfriendrequest");
                 });
 
             modelBuilder.Entity("Voxerra_API.Entities.TblPendingPassword", b =>
@@ -124,6 +143,13 @@ namespace Voxerra_API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Bio")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -161,6 +187,10 @@ namespace Voxerra_API.Migrations
 
                     b.Property<int>("FriendId")
                         .HasColumnType("int");
+
+                    b.Property<string>("NickName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");

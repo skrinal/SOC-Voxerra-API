@@ -8,7 +8,9 @@
         public string Email { get; set; } = null!;
         public byte[] StoredSalt { get; set; } = null!;
         public string AvatarSourceName { get; set; } = null!;
+        public string Bio { get; set; } = string.Empty;
         public bool IsOnline { get; set; }
         public DateTime LastLogonTime { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }

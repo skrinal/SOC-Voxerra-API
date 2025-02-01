@@ -76,17 +76,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendAddRequest"
+                "$ref": "#/components/schemas/FriendRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendAddRequest"
+                "$ref": "#/components/schemas/FriendRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendAddRequest"
+                "$ref": "#/components/schemas/FriendRequest"
               }
             }
           }
@@ -107,17 +107,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendAddRequest"
+                "$ref": "#/components/schemas/FriendRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendAddRequest"
+                "$ref": "#/components/schemas/FriendRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FriendAddRequest"
+                "$ref": "#/components/schemas/FriendRequest"
               }
             }
           }
@@ -397,7 +397,7 @@
         },
         "additionalProperties": false
       },
-      "FriendAddRequest": {
+      "FriendRequest": {
         "type": "object",
         "properties": {
           "fromUserId": {

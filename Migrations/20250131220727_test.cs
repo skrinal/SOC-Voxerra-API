@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Voxerra_API.Migrations
 {
     /// <inheritdoc />
-    public partial class validuntil : Migration
+    public partial class test : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -31,6 +31,21 @@ namespace Voxerra_API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tblmessages", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Tblpendingfriendrequest",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    FromUserId = table.Column<int>(type: "int", nullable: false),
+                    ToUserId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tblpendingfriendrequest", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -80,7 +95,9 @@ namespace Voxerra_API.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    FriendId = table.Column<int>(type: "int", nullable: false)
+                    FriendId = table.Column<int>(type: "int", nullable: false),
+                    NickName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -103,8 +120,11 @@ namespace Voxerra_API.Migrations
                     StoredSalt = table.Column<byte[]>(type: "longblob", nullable: false),
                     AvatarSourceName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    Bio = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     IsOnline = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    LastLogonTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    LastLogonTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -118,6 +138,9 @@ namespace Voxerra_API.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Tblmessages");
+
+            migrationBuilder.DropTable(
+                name: "Tblpendingfriendrequest");
 
             migrationBuilder.DropTable(
                 name: "Tblpendingpassword");

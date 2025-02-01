@@ -1,9 +1,11 @@
-﻿namespace Voxerra_API.Entities;
-
-public class TblPendingFriendRequest
+﻿namespace Voxerra_API.Entities
 {
-    public int Id { get; set; }
-    public int FromUserId { get; set; }
-    public int ToUserId { get; set; }
+    public class TblPendingFriendRequest
+    {
+        public int Id { get; set; }
+        public int FromUserId { get; set; }
+        public int ToUserId { get; set; }
     
+    }
 }
+

@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Voxerra_API.Controller.FriendAdd.FriendAddRequest",
+        "Type": "Voxerra_API.Controller.FriendAdd.FriendRequest",
         "IsRequired": true
       }
     ],
@@ -41,7 +41,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Voxerra_API.Controller.FriendAdd.FriendAddRequest",
+        "Type": "Voxerra_API.Controller.FriendAdd.FriendRequest",
         "IsRequired": true
       }
     ],
