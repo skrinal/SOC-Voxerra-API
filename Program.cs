@@ -21,7 +21,7 @@ builder.Services.AddSwaggerGen();
 //        mySqlOptions => mySqlOptions.EnableRetryOnFailure())
 //);
 
-var connectionString = builder.Configuration.GetConnectionString("ConnectionString");
+var connectionString = "Server=localhost;port=3306;Database=Voxerra;user=root;password=Skrinal06;";
 if (string.IsNullOrEmpty(connectionString))
 {
     throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
