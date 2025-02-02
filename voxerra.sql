@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `tblmessages`
 --
 
-CREATE TABLE `tblmessages` (
+CREATE TABLE `Tblmessages` (
   `Id` int(11) NOT NULL,
   `FromUserId` int(11) NOT NULL,
   `ToUserId` int(11) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE `tblmessages` (
 -- Dumping data for table `tblmessages`
 --
 
-INSERT INTO `tblmessages` (`Id`, `FromUserId`, `ToUserId`, `Content`, `SendDateTime`, `IsRead`) VALUES
+INSERT INTO `Tblmessages` (`Id`, `FromUserId`, `ToUserId`, `Content`, `SendDateTime`, `IsRead`) VALUES
 (1, 1, 2, 'Testing sql 1', '2024-12-16 22:53:55.000000', 0),
 (2, 2, 1, 'testing sql 2', '2024-12-16 22:53:55.000000', 0),
 (3, 1, 2, 'halo', '2024-12-16 22:56:31.322097', 0),
@@ -127,7 +127,7 @@ INSERT INTO `tblmessages` (`Id`, `FromUserId`, `ToUserId`, `Content`, `SendDateT
 -- Table structure for table `tblpendingfriendrequest`
 --
 
-CREATE TABLE `tblpendingfriendrequest` (
+CREATE TABLE `Tblpendingfriendrequest` (
   `Id` int(11) NOT NULL,
   `FromUserId` int(11) NOT NULL,
   `ToUserId` int(11) NOT NULL
@@ -139,7 +139,7 @@ CREATE TABLE `tblpendingfriendrequest` (
 -- Table structure for table `tblpendingpassword`
 --
 
-CREATE TABLE `tblpendingpassword` (
+CREATE TABLE `Tblpendingpassword` (
   `Id` int(11) NOT NULL,
   `Token` int(11) NOT NULL,
   `Email` longtext NOT NULL,
@@ -152,7 +152,7 @@ CREATE TABLE `tblpendingpassword` (
 -- Table structure for table `tblpendingusers`
 --
 
-CREATE TABLE `tblpendingusers` (
+CREATE TABLE `Tblpendingusers` (
   `Id` int(11) NOT NULL,
   `UserName` longtext NOT NULL,
   `Email` longtext NOT NULL,
@@ -168,7 +168,7 @@ CREATE TABLE `tblpendingusers` (
 -- Table structure for table `tbluserfriends`
 --
 
-CREATE TABLE `tbluserfriends` (
+CREATE TABLE `Tbluserfriends` (
   `Id` int(11) NOT NULL,
   `UserId` int(11) NOT NULL,
   `FriendId` int(11) NOT NULL,
@@ -179,7 +179,7 @@ CREATE TABLE `tbluserfriends` (
 -- Dumping data for table `tbluserfriends`
 --
 
-INSERT INTO `tbluserfriends` (`Id`, `UserId`, `FriendId`, `NickName`) VALUES
+INSERT INTO `Tbluserfriends` (`Id`, `UserId`, `FriendId`, `NickName`) VALUES
 (1, 1, 2, ''),
 (2, 2, 1, ''),
 (3, 1, 3, ''),
@@ -194,7 +194,7 @@ INSERT INTO `tbluserfriends` (`Id`, `UserId`, `FriendId`, `NickName`) VALUES
 -- Table structure for table `tblusers`
 --
 
-CREATE TABLE `tblusers` (
+CREATE TABLE `Tblusers` (
   `Id` int(11) NOT NULL,
   `UserName` longtext NOT NULL,
   `Password` longtext NOT NULL,
@@ -211,7 +211,7 @@ CREATE TABLE `tblusers` (
 -- Dumping data for table `tblusers`
 --
 
-INSERT INTO `tblusers` (`Id`, `UserName`, `Password`, `Email`, `StoredSalt`, `AvatarSourceName`, `Bio`, `IsOnline`, `LastLogonTime`, `CreationDate`) VALUES
+INSERT INTO `Tblusers` (`Id`, `UserName`, `Password`, `Email`, `StoredSalt`, `AvatarSourceName`, `Bio`, `IsOnline`, `LastLogonTime`, `CreationDate`) VALUES
 (1, 'test1', 'LvkT4Bx3/suEdntu0MbO20bHdcKO/tZ3jV/jDtCvrHI=', 'test1gmail.com', 0x88a2db71906e7c50fb4570104ec44625, 'defaulticon.png', '', 0, '2025-01-29 11:35:24.495349', '2025-01-29 11:35:24.495430'),
 (2, 'test2', 'wy8zm0YQYIJ9h03ImUwMX9b3O1VQkzF9wERydL2rYmc=', 'test2gmail.com', 0x6c14aec4a64aa7043d0c114b6e5a0288, 'defaulticon2.png', '', 0, '2025-01-29 11:35:24.495349', '2025-01-29 11:35:24.495430'),
 (3, 'test3', 'J7rSXOQXkjrpLkfsJP11pQUJazYsvzrakk/TgnSU7hM=', 'test3gmail.com', 0xce93e11cde62253b1e5b445cd471d0b7, 'defaulticon3.png', '', 0, '2025-01-29 11:35:24.495349', '2025-01-29 11:35:24.495430'),
@@ -235,9 +235,6 @@ CREATE TABLE `__efmigrationshistory` (
 -- Dumping data for table `__efmigrationshistory`
 --
 
-INSERT INTO `__efmigrationshistory` (`MigrationId`, `ProductVersion`) VALUES
-('20250131220727_test', '8.0.11');
-
 --
 -- Indexes for dumped tables
 --
@@ -245,37 +242,37 @@ INSERT INTO `__efmigrationshistory` (`MigrationId`, `ProductVersion`) VALUES
 --
 -- Indexes for table `tblmessages`
 --
-ALTER TABLE `tblmessages`
+ALTER TABLE `Tblmessages`
   ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `tblpendingfriendrequest`
 --
-ALTER TABLE `tblpendingfriendrequest`
+ALTER TABLE `Tblpendingfriendrequest`
   ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `tblpendingpassword`
 --
-ALTER TABLE `tblpendingpassword`
+ALTER TABLE `Tblpendingpassword`
   ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `tblpendingusers`
 --
-ALTER TABLE `tblpendingusers`
+ALTER TABLE `Tblpendingusers`
   ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `tbluserfriends`
 --
-ALTER TABLE `tbluserfriends`
+ALTER TABLE `Tbluserfriends`
   ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `tblusers`
 --
-ALTER TABLE `tblusers`
+ALTER TABLE `Tblusers`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -291,37 +288,37 @@ ALTER TABLE `__efmigrationshistory`
 --
 -- AUTO_INCREMENT for table `tblmessages`
 --
-ALTER TABLE `tblmessages`
+ALTER TABLE `Tblmessages`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `tblpendingfriendrequest`
 --
-ALTER TABLE `tblpendingfriendrequest`
+ALTER TABLE `Tblpendingfriendrequest`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tblpendingpassword`
 --
-ALTER TABLE `tblpendingpassword`
+ALTER TABLE `Tblpendingpassword`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tblpendingusers`
 --
-ALTER TABLE `tblpendingusers`
+ALTER TABLE `Tblpendingusers`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbluserfriends`
 --
-ALTER TABLE `tbluserfriends`
+ALTER TABLE `Tbluserfriends`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tblusers`
 --
-ALTER TABLE `tblusers`
+ALTER TABLE `Tblusers`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
