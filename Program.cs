@@ -1,3 +1,4 @@
+using Google;
 using Voxerra_API.Controllers.ChatHub;
 using Voxerra_API.Entities;
 using Voxerra_API.Functions.Password;
@@ -20,11 +21,20 @@ builder.Services.AddSwaggerGen();
 //        mySqlOptions => mySqlOptions.EnableRetryOnFailure())
 //);
 
-builder.Services.AddDbContext<ChatAppContext>(options =>
+var connectionString = builder.Configuration.GetConnectionString("ConnectionString");
+if (string.IsNullOrEmpty(connectionString))
 {
-    options.UseMySql(builder.Configuration["ConnectionString"],
-        new MySqlServerVersion(new Version(8, 0, 40)));
-});
+    throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+}
+
+//builder.Services.AddDbContext<ChatAppContext>(options =>
+//{
+//    options.UseMySql(builder.Configuration["ConnectionString"],
+//        new MySqlServerVersion(new Version(8, 0, 40)));
+//});
+
+builder.Services.AddDbContext<ChatAppContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddTransient<IUserFunction, UserFunction>();
 builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
