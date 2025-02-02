@@ -13,11 +13,18 @@ builder.Services.AddSignalR();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var connectionString = builder.Configuration.GetConnectionString("ConnectionString");
+
 builder.Services.AddDbContext<ChatAppContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString),
+        mySqlOptions => mySqlOptions.EnableRetryOnFailure())
+);
+
+/*builder.Services.AddDbContext<ChatAppContext>(options =>
 {
     options.UseMySql(builder.Configuration["ConnectionString"],
         new MySqlServerVersion(new Version(8, 0, 40)));
-});
+});*/
 
 builder.Services.AddTransient<IUserFunction, UserFunction>();
 builder.Services.AddTransient<IUserFriendFunction, UserFriendFunction>();
