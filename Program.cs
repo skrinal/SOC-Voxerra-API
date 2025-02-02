@@ -35,6 +35,7 @@ var app = builder.Build();
 
 app.Urls.Add("https://0.0.0.0:42069");
 app.Urls.Add("http://0.0.0.0:42070");
+app.Urls.Add("https://0.0.0.0:443");
 
 if (app.Environment.IsDevelopment())
 {
@@ -46,16 +47,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseMiddleware<JwtMiddleware>();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
 
-app.Use(async (context, next) =>
-{
-    Console.WriteLine($"Request received: {context.Request.Method} {context.Request.Path}");
-    await next();
-});
 app.MapControllers();
 app.MapHub<ChatHub>("/ChatHub");
 

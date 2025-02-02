@@ -11,8 +11,10 @@ namespace Voxerra_API.Helpers
         {
             _next = next;
         }
-        public async Task Invoke(HttpContext context, IUserFunction userFunction)
+        public async Task Invoke(HttpContext context, IUserFunction userFunction, ILogger<JwtMiddleware> logger)
         {
+            logger.LogInformation("Incoming request: {Path}", context.Request.Path);
+
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(' ').Last();
             if (token == null)
                 token = context.Request.Headers["ChatHubBearer"].FirstOrDefault()?.Split(' ').Last();
