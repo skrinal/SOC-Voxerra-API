@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\SOC-Voxerra-API\bin\Release\net8.0\publish\</_PublishTargetUrl>
-    <History>True|2025-02-02T15:39:58.3842032Z||;True|2025-02-02T16:08:01.1416525+01:00||;True|2025-02-01T23:48:45.2573867+01:00||;</History>
+    <History>True|2025-02-02T17:31:13.7573725Z||;True|2025-02-02T17:32:27.2406493+01:00||;True|2025-02-02T16:39:58.3842032+01:00||;True|2025-02-02T16:08:01.1416525+01:00||;True|2025-02-01T23:48:45.2573867+01:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Voxerra_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a2b98971dcde2de7f999ae090c01eeafb6dd0d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+861bb9d0416dc23fc9474926de0cc02103049baa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Voxerra_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Voxerra_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

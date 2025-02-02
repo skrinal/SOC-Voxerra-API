@@ -73,9 +73,10 @@
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
               "ToolTip": "C:\\SOC-Voxerra-API\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAC0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-01T22:47:28.367Z"
+              "WhenOpened": "2025-02-01T22:47:28.367Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -85,7 +86,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwC0AAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-29T17:40:53.511Z",
               "EditorCaption": ""
