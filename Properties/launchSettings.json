@@ -41,30 +41,3 @@
     }
   }
 }
-
-//{
-//  "profiles": {
-//    "Voxerra_API": {
-//      "commandName": "Project",
-//      "launchBrowser": true,
-//      "launchUrl": "swagger",
-//      "environmentVariables": {
-//        "ASPNETCORE_ENVIRONMENT": "Development",
-//        "ASPNETCORE_URLS": "https://0.0.0.0:7264;http://0.0.0.0:5068"
-//      },
-//      "dotnetRunMessages": true,
-//      "applicationUrl": "https://0.0.0.0:7264;http://0.0.0.0:5068",
-//      "sqlDebugging": true
-//    },
-//    "Kestrel": {
-//      "Endpoints": {
-//        "HTTPS": {
-//          "Url": "https://0.0.0.0:42069"
-//        },
-//        "HTTP": {
-//          "Url": "http://0.0.0.0:42070"
-//        }
-//      }
-//    }
-//  }
-//}

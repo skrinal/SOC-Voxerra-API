@@ -10,9 +10,7 @@ namespace Voxerra_API.Functions.Password
         private readonly IUserRegistrationFunction _userRegistrationFunction = userRegistrationFunction;
         private readonly IEmailFunction _emailMessage = emailMessage;
         private readonly ChatAppContext _chatAppContext = chatAppContext;
-
         
-
         public async Task<bool> ResetPassword(string email)
         {
             var user = _chatAppContext.Tblusers.FirstOrDefault(x => x.Email == email);
@@ -29,7 +27,7 @@ namespace Voxerra_API.Functions.Password
                     PasswordEmail = true
                 };
 
-                //await _emailMessage.SendEmail(details);
+                await _emailMessage.SendEmail(details);
                 
                 return true;
             }

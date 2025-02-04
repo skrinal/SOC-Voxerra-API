@@ -11,3 +11,4 @@ global using Voxerra_API.Entities;
 global using Voxerra_API.Functions.FriendAdd;
 global using Voxerra_API.Controller;
 global using Voxerra_API.Controller.FriendAdd;
+global using Voxerra_API.Functions.Settings;
