@@ -12,5 +12,7 @@
         public bool IsOnline { get; set; }
         public DateTime LastLogonTime { get; set; }
         public DateTime CreationDate { get; set; }
+        
+        public virtual TblUserSettings? UserSettings { get; set; }
     }
 }

@@ -59,7 +59,13 @@ namespace Voxerra_API.Controllers.Registration
                 AvatarSourceName = "defaulticon.png",
                 IsOnline = false,
                 LastLogonTime = DateTime.UtcNow,
-                CreationDate = DateTime.UtcNow
+                CreationDate = DateTime.UtcNow,
+                UserSettings = new TblUserSettings
+                {
+                    LoginAlertsEnabled = false,
+                    TwoFactorEnabled = false,
+                    WhereIsUserLoggedIn = ""
+                }
             };
 
             _chatAppContext.Tblusers.Add(newUser);

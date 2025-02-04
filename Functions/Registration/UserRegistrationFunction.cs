@@ -44,7 +44,8 @@ namespace Voxerra_API.Functions.Registration
                 {
                     var (encryptedPassword, salt) = EncryptPassword(password);
                     verificationCode = GenerateCode();
-
+                    Console.WriteLine(verificationCode);
+                    
                     var pendingUser = new TblPendingUser
                     {
                         UserName = userName,

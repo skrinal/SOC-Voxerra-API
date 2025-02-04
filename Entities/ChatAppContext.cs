@@ -8,5 +8,14 @@
         public virtual DbSet<TblPendingUser> Tblpendingusers { get; set; } = null!;
         public virtual DbSet<TblPendingPassword> Tblpendingpassword { get; set;} = null!;
         public virtual DbSet<TblPendingFriendRequest> Tblpendingfriendrequest { get; set; } = null!;
+        public virtual DbSet<TblUserSettings> Tblusersettings { get; set; } = null!;
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TblUser>()
+                .HasOne(x => x.UserSettings)
+                .WithOne(s => s.User)
+                .HasForeignKey<TblUserSettings>(s => s.UserId);
+        }
     }
 }

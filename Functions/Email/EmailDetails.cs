@@ -7,6 +7,7 @@ namespace Voxerra_API.Functions.Email
         public string Subject { get; set; } = null!;
         public bool RegistrationEmail { get; set; } = false;
         public bool PasswordEmail { get; set; } = false;
+        
 
     }
 }
