@@ -11,8 +11,9 @@ namespace Voxerra_API.Controllers.UserSettings
         public async Task<ActionResult> ChangeUserName([FromBody] UserNameChangeRequest request)
         {
             var result = await _settingFunction.ChangeUserName(request.UserId, request.NewUserName);
-
-            return Ok(result);
+            if (result) return Ok();
+            
+            return BadRequest();
         }
     
         [HttpPost("ReturnEmail")] 
@@ -35,5 +36,13 @@ namespace Voxerra_API.Controllers.UserSettings
             return BadRequest();
         }
     
+        [HttpPost("ChangeBio")]
+        public async Task<ActionResult> ChangeBio([FromBody] UserBioChangeRequest request)
+        {
+            var result = await _settingFunction.ChangeEmail(request.UserId, request.NewBio);
+            if (result) return Ok();
+            
+            return BadRequest();
+        }
     }
 }
