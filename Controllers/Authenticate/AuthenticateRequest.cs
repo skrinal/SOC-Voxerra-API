@@ -1,4 +1,6 @@
-﻿namespace Voxerra_API.Controllers.Authenticate
+﻿using Microsoft.Build.Framework;
+
+namespace Voxerra_API.Controllers.Authenticate
 {
     public class AuthenticateRequest
     {
