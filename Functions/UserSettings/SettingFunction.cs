@@ -52,4 +52,20 @@ public class SettingFunction(ChatAppContext chatAppContext) : ISettingFunction
             return false;
         }
     }
+    public async Task<bool> ChangeBio(int userId, string newBio)
+    {
+        try
+        {
+            var user = await _chatAppContext.Tblusers.FirstOrDefaultAsync(x => x.Id == userId);
+            
+            user.Bio = newBio;
+            await _chatAppContext.SaveChangesAsync();
+
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
 }
