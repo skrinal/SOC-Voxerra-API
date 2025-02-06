@@ -68,4 +68,21 @@ public class SettingFunction(ChatAppContext chatAppContext) : ISettingFunction
             return false;
         }
     }
+
+    public async Task<bool> ChangePassword(int userId, string newPassword)
+    {
+        try
+        {
+            var user = await _chatAppContext.Tblusers.FirstOrDefaultAsync(x => x.Id == userId);
+            
+            user.Password = newPassword;
+            await _chatAppContext.SaveChangesAsync();
+
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
 }

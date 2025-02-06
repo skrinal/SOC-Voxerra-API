@@ -39,7 +39,16 @@ namespace Voxerra_API.Controllers.UserSettings
         [HttpPost("ChangeBio")]
         public async Task<ActionResult> ChangeBio([FromBody] UserBioChangeRequest request)
         {
-            var result = await _settingFunction.ChangeEmail(request.UserId, request.NewBio);
+            var result = await _settingFunction.ChangeBio(request.UserId, request.NewBio);
+            if (result) return Ok();
+            
+            return BadRequest();
+        }
+
+        [HttpPost("ChangePassword")]
+        public async Task<ActionResult> ChangePassword([FromBody] UserPasswordChangeReques request)
+        {
+            var result = await _settingFunction.ChangePassword(request.UserId, request.NewPassword);
             if (result) return Ok();
             
             return BadRequest();

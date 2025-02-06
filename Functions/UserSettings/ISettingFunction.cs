@@ -6,4 +6,5 @@ public interface ISettingFunction
     Task<string> ReturnEmail(int userId);
     Task<bool> ChangeEmail(int userId, string newEmail);
     Task<bool> ChangeBio(int userId, string newBio);
+    Task<bool> ChangePassword(int userId, string newPassword);
 }

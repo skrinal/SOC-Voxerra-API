@@ -1,4 +1,4 @@
-namespace Controllers.UserSettings
+namespace Voxerra_API.Controllers.UserSettings
 {
     public class UserBioChangeRequest
     {
