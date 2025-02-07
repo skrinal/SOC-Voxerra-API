@@ -53,5 +53,17 @@ namespace Voxerra_API.Controllers.UserSettings
             
             return BadRequest();
         }
+        
+        
+        
+        
+        [HttpPost("DeleteUser")]
+        public async Task<ActionResult> DeleteUser([FromBody] int UserId)
+        {
+            var result = await _settingFunction.DeleteAccount(UserId);
+            if (result) return Ok();
+            
+            return BadRequest();
+        }
     }
 }

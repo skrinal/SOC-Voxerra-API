@@ -85,4 +85,22 @@ public class SettingFunction(ChatAppContext chatAppContext) : ISettingFunction
             return false;
         }
     }
+    
+    public async Task<bool> DeleteAccount(int userId)
+    {
+        try
+        {
+            var user = await _chatAppContext.Tblusers.FirstOrDefaultAsync(x => x.Id == userId);
+            if (user == null) return false;
+
+            _chatAppContext.Tblusers.Remove(user);
+            await _chatAppContext.SaveChangesAsync(); 
+
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
 }
