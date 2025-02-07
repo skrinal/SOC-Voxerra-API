@@ -21,5 +21,20 @@ namespace Voxerra_API.Controllers.Authenticate
             return Ok(response);
             
         }
+
+        [HttpPost("TwoAuth")]
+        public async Task<IActionResult> TwoAuthConfirm(AuthenticateRequest request)
+        {
+            var response = await _userFunction.Authenticate(request.UserName, request.Password);
+
+            if (response == null)
+            {
+                return Unauthorized(new { message = "Invalid credentials" });
+            }
+            return Ok(response);
+            
+        }
+
+
     }
 }

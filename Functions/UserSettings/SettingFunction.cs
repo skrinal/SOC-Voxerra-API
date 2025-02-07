@@ -94,6 +94,12 @@ public class SettingFunction(ChatAppContext chatAppContext) : ISettingFunction
             if (user == null) return false;
 
             _chatAppContext.Tblusers.Remove(user);
+            
+            var friends = await _chatAppContext.Tbluserfriends
+                .Where(x => (x.UserId == userId ||x.FriendId == userId ))
+                .ToListAsync();
+            if (friends != null) _chatAppContext.Tbluserfriends.Remove(friends);
+                
             await _chatAppContext.SaveChangesAsync(); 
 
             return true;
@@ -102,5 +108,22 @@ public class SettingFunction(ChatAppContext chatAppContext) : ISettingFunction
         {
             return false;
         }
+    }
+
+
+    public async Task<bool> TwoAuthUpdate(int userId, bool decision)
+    {
+        try
+        {
+            var user = await _chatAppContext.Tblusersettings
+                .FirstOrDefaultAsync(x => x.UserId == userId);
+            if( user == null) return false;
+
+            user.TwoFactorEnabled = decision;
+            await _chatAppContext.SaveChangesAsync();
+
+            return true;
+        }   
+        catch (Exception ex){ return false; } 
     }
 }

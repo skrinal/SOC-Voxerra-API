@@ -8,4 +8,5 @@ public interface ISettingFunction
     Task<bool> ChangeBio(int userId, string newBio);
     Task<bool> ChangePassword(int userId, string newPassword);
     Task<bool> DeleteAccount(int userId);
+    Task<bool> TwoAuthUpdate(int userId, bool decision);
 }

@@ -7,9 +7,10 @@ using Voxerra_API.Entities;
 
 namespace Voxerra_API.Functions.User
 {
-    public class UserFunction(ChatAppContext chatAppContext) : IUserFunction
+    public class UserFunction(ChatAppContext chatAppContext, EmailFunction emailFunction) : IUserFunction
     {
         private readonly ChatAppContext _chatAppContext = chatAppContext;
+        private readonly IEmailFunction _emailFunction = emailFunction;
         public async Task<User?> Authenticate(string userName, string password)
         {
             try
@@ -21,6 +22,25 @@ namespace Voxerra_API.Functions.User
 
                 var isPasswordMatched = VerifyPassword(password, entity.StoredSalt, entity.Password);
                 if (!isPasswordMatched) return null;
+
+                var twoAuthCheck = await _chatAppContext.Tblusersettings
+                    .Where(x => x.UserId == entity.Id)
+                    .Select(x => x.TwoFactorEnabled)
+                    .FirstOrDefaultAsync();
+                if(twoAuthCheck)
+                {
+                    var emailPrompt = new EmailDetails
+                    {
+                        ToEmail = entity.Email,
+                        Subject = "Two Auth Code",
+                        Code = ,
+                        TwoAuthEmail = true
+                        
+                    };
+                    _emailFunction.SendEmail(emailPrompt);
+                }
+
+                
 
                 var token = GenerateJwtToken(entity);
 

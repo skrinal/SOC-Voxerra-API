@@ -65,5 +65,14 @@ namespace Voxerra_API.Controllers.UserSettings
             
             return BadRequest();
         }
+
+        [HttpPost("TwoAuth")]
+        public async Task<ActionResult> TwoAuthChange([FromBody] UserTwoAuthRequest request)
+        {
+            var result = await _settingFunction.TwoAuthUpdate(request.UserId, request.Decision);
+            if (result) return Ok();
+            
+            return BadRequest();
+        }
     }
 }

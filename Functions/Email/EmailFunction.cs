@@ -12,6 +12,12 @@ namespace Voxerra_API.Functions.Email
         private const string GmailSmtpServer = "smtp.gmail.com";
         private const int GmailSmtpPort = 587;
 
+        public int GenerateCode()
+        {
+            Random random = new();
+            return verificationCode = random.Next(10000, 99999);
+        }
+
         public async Task SendEmail(EmailDetails emailDetails)
         {
             var emailMessage = new MimeMessage();
