@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Voxerra_API.Migrations
 {
     /// <inheritdoc />
-    public partial class skidbi : Migration
+    public partial class skibib : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -58,7 +58,7 @@ namespace Voxerra_API.Migrations
                     Token = table.Column<int>(type: "int", nullable: false),
                     Email = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ValidUntil = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    ExpireTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -80,11 +80,26 @@ namespace Voxerra_API.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     StoredSalt = table.Column<byte[]>(type: "longblob", nullable: false),
                     VerificationCode = table.Column<int>(type: "int", nullable: false),
-                    ValidUntil = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    ExpireTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tblpendingusers", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Tbltwofactorauth",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Code = table.Column<int>(type: "int", nullable: false),
+                    ExpireTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tbltwofactorauth", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -177,6 +192,9 @@ namespace Voxerra_API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Tblpendingusers");
+
+            migrationBuilder.DropTable(
+                name: "Tbltwofactorauth");
 
             migrationBuilder.DropTable(
                 name: "Tbluserfriends");

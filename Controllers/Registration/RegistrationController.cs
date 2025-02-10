@@ -45,7 +45,7 @@ namespace Voxerra_API.Controllers.Registration
                 return BadRequest(new { message = "Invalid verification code or email." });
             }
 
-            if (DateTime.UtcNow > pendingUser.ValidUntil)
+            if (DateTime.UtcNow > pendingUser.ExpireTime)
             {
                 return BadRequest(new { message = "Verification code has expired." });
             }

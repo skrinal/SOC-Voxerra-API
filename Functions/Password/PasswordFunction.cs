@@ -43,7 +43,7 @@ namespace Voxerra_API.Functions.Password
             {
                 Token = token,
                 Email = email,
-                ValidUntil = DateTime.UtcNow.AddMinutes(5)
+                ExpireTime = DateTime.UtcNow.AddMinutes(5)
             };
 
             _chatAppContext.Tblpendingpassword.Add(pendingPassword);
@@ -57,7 +57,7 @@ namespace Voxerra_API.Functions.Password
             var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => (x.Token == token && x.Email == email));
 
             //
-            if (resetToken == null || resetToken.ValidUntil < DateTime.UtcNow)
+            if (resetToken == null || resetToken.ExpireTime < DateTime.UtcNow)
             {
                 return false; 
             }

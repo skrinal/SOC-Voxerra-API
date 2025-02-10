@@ -38,7 +38,7 @@ namespace Voxerra_API.Functions.Registration
                     verificationCode = GenerateCode();
                     
                     existingPendingUser.VerificationCode = verificationCode;
-                    existingPendingUser.ValidUntil = DateTime.UtcNow.AddMinutes(5);
+                    existingPendingUser.ExpireTime = DateTime.UtcNow.AddMinutes(5);
                 }
                 else
                 {
@@ -53,7 +53,7 @@ namespace Voxerra_API.Functions.Registration
                         Password = encryptedPassword,
                         StoredSalt = salt,
                         VerificationCode = verificationCode,
-                        ValidUntil = DateTime.UtcNow.AddMinutes(5)
+                        ExpireTime = DateTime.UtcNow.AddMinutes(5)
                     };
 
                     _chatAppContext.Tblpendingusers.Add(pendingUser);

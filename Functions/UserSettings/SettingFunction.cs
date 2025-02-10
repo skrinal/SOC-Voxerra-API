@@ -98,7 +98,8 @@ public class SettingFunction(ChatAppContext chatAppContext) : ISettingFunction
             var friends = await _chatAppContext.Tbluserfriends
                 .Where(x => (x.UserId == userId ||x.FriendId == userId ))
                 .ToListAsync();
-            if (friends != null) _chatAppContext.Tbluserfriends.Remove(friends);
+            
+            if (friends.Any()) _chatAppContext.Tbluserfriends.RemoveRange(friends);
                 
             await _chatAppContext.SaveChangesAsync(); 
 

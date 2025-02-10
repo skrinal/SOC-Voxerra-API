@@ -82,11 +82,11 @@ namespace Voxerra_API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<DateTime>("ExpireTime")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<int>("Token")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("ValidUntil")
-                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -105,6 +105,9 @@ namespace Voxerra_API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<DateTime>("ExpireTime")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -117,15 +120,31 @@ namespace Voxerra_API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("ValidUntil")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<int>("VerificationCode")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Tblpendingusers");
+                });
+
+            modelBuilder.Entity("Voxerra_API.Entities.TblTwoFactorAuth", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Code")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ExpireTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tbltwofactorauth");
                 });
 
             modelBuilder.Entity("Voxerra_API.Entities.TblUser", b =>

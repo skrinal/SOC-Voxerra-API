@@ -15,7 +15,7 @@ namespace Voxerra_API.Functions.Email
         public int GenerateCode()
         {
             Random random = new();
-            return verificationCode = random.Next(10000, 99999);
+            return random.Next(10000, 99999);
         }
 
         public async Task SendEmail(EmailDetails emailDetails)
