@@ -4,7 +4,7 @@ namespace Voxerra_API.Controllers.Password
     {
         public string NewPassword { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public int Token { get; set; }
+        public int Code { get; set; }
 
     }
 }

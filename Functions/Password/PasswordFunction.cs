@@ -41,7 +41,7 @@ namespace Voxerra_API.Functions.Password
 
             var pendingPassword = new TblPendingPassword
             {
-                Token = token,
+                Code = token,
                 Email = email,
                 ExpireTime = DateTime.UtcNow.AddMinutes(5)
             };
@@ -52,9 +52,9 @@ namespace Voxerra_API.Functions.Password
             return token;
         }
 
-        public async Task<bool> ChangePasswordUsingToken(string email, int token, string newPassword)
+        public async Task<bool> ChangePasswordUsingCode(string email, int code, string newPassword)
         {
-            var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => (x.Token == token && x.Email == email));
+            var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => (x.Code == code && x.Email == email));
 
             //
             if (resetToken == null || resetToken.ExpireTime < DateTime.UtcNow)

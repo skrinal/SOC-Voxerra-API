@@ -12,8 +12,8 @@ using Voxerra_API.Entities;
 namespace Voxerra_API.Migrations
 {
     [DbContext(typeof(ChatAppContext))]
-    [Migration("20250208132244_skibib")]
-    partial class skibib
+    [Migration("20250211180044_xeee")]
+    partial class xeee
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,10 @@ namespace Voxerra_API.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FromUserId");
+
+                    b.HasIndex("ToUserId");
+
                     b.ToTable("Tblmessages");
                 });
 
@@ -70,6 +74,10 @@ namespace Voxerra_API.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FromUserId");
+
+                    b.HasIndex("ToUserId");
+
                     b.ToTable("Tblpendingfriendrequest");
                 });
 
@@ -81,15 +89,15 @@ namespace Voxerra_API.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Code")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("ExpireTime")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<int>("Token")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -145,7 +153,12 @@ namespace Voxerra_API.Migrations
                     b.Property<DateTime>("ExpireTime")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Tbltwofactorauth");
                 });
@@ -216,6 +229,10 @@ namespace Voxerra_API.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FriendId");
+
+                    b.HasIndex("UserId");
+
                     b.ToTable("Tbluserfriends");
                 });
 
@@ -248,6 +265,74 @@ namespace Voxerra_API.Migrations
                     b.ToTable("Tblusersettings");
                 });
 
+            modelBuilder.Entity("Voxerra_API.Entities.TblMessage", b =>
+                {
+                    b.HasOne("Voxerra_API.Entities.TblUser", "FromUser")
+                        .WithMany("SentMessages")
+                        .HasForeignKey("FromUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Voxerra_API.Entities.TblUser", "ToUser")
+                        .WithMany("ReceivedMessages")
+                        .HasForeignKey("ToUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("FromUser");
+
+                    b.Navigation("ToUser");
+                });
+
+            modelBuilder.Entity("Voxerra_API.Entities.TblPendingFriendRequest", b =>
+                {
+                    b.HasOne("Voxerra_API.Entities.TblUser", "FromUser")
+                        .WithMany("SentFriendRequests")
+                        .HasForeignKey("FromUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Voxerra_API.Entities.TblUser", "ToUser")
+                        .WithMany("ReceivedFriendRequests")
+                        .HasForeignKey("ToUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("FromUser");
+
+                    b.Navigation("ToUser");
+                });
+
+            modelBuilder.Entity("Voxerra_API.Entities.TblTwoFactorAuth", b =>
+                {
+                    b.HasOne("Voxerra_API.Entities.TblUser", "User")
+                        .WithMany("TwoFactorAuths")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Voxerra_API.Entities.TblUserFriend", b =>
+                {
+                    b.HasOne("Voxerra_API.Entities.TblUser", "Friend")
+                        .WithMany()
+                        .HasForeignKey("FriendId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Voxerra_API.Entities.TblUser", "User")
+                        .WithMany("Friends")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Friend");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Voxerra_API.Entities.TblUserSettings", b =>
                 {
                     b.HasOne("Voxerra_API.Entities.TblUser", "User")
@@ -261,6 +346,18 @@ namespace Voxerra_API.Migrations
 
             modelBuilder.Entity("Voxerra_API.Entities.TblUser", b =>
                 {
+                    b.Navigation("Friends");
+
+                    b.Navigation("ReceivedFriendRequests");
+
+                    b.Navigation("ReceivedMessages");
+
+                    b.Navigation("SentFriendRequests");
+
+                    b.Navigation("SentMessages");
+
+                    b.Navigation("TwoFactorAuths");
+
                     b.Navigation("UserSettings");
                 });
 #pragma warning restore 612, 618

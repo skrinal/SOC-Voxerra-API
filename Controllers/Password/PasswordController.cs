@@ -25,7 +25,7 @@ namespace Voxerra_API.Controllers.Password
         [HttpPost("ResetPasswordConfirmation")]
         public async Task<ActionResult> ResetPasswordConfirmation([FromBody] PasswordResetConfirmationRequest request)
         {
-            var changePass = _passwordFunction.ChangePasswordUsingToken(request.Email, request.Token, request.NewPassword);
+            var changePass = _passwordFunction.ChangePasswordUsingCode(request.Email, request.Code, request.NewPassword);
 
             if (changePass.Result == true)
             {

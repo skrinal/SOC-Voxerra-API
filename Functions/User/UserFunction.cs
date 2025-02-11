@@ -79,7 +79,7 @@ namespace Voxerra_API.Functions.User
             try
             {
                 var existingAuth = await _chatAppContext.Tbltwofactorauth
-                    .Where(x => x.Id == userId 
+                    .Where(x => x.UserId == userId 
                                 && x.ExpireTime > DateTime.UtcNow
                                 && x.Code == code) 
                     .OrderByDescending(x => x.ExpireTime)
