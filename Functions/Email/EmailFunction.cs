@@ -23,12 +23,13 @@ namespace Voxerra_API.Functions.Email
             var emailMessage = new MimeMessage();
             emailMessage.From.Add(new MailboxAddress("Voxerra support", supportEmail));
             emailMessage.To.Add(new MailboxAddress("", emailDetails.ToEmail));
-            emailMessage.Subject = emailDetails.Subject;
+            
 
             var bodyBuilder = new BodyBuilder();
 
-            if (emailDetails.RegistrationEmail == true)
+            if (emailDetails.RegistrationEmail)
             {
+                emailMessage.Subject = "Registration Verification Code";
                 bodyBuilder.HtmlBody = $@"
                                 <!DOCTYPE html>
                                 <html lang='en'>
@@ -98,6 +99,156 @@ namespace Voxerra_API.Functions.Email
                                     </div>
                                 </body>
                                 </html>";
+            }
+            else if (emailDetails.TwoAuthEmail)
+            {
+                emailMessage.Subject = "";
+                bodyBuilder.HtmlBody = $@"<!DOCTYPE html>
+                                <html lang='en'>
+                                <head>
+                                    <meta charset='UTF-8'>
+                                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                                    <title>Email Template</title>
+                                    <style>
+                                        body {{
+                                            margin: 0;
+                                            padding: 0;
+                                            background-color: #f8f8f9;
+                                            font-family: 'Montserrat', sans-serif;
+                                        }}
+                                        .container {{
+                                            width: 100%;
+                                            max-width: 600px;
+                                            margin: auto;
+                                            background-color: #ffffff;
+                                            border-radius: 8px;
+                                            overflow: hidden;
+                                        }}
+                                        .header {{
+                                            background-color: #2b303a;
+                                            padding: 20px;
+                                            text-align: center;
+                                        }}
+                                        .header img {{
+                                            max-width: 100%;
+                                            height: auto;
+                                        }}
+                                        .content {{
+                                            padding: 20px;
+                                            text-align: center;
+                                        }}
+                                        .footer {{
+                                            background-color: #2b303a;
+                                            color: white;
+                                            text-align: center;
+                                            padding: 10px;
+                                        }}
+                                        @media (max-width: 600px) {{
+                                            .container {{
+                                                width: 100%;
+                                            }}
+                                        }}
+                                        .location{{
+                                            color: rgb(132, 0, 255);
+                                            font-weight: 1000;
+                                            font-size: 25px;
+                                        }
+                                    </style>
+                                </head>
+                                <body>
+                                    <div class='container'>
+                                        <div class='header'>
+                                            <img src='cid:logo_voxerra_image' alt='Logo' />
+                                        </div>
+                                        <div class='content'>
+                                            <h2>New sign in to Voxerra</h2>
+                                            <p>From you account {emailDetails.UserName}</p>
+                                            <p class='location'>Location of sign in: <br> {emailDetails.Locations} <br> {emailsDetails.IpAdress}</p>
+                                            <p>If this is your doing, you can safely ignor this email.</p>
+                                            <p>Otherwise contant support on this email.</p>
+                                        </div>
+                                        <div class='footer'>
+                                            <p>Voxerra Copyright © 2025</p>
+                                        </div>
+                                    </div>
+                                </body>
+                                </html>";
+            
+            }
+            else if (emailDetails.AlertEmail)
+            {
+                emailMessage.Subject = "New Sigin in to Voxerra";
+                bodyBuilder.HtmlBody = $@"<!DOCTYPE html>
+                                <html lang='en'>
+                                <head>
+                                    <meta charset='UTF-8'>
+                                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                                    <title>Email Template</title>
+                                    <style>
+                                        body {{
+                                            margin: 0;
+                                            padding: 0;
+                                            background-color: #f8f8f9;
+                                            font-family: 'Montserrat', sans-serif;
+                                        }}
+                                        .container {{
+                                            width: 100%;
+                                            max-width: 600px;
+                                            margin: auto;
+                                            background-color: #ffffff;
+                                            border-radius: 8px;
+                                            overflow: hidden;
+                                        }}
+                                        .header {{
+                                            background-color: #2b303a;
+                                            padding: 20px;
+                                            text-align: center;
+                                        }}
+                                        .header img {{
+                                            max-width: 100%;
+                                            height: auto;
+                                        }}
+                                        .content {{
+                                            padding: 20px;
+                                            text-align: center;
+                                        }}
+                                        .footer {{
+                                            background-color: #2b303a;
+                                            color: white;
+                                            text-align: center;
+                                            padding: 10px;
+                                        }}
+                                        @media (max-width: 600px) {{
+                                            .container {{
+                                                width: 100%;
+                                            }}
+                                        }}
+                                        .location{{
+                                            color: rgb(132, 0, 255);
+                                            font-weight: 1000;
+                                            font-size: 25px;
+                                        }}
+                                    </style>
+                                </head>
+                                <body>
+                                    <div class='container'>
+                                        <div class='header'>
+                                            <img src='cid:logo_voxerra_image' alt='Logo' />
+                                        </div>
+                                        <div class='content'>
+                                            <h2>New sign in to Voxerra</h2>
+                                            <p>From you account {emailDetails.UserName}</p>
+                                            <p class='location'>Location of sign in: <br> {emailDetails.Location} <br> {emailDetails.IpAdress}</p>
+                                            <p>If this is your doing, you can safely ignor this email.</p>
+                                            <p>Otherwise contant support on this email.</p>
+                                        </div>
+                                        <div class='footer'>
+                                            <p>Voxerra Copyright © 2025</p>
+                                        </div>
+                                    </div>
+                                </body>
+                                </html>";
+            
             }
             else 
             {

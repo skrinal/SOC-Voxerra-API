@@ -2,8 +2,8 @@
 {
     public interface IUserFunction
     {
-        Task<AuthenticateResponse?> Authenticate(string userName, string password);
+        Task<AuthenticateResponse?> Authenticate(string userName, string password, string ipAdress);
         User GetUserById(int id);
-        Task<AuthenticateResponse?> TwoFactorAuth(int userId, int code);
+        Task<AuthenticateResponse?> TwoFactorAuth(int userId, int code, string ipAdress); 
     }
 }

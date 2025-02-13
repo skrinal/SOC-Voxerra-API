@@ -8,7 +8,6 @@ using Voxerra_API.Functions.Registration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddMemoryCache();
 builder.Services.Configure<IpRateLimitOptions>(options =>
 {

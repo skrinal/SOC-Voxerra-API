@@ -12,7 +12,9 @@ namespace Voxerra_API.Controllers.Authenticate
         [HttpPost("Authenticate")]
         public async Task<IActionResult> Authenticate(AuthenticateRequest request)
         {
-            var response = await _userFunction.Authenticate(request.UserName, request.Password);
+            var userIp = HttpContext.Connection.RemoteIpAddress?.ToString();
+            
+            var response = await _userFunction.Authenticate(request.UserName, request.Password, userIp);
 
             if (response == null)
             {
@@ -29,7 +31,9 @@ namespace Voxerra_API.Controllers.Authenticate
         [HttpPost("TwoAuth")]
         public async Task<IActionResult> TwoAuthConfirm(TwoFactorAuthRequest request)
         {
-            var response = await _userFunction.TwoFactorAuth(request.UserId, request.Code);
+            var userIp = HttpContext.Connection.RemoteIpAddress?.ToString();
+
+            var response = await _userFunction.TwoFactorAuth(request.UserId, request.Code, userIp);
 
             if (response == null)
             {
