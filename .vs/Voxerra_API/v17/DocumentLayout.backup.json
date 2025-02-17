@@ -50,8 +50,7 @@
               "RelativeToolTip": "Controllers\\Authenticate\\AuthenticateRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T22:45:15.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T22:45:15.974Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "Functions\\User\\UserFunction.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAD4vykAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T19:49:28.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T19:49:28.477Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "Controllers\\Authenticate\\AuthenticateController.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAkwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T19:49:11.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T19:49:11.029Z"
             },
             {
               "$type": "Document",
@@ -89,8 +86,7 @@
               "RelativeToolTip": "Helpers\\JwtMiddleware.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T15:04:20.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-02T15:04:20.644Z"
             },
             {
               "$type": "Document",
@@ -100,7 +96,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-29T17:40:53.511Z",
               "EditorCaption": ""
