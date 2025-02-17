@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/skrinal/Desktop/SOC-Voxerra-API/Voxerra_API.csproj": {}
+    "C:\\SOC-Voxerra-API\\Voxerra_API.csproj": {}
   },
   "projects": {
-    "/home/skrinal/Desktop/SOC-Voxerra-API/Voxerra_API.csproj": {
+    "C:\\SOC-Voxerra-API\\Voxerra_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/skrinal/Desktop/SOC-Voxerra-API/Voxerra_API.csproj",
+        "projectUniqueName": "C:\\SOC-Voxerra-API\\Voxerra_API.csproj",
         "projectName": "Voxerra_API",
-        "projectPath": "/home/skrinal/Desktop/SOC-Voxerra-API/Voxerra_API.csproj",
-        "packagesPath": "/home/skrinal/.nuget/packages/",
-        "outputPath": "/home/skrinal/Desktop/SOC-Voxerra-API/obj/",
+        "projectPath": "C:\\SOC-Voxerra-API\\Voxerra_API.csproj",
+        "packagesPath": "C:\\Users\\Skrinal\\.nuget\\packages\\",
+        "outputPath": "C:\\SOC-Voxerra-API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/skrinal/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Skrinal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/home/skrinal/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -122,7 +129,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/skrinal/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

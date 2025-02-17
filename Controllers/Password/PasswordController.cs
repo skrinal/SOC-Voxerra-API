@@ -32,7 +32,6 @@ namespace Voxerra_API.Controllers.Password
                 var details = new EmailDetails
                 {
                     ToEmail = request.Email,
-                    Subject = "Password Changed",
                     PasswordEmail = true
                 };
                 await _emailMessage.SendEmail(details);

@@ -102,7 +102,7 @@ namespace Voxerra_API.Functions.Email
             }
             else if (emailDetails.TwoAuthEmail)
             {
-                emailMessage.Subject = "";
+                emailMessage.Subject = "Two-Auth Code";
                 bodyBuilder.HtmlBody = $@"<!DOCTYPE html>
                                 <html lang='en'>
                                 <head>
@@ -152,7 +152,7 @@ namespace Voxerra_API.Functions.Email
                                             color: rgb(132, 0, 255);
                                             font-weight: 1000;
                                             font-size: 25px;
-                                        }
+                                        }}
                                     </style>
                                 </head>
                                 <body>
@@ -163,7 +163,7 @@ namespace Voxerra_API.Functions.Email
                                         <div class='content'>
                                             <h2>New sign in to Voxerra</h2>
                                             <p>From you account {emailDetails.UserName}</p>
-                                            <p class='location'>Location of sign in: <br> {emailDetails.Locations} <br> {emailsDetails.IpAdress}</p>
+                                            <p class='location'>Location of sign in: <br> {emailDetails.Location} <br> {emailDetails.IpAdress}</p>
                                             <p>If this is your doing, you can safely ignor this email.</p>
                                             <p>Otherwise contant support on this email.</p>
                                         </div>

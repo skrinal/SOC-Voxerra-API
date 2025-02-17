@@ -24,6 +24,7 @@ builder.Services.Configure<IpRateLimitOptions>(options =>
 builder.Services.AddInMemoryRateLimiting(); 
 builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
+builder.Services.AddHttpClient();
 
 
 builder.WebHost.UseKestrel();

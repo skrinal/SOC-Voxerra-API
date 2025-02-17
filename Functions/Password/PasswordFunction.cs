@@ -23,7 +23,6 @@ namespace Voxerra_API.Functions.Password
                 {
                     Code = resetToken,
                     ToEmail = email,
-                    Subject = "Reset Password Code",
                     PasswordEmail = true
                 };
 

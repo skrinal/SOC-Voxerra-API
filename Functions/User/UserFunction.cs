@@ -12,7 +12,7 @@ namespace Voxerra_API.Functions.User
     {
         private readonly ChatAppContext _chatAppContext = chatAppContext;
         private readonly IEmailFunction _emailFunction = emailFunction;
-        private readonly HttpClient _httpClient = httpClient;
+        //private readonly HttpClient _httpClient = httpClient;
         public async Task<AuthenticateResponse?> Authenticate(string userName, string password, string ipAdress)
         {
             try
@@ -112,7 +112,7 @@ namespace Voxerra_API.Functions.User
                     .Select(x => x.LoginAlertsEnabled)
                     .FirstOrDefaultAsync();
 
-                if (LoginAlertsEnabled)
+                /*if (LoginAlertsEnabled)
                 {
                     var url = $"http://ip-api.com/json/{ipAdress}";
                     var response = await _httpClient.GetStringAsync(url);
@@ -127,7 +127,7 @@ namespace Voxerra_API.Functions.User
                     };
 
                     _emailFunction.SendEmail(emailPrompt);
-                }
+                }*/
 
                 return new AuthenticateResponse
                 {

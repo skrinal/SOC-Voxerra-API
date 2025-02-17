@@ -67,7 +67,6 @@ namespace Voxerra_API.Functions.Registration
                 {
                     Code = verificationCode,
                     ToEmail = email,
-                    Subject = "Verification Code",
                     RegistrationEmail = true
                 };
 
@@ -90,7 +89,7 @@ namespace Voxerra_API.Functions.Registration
 
         public (string encryptedPassword, byte[] salt) EncryptPassword(string password)
         {
-            byte[] salt = new byte[128 / 8];
+            byte[] salt = new byte[256 / 8];
             RandomNumberGenerator.Fill(salt);
 
             var encryptedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
