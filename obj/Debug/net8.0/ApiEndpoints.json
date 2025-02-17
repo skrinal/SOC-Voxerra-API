@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Voxerra_API.Controllers.Authenticate.AuthenticateController",
+    "Method": "TwoAuthConfirm",
+    "RelativePath": "Authenticate/TwoAuth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.Authenticate.TwoFactorAuthRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Voxerra_API.Controllers.FriendAdd.FriendAddController",
     "Method": "FriendRequest",
     "RelativePath": "FriendAdd/FriendRequest",
@@ -234,6 +250,118 @@
       {
         "Name": "request",
         "Type": "Voxerra_API.Controllers.Registration.RegistrationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.UserSettings.UserSettingsController",
+    "Method": "ChangeBio",
+    "RelativePath": "UserSettings/ChangeBio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.UserSettings.UserBioChangeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.UserSettings.UserSettingsController",
+    "Method": "ChangeEmail",
+    "RelativePath": "UserSettings/ChangeEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.UserSettings.UserEmailChangeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.UserSettings.UserSettingsController",
+    "Method": "ChangePassword",
+    "RelativePath": "UserSettings/ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.UserSettings.UserPasswordChangeReques",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.UserSettings.UserSettingsController",
+    "Method": "ChangeUserName",
+    "RelativePath": "UserSettings/ChangeUserName",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.UserSettings.UserNameChangeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.UserSettings.UserSettingsController",
+    "Method": "DeleteUser",
+    "RelativePath": "UserSettings/DeleteUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.UserSettings.UserSettingsController",
+    "Method": "ReturnEmail",
+    "RelativePath": "UserSettings/ReturnEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Voxerra_API.Controllers.UserSettings.UserSettingsController",
+    "Method": "TwoAuthChange",
+    "RelativePath": "UserSettings/TwoAuth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Voxerra_API.Controllers.UserSettings.UserTwoAuthRequest",
         "IsRequired": true
       }
     ],
