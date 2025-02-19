@@ -54,8 +54,7 @@
               "RelativeToolTip": "Functions\\Email\\EmailFunction.cs",
               "ViewState": "AgIAALUAAAAAAAAAAADwvx8BAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T15:56:06.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T15:56:06.78Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "Functions\\User\\UserFunction.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAD4vykAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T19:49:28.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T19:49:28.477Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "Controllers\\Authenticate\\AuthenticateController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAlwCMAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T19:49:11.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T19:49:11.029Z"
             },
             {
               "$type": "Document",
@@ -93,8 +90,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAAEkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T17:40:53.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-29T17:40:53.511Z"
             },
             {
               "$type": "Document",
@@ -106,8 +102,7 @@
               "RelativeToolTip": "Controllers\\Authenticate\\AuthenticateRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T22:45:15.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T22:45:15.974Z"
             },
             {
               "$type": "Document",
@@ -117,7 +112,7 @@
               "RelativeDocumentMoniker": "Helpers\\JwtMiddleware.cs",
               "ToolTip": "C:\\SOC-Voxerra-API\\Helpers\\JwtMiddleware.cs",
               "RelativeToolTip": "Helpers\\JwtMiddleware.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwDMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-02T15:04:20.644Z",
               "EditorCaption": ""
