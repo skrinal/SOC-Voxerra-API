@@ -64,8 +64,7 @@ app.Urls.Add("http://0.0.0.0:42070");
 
 
 app.UseIpRateLimiting(); 
-
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseRouting();
 app.UseMiddleware<JwtMiddleware>();
 

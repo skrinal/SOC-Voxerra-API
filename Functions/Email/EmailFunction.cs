@@ -325,14 +325,14 @@ namespace Voxerra_API.Functions.Email
             }
 
             
-            var logoPath = "Resources/logo_voxerra_whitev2.png"; // Replace with the actual file path
+            var logoPath = "Resources/logo_voxerra_whitev2.png";
             var logoAttachment = new MimePart("image", "png")
             {
                 Content = new MimeContent(File.OpenRead(logoPath)),
                 ContentDisposition = new ContentDisposition(ContentDisposition.Inline),
-                ContentTransferEncoding = (ContentEncoding)ContentTransferEncoding.Base64,
+                ContentTransferEncoding = ContentEncoding.Base64,
                 FileName = "logo_voxerra_whitev2.png",
-                Headers = { { "Content-ID", "<logo_voxerra_image>" } } // This matches the CID in the HTML content
+                Headers = { { "Content-ID", "<logo_voxerra_image>" } }
             };
 
             
