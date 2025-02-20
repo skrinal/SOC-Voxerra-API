@@ -1,21 +1,28 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using Voxerra_API.Functions.Password;
 
 namespace Voxerra_API.Helpers
 {
     public class JwtMiddleware(RequestDelegate next)
     {
         private readonly RequestDelegate _next = next;
-
+            
         public async Task Invoke(HttpContext context, IUserFunction userFunction, ILogger<JwtMiddleware> logger)
         {
             logger.LogInformation("Incoming request: {Path}", context.Request.Path);
-
+            
+            if (context.Request.Path.StartsWithSegments("/Password"))
+            {
+                await _next(context);
+                return;
+            }
+            
             var token = context.Request.Headers.Authorization.FirstOrDefault()?.Split(' ').Last();
             if (token == null)
                 token = context.Request.Headers["ChatHubBearer"].FirstOrDefault()?.Split(' ').Last();
-
+            
             if (token != null)
                 AttachUserToContext(context, userFunction, token);
 

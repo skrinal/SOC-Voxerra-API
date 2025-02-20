@@ -192,6 +192,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Voxerra_API.Controllers.Password.PasswordController",
+    "Method": "SendNewCodeToEmail",
+    "RelativePath": "Password/SendNewCode",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Voxerra_API.Controllers.Registration.RegistrationController",
     "Method": "ConfirmRegistration",
     "RelativePath": "Registration/ConfirmRegistration",

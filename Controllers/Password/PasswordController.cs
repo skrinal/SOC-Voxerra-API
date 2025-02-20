@@ -27,7 +27,7 @@ namespace Voxerra_API.Controllers.Password
         {
             var changePass = _passwordFunction.ChangePasswordUsingCode(request.Email, request.Code, request.NewPassword);
 
-            if (changePass.Result == true)
+            if (changePass.Result)
             {
                 var details = new EmailDetails
                 {
@@ -38,6 +38,18 @@ namespace Voxerra_API.Controllers.Password
                 return Ok();
             }
             return BadRequest(new { message = "Failed to changed User password." });
+        }
+        
+        [HttpPost("SendNewCode")]
+        public async Task<ActionResult> SendNewCodeToEmail([FromBody] string email)
+        {
+            var sendCode = _passwordFunction.SendCodeAgain(email);
+
+            if (sendCode.Result)
+            {
+                return Ok();
+            }
+            return BadRequest(new { message = "Failed to send code." });
         }
 
         /*TEST TEST

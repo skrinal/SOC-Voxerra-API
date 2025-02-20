@@ -31,13 +31,14 @@ namespace Voxerra_API.Functions.Password
                 return true;
             }
 
-            return false;  // Invalid or expired token
+            return false;  
         }
 
         public int GeneratePasswordResetToken(string email)
         {
             var token = _userRegistrationFunction.GenerateCode(); 
 
+            
             var pendingPassword = new TblPendingPassword
             {
                 Code = token,
@@ -50,17 +51,14 @@ namespace Voxerra_API.Functions.Password
 
             return token;
         }
-
         public async Task<bool> ChangePasswordUsingCode(string email, int code, string newPassword)
         {
             var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => (x.Code == code && x.Email == email));
 
-            //
             if (resetToken == null || resetToken.ExpireTime < DateTime.UtcNow)
             {
                 return false; 
             }
-            //
 
             var user = _chatAppContext.Tblusers.FirstOrDefault(x => x.Email == resetToken.Email);
             if (user == null)
@@ -80,6 +78,30 @@ namespace Voxerra_API.Functions.Password
             await _chatAppContext.SaveChangesAsync();
 
             return true; 
+        }
+        public async Task<bool> SendCodeAgain(string email)
+        {
+            var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => (x.Email == email));
+
+            if (resetToken != null )
+            {
+                resetToken.Code = _userRegistrationFunction.GenerateCode();
+                resetToken.ExpireTime = DateTime.UtcNow.AddMinutes(5);
+                
+                var details = new EmailDetails
+                {
+                    Code = resetToken.Code,
+                    ToEmail = email,
+                    PasswordEmail = true
+                };
+
+                await _emailMessage.SendEmail(details);
+                
+                _chatAppContext.Tblpendingpassword.Update(resetToken);
+                await _chatAppContext.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
     }
 }

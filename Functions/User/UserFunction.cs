@@ -34,7 +34,6 @@ namespace Voxerra_API.Functions.User
                     var emailPrompt = new EmailDetails
                     {
                         ToEmail = entity.Email,
-                        //Subject = "Two-Factor Auth Code",
                         Code = AuthCode,
                         TwoAuthEmail = true
                         
