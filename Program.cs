@@ -59,8 +59,8 @@ builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
-app.Urls.Add("https://0.0.0.0:42069");
-app.Urls.Add("http://0.0.0.0:42070");
+app.Urls.Add("https://0.0.0.0:433");
+app.Urls.Add("http://0.0.0.0:80");
 
 
 app.UseIpRateLimiting(); 
