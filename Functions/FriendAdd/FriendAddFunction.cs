@@ -50,16 +50,30 @@ namespace Voxerra_API.Functions.FriendAdd
         
         public async Task<UserPublicProfile> PublicProfile(int IdOfUser)
         {
-            var user = await _chatAppContext.Tblusers.FirstOrDefaultAsync(x => x.Id == IdOfUser);
-            var friendsCount = await _chatAppContext.Tbluserfriends.CountAsync(x => x.UserId == IdOfUser);
-            
+            var userProfile = await _chatAppContext.Tblusers
+                .Where(x => x.Id == IdOfUser)
+                .Select(user => new 
+                {
+                    user.Bio,
+                    user.IsOnline,
+                    user.CreationDate,
+                    FriendsCount = _chatAppContext.Tbluserfriends.Count(f => f.UserId == IdOfUser)
+                })
+                .FirstOrDefaultAsync();
+
+            if (userProfile == null)
+            {
+                return null;
+            }
+
             var response = new UserPublicProfile
             {
-                Bio = user.Bio,
-                FriendsCount = friendsCount,
-                IsOnline = user.IsOnline,
-                CreationYear = user.CreationDate.Year.ToString()
+                Bio = userProfile.Bio,
+                FriendsCount = userProfile.FriendsCount,
+                IsOnline = userProfile.IsOnline,
+                CreationYear = userProfile.CreationDate.Year.ToString()
             };
+
             
             return response;
         }

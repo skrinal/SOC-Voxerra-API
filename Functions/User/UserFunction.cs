@@ -98,12 +98,23 @@ namespace Voxerra_API.Functions.User
 
                 if (existingAuth == null) return null;
                 
-                var entity = await _chatAppContext.Tblusers
-                    .FirstOrDefaultAsync(x => x.Id == userId);
+                var userWithSettings  = await _chatAppContext.Tblusers
+                    .Where(x => x.Id == userId)
+                    .Select(u => 
+                        new
+                        {
+                            User = u,
+                            LoginAlertsEnabled = _chatAppContext.Tblusersettings
+                                .Where(s => s.UserId == u.Id)
+                                .Select(s => s.LoginAlertsEnabled)
+                                .FirstOrDefault()
+                        })
+                    .FirstOrDefaultAsync();
                 
-                if (entity == null) return null;
                 
-                var token = GenerateJwtToken(entity);
+                if (userWithSettings?.User == null) return null;
+                
+                var token = GenerateJwtToken(userWithSettings.User);
 
 
                 var LoginAlertsEnabled = await _chatAppContext.Tblusersettings

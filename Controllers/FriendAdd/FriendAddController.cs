@@ -3,7 +3,8 @@ namespace Voxerra_API.Controllers.FriendAdd
 {
     [ApiController]
     [Route("[controller]")]
-    public class FriendAddController(IFriendAddFunction friendAddFunction) : MvcController
+    [Authorize]
+    public class FriendAddController(IFriendAddFunction friendAddFunction) :  BaseController
     {
         public IFriendAddFunction _friendAddFunction = friendAddFunction;
 
@@ -29,19 +30,23 @@ namespace Voxerra_API.Controllers.FriendAdd
         
         
         [HttpPost("FriendRequest")]
-        public async Task<ActionResult> FriendRequest([FromBody] FriendRequest request)
+        public async Task<ActionResult> FriendRequest([FromBody] int ToUserId)
         {
-            var result = await _friendAddFunction.FriendAddRequset(request.FromUserId, request.ToUserId);
+            if (CurrentUser == null) return Unauthorized();
+            
+            var result = await _friendAddFunction.FriendAddRequset(CurrentUser.Id, ToUserId);
             
             return Ok();
         }
 
         [HttpPost("FriendRequestList")]
-        public async Task<ActionResult> FriendRequestList([FromBody] int IdOfUser)
+        public async Task<ActionResult> FriendRequestList()
         {
+            if (CurrentUser == null) return Unauthorized();
+            
             var result = new FriendSearchResponse
             {
-                Users = await _friendAddFunction.PendingRequestList(IdOfUser)
+                Users = await _friendAddFunction.PendingRequestList(CurrentUser.Id)
             }; 
             
             return Ok(result);
@@ -51,8 +56,10 @@ namespace Voxerra_API.Controllers.FriendAdd
         [HttpPost("FriendRequestDecision")]
         public async Task<ActionResult> FriendRequestDecision([FromBody] FriendDecisionRequest request)
         {
+            if (CurrentUser == null) return Unauthorized();
+            
             var result = await _friendAddFunction.FriendRequestDecision
-                (request.UserRequestFromId, request.UserRequestToId, request.Decision);
+                (request.UserRequestFromId, CurrentUser.Id, request.Decision);
             
             return Ok(result);
         }
