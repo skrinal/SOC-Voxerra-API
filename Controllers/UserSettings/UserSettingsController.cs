@@ -33,17 +33,24 @@ namespace Voxerra_API.Controllers.UserSettings
         [HttpPost("ChangeEmail")]
         public async Task<ActionResult> ChangeEmail([FromBody] UserEmailChangeRequest request)
         {
-            if (CurrentUser == null) return Unauthorized();
-
-            var emailPrompt = new EmailDetails
+            try
             {
-                ToEmail = CurrentUser.Email,
+                if (CurrentUser == null) return Unauthorized();
+
+                var emailPrompt = new EmailDetails
+                {
+                    ToEmail = CurrentUser.Email,
+
+                };
+                var email = _emailfunction.SendEmail(emailPrompt);
+                return Ok();
+
                 
-            };
-            var email =_emailfunction.SendEmail();
-            if (result) return Ok();
-            
-            return BadRequest();
+            }
+            catch (Exception )
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPost("ChangeEmailConfirm")]
