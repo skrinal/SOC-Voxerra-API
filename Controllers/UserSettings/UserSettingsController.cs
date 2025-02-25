@@ -3,14 +3,17 @@ namespace Voxerra_API.Controllers.UserSettings
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserSettingsController(ISettingFunction settingFunction) : MvcController
+    public class UserSettingsController(ISettingFunction settingFunction, IEmailFunction emailFunction) :  BaseController
     {
         private ISettingFunction _settingFunction = settingFunction;
+        private IEmailFunction _emailfunction = emailFunction;
     
         [HttpPost("ChangeUserName")]
-        public async Task<ActionResult> ChangeUserName([FromBody] UserNameChangeRequest request)
+        public async Task<ActionResult> ChangeUserName([FromBody] string NewUserName)
         {
-            var result = await _settingFunction.ChangeUserName(request.UserId, request.NewUserName);
+            if (CurrentUser == null) return Unauthorized();
+
+            var result = await _settingFunction.ChangeUserName(CurrentUser.Id, NewUserName);
             if (result) return Ok();
             
             return BadRequest();
@@ -30,46 +33,71 @@ namespace Voxerra_API.Controllers.UserSettings
         [HttpPost("ChangeEmail")]
         public async Task<ActionResult> ChangeEmail([FromBody] UserEmailChangeRequest request)
         {
+            if (CurrentUser == null) return Unauthorized();
+
+            var emailPrompt = new EmailDetails
+            {
+                ToEmail = CurrentUser.Email,
+                
+            };
+            var email =_emailfunction.SendEmail();
+            if (result) return Ok();
+            
+            return BadRequest();
+        }
+
+        [HttpPost("ChangeEmailConfirm")]
+        public async Task<ActionResult> ChangeEmailConfirm([FromBody] UserEmailChangeRequest request)
+        {
             var result = await _settingFunction.ChangeEmail(request.UserId, request.NewEmail);
             if (result) return Ok();
             
             return BadRequest();
         }
+
+        
     
         [HttpPost("ChangeBio")]
-        public async Task<ActionResult> ChangeBio([FromBody] UserBioChangeRequest request)
+        public async Task<ActionResult> ChangeBio([FromBody] string NewBio)
         {
-            var result = await _settingFunction.ChangeBio(request.UserId, request.NewBio);
+            if (CurrentUser == null) return Unauthorized();
+
+            var result = await _settingFunction.ChangeBio(CurrentUser.Id, NewBio);
             if (result) return Ok();
             
             return BadRequest();
         }
 
         [HttpPost("ChangePassword")]
-        public async Task<ActionResult> ChangePassword([FromBody] UserPasswordChangeReques request)
+        public async Task<ActionResult> ChangePassword([FromBody] string NewPassword)
         {
-            var result = await _settingFunction.ChangePassword(request.UserId, request.NewPassword);
+            if (CurrentUser == null) return Unauthorized();
+
+            var result = await _settingFunction.ChangePassword(CurrentUser.Id, NewPassword);
             if (result) return Ok();
             
             return BadRequest();
         }
         
         
-        
-        
         [HttpPost("DeleteUser")]
-        public async Task<ActionResult> DeleteUser([FromBody] int UserId)
+        public async Task<ActionResult> DeleteUser()
         {
-            var result = await _settingFunction.DeleteAccount(UserId);
+            if (CurrentUser == null) return Unauthorized();
+
+            var result = await _settingFunction.DeleteAccount(CurrentUser.Id);
+
             if (result) return Ok();
             
             return BadRequest();
         }
 
         [HttpPost("TwoAuth")]
-        public async Task<ActionResult> TwoAuthChange([FromBody] UserTwoAuthRequest request)
+        public async Task<ActionResult> TwoAuthChange([FromBody] bool Decision)
         {
-            var result = await _settingFunction.TwoAuthUpdate(request.UserId, request.Decision);
+            if (CurrentUser == null) return Unauthorized();
+            
+            var result = await _settingFunction.TwoAuthUpdate(CurrentUser.Id, Decision);
             if (result) return Ok();
             
             return BadRequest();
