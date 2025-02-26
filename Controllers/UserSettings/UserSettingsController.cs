@@ -109,5 +109,26 @@ namespace Voxerra_API.Controllers.UserSettings
             
             return BadRequest();
         }
+
+        [HttpPost("ChangePicture")]
+        public async Task<ActionResult> ChangePicture(IFormFile file)
+        {
+            if (CurrentUser == null) return Unauthorized();
+            
+            if (file == null || file.Length == 0) return BadRequest();
+            
+            if (file.Length > 5 * 1024 * 1024) return BadRequest();
+
+            var allowedTypes = new[] { "image/jpeg", "image/png", "image/gif" };
+            if (!allowedTypes.Contains(file.ContentType.ToLower()))
+                return BadRequest("Invalid file type. Only JPEG, PNG, and GIF allowed.");
+
+            var versionNumber = int.Parse(CurrentUser.AvatarVersion?.TrimStart('v') ?? "0") + 1;
+            var newFileName = $"v{versionNumber}_{CurrentUser.Id}{Path.GetExtension(file.FileName)}";
+
+            if (result) return Ok();
+            
+            return BadRequest();
+        }
     }
 }
