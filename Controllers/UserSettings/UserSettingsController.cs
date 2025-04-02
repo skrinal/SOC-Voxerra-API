@@ -45,7 +45,6 @@ namespace Voxerra_API.Controllers.UserSettings
                 var email = _emailfunction.SendEmail(emailPrompt);
                 return Ok();
 
-                
             }
             catch (Exception )
             {
@@ -54,9 +53,11 @@ namespace Voxerra_API.Controllers.UserSettings
         }
 
         [HttpPost("ChangeEmailConfirm")]
-        public async Task<ActionResult> ChangeEmailConfirm([FromBody] UserEmailChangeRequest request)
+        public async Task<ActionResult> ChangeEmailConfirm([FromBody] string newEmail)
         {
-            var result = await _settingFunction.ChangeEmail(request.UserId, request.NewEmail);
+            if (CurrentUser == null) return Unauthorized();
+
+            var result = await _settingFunction.ChangeEmail(CurrentUser.Id, newEmail);
             if (result) return Ok();
             
             return BadRequest();

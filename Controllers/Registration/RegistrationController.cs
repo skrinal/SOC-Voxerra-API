@@ -77,9 +77,9 @@ namespace Voxerra_API.Controllers.Registration
 
 
         [HttpPost("IsEmailUnique")]
-        public async Task<ActionResult> IsEmailUnique([FromBody] IsEmailUniqueRequest request)
+        public async Task<ActionResult> IsEmailUnique([FromBody] string email)
         {
-            var IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(request.Email);
+            var IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(email);
             
             if (IsEmailUnique == false)
             {
