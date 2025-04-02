@@ -1,10 +1,12 @@
-﻿namespace Voxerra_API.Functions.Password
+﻿
+namespace Voxerra_API.Functions.Password
 {
     public interface IPasswordFunction
     {
-        Task<bool> ChangePasswordUsingCode(string email, int code, string newPassword);
         int GeneratePasswordResetToken(string email);
         Task<bool> ResetPassword(string email);
+        Task<Guid> ValidateCode(int code, string email);
+        Task<PassCResult> ChangePasswordUsingCode(Guid guidAuth, string newPassword);
         Task<bool> SendCodeAgain(string email);
     }
 }

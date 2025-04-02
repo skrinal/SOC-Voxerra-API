@@ -126,7 +126,7 @@ namespace Voxerra_API.Controllers.UserSettings
             var versionNumber = int.Parse(CurrentUser.AvatarVersion?.TrimStart('v') ?? "0") + 1;
             var newFileName = $"v{versionNumber}_{CurrentUser.Id}{Path.GetExtension(file.FileName)}";
 
-            if (result) return Ok();
+            //if (result) return Ok();
             
             return BadRequest();
         }

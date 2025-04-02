@@ -141,8 +141,8 @@ namespace Voxerra_API.Functions.User
 
                 return new AuthenticateResponse
                 {
-                    Id = entity.Id,
-                    UserName = entity.UserName,
+                    Id = userWithSettings.User.Id,
+                    UserName = userWithSettings.User.UserName,
                     Token = token,
                     RequiresTwoFactorAuth = false
                 };

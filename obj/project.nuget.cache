@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qq2079Qi9Sw=",
+  "dgSpecHash": "GZrsuB6vDGw=",
   "success": true,
-  "projectFilePath": "/home/skrinal/Desktop/SOC-Voxerra-API/Voxerra_API.csproj",
+  "projectFilePath": "/home/skrinal/SOC-Voxerra-API/Voxerra_API.csproj",
   "expectedPackageFiles": [
     "/home/skrinal/.nuget/packages/aspnetcoreratelimit/5.0.0/aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "/home/skrinal/.nuget/packages/bouncycastle.cryptography/2.5.0/bouncycastle.cryptography.2.5.0.nupkg.sha512",

@@ -1,6 +1,4 @@
-﻿using Org.BouncyCastle.Asn1.Ocsp;
-using System;
-using Voxerra_API.Entities;
+﻿using Voxerra_API.Controllers.Password;
 using Voxerra_API.Functions.Registration;
 
 namespace Voxerra_API.Functions.Password
@@ -51,33 +49,43 @@ namespace Voxerra_API.Functions.Password
 
             return token;
         }
-        public async Task<bool> ChangePasswordUsingCode(string email, int code, string newPassword)
+
+        public async Task<Guid> ValidateCode(int code, string email)
         {
-            var resetToken = _chatAppContext.Tblpendingpassword.FirstOrDefault(x => (x.Code == code && x.Email == email));
+            var validCodeCheck = await _chatAppContext.Tblpendingpassword
+                .FirstOrDefaultAsync(x => x.Email == email
+                                        && x.Code == code 
+                                        && x.ExpireTime > DateTime.UtcNow);
+            
+            if (validCodeCheck == null) return Guid.Empty;
+            
+            validCodeCheck.AuthString = Guid.NewGuid();
+            
+            _chatAppContext.Tblpendingpassword.Update(validCodeCheck);
+            await _chatAppContext.SaveChangesAsync();
+            
+            return validCodeCheck.AuthString;
+        }
+        public async Task<PassCResult> ChangePasswordUsingCode(Guid guidAuth, string newPassword)
+        {
+            var resetToken = await _chatAppContext.Tblpendingpassword
+                .SingleOrDefaultAsync(x => x.AuthString == guidAuth);
 
-            if (resetToken == null || resetToken.ExpireTime < DateTime.UtcNow)
-            {
-                return false; 
-            }
+            if (resetToken == null ) return new PassCResult { Success = false };
 
-            var user = _chatAppContext.Tblusers.FirstOrDefault(x => x.Email == resetToken.Email);
-            if (user == null)
-            {
-                return false; 
-            }
-
-          
+            var user = await _chatAppContext.Tblusers
+                .SingleOrDefaultAsync(x => x.Email == resetToken.Email);
+            if (user == null) return new PassCResult { Success = false };
+            
             var passwordHash = _userRegistrationFunction.EncryptPassword(newPassword);
-
             user.Password = passwordHash.encryptedPassword;
             user.StoredSalt = passwordHash.salt;
-
-
+            
             _chatAppContext.Tblpendingpassword.Remove(resetToken); // Remove used token
             _chatAppContext.Tblusers.Update(user);
             await _chatAppContext.SaveChangesAsync();
 
-            return true; 
+            return new PassCResult { Success = true, Email = resetToken.Email };
         }
         public async Task<bool> SendCodeAgain(string email)
         {

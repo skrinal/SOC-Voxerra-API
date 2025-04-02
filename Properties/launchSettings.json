@@ -2,14 +2,14 @@
   "profiles": {
     "Voxerra_API": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "https://0.0.0.0:7264;http://0.0.0.0:5068"
+        "ASPNETCORE_URLS": "https://0.0.0.0:42069;http://0.0.0.0:42070"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://0.0.0.0:7264;http://0.0.0.0:5068",
+      "applicationUrl": "https://0.0.0.0:42069;http://0.0.0.0:42070",
       "sqlDebugging": true
     },
     "IIS Express": {

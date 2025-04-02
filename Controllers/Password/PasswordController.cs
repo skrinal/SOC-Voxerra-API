@@ -22,16 +22,26 @@ namespace Voxerra_API.Controllers.Password
             return BadRequest(new { message = "User email doesn't exist." });
         }
 
-        [HttpPost("ResetPasswordConfirmation")]
-        public async Task<ActionResult> ResetPasswordConfirmation([FromBody] PasswordResetConfirmationRequest request)
+        [HttpPost("RPCodeValidation")]
+        public async Task<ActionResult> ResetPasswordCodeValidation([FromBody] RPCodeRequest request)
         {
-            var changePass = _passwordFunction.ChangePasswordUsingCode(request.Email, request.Code, request.NewPassword);
+            var changePass = _passwordFunction.ValidateCode(request.Code, request.Email);
 
-            if (changePass.Result)
+            if (changePass.Result != Guid.Empty) return Ok(changePass.Result);
+            
+            return BadRequest(new { message = "Wrong code." });
+        }
+        
+        [HttpPost("RPConfirm")]
+        public async Task<ActionResult> ResetPasswordConfirm([FromBody] RPConfirmRequest request)
+        {
+            var result = _passwordFunction.ChangePasswordUsingCode(request.GuidAuth, request.NewPassword);
+
+            if (result.Result.Success)
             {
                 var details = new EmailDetails
                 {
-                    ToEmail = request.Email,
+                    ToEmail = result.Result.Email,
                     PasswordEmail = true
                 };
                 await _emailMessage.SendEmail(details);

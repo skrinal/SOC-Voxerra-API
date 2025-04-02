@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblmessages`
+-- Table structure for table `Tblmessages`
 --
 
-CREATE TABLE `tblmessages` (
+CREATE TABLE `Tblmessages` (
   `Id` int(11) NOT NULL,
   `FromUserId` int(11) NOT NULL,
   `ToUserId` int(11) NOT NULL,
@@ -39,10 +39,10 @@ CREATE TABLE `tblmessages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblpendingfriendrequest`
+-- Table structure for table `Tblpendingfriendrequest`
 --
 
-CREATE TABLE `tblpendingfriendrequest` (
+CREATE TABLE `Tblpendingfriendrequest` (
   `Id` int(11) NOT NULL,
   `FromUserId` int(11) NOT NULL,
   `ToUserId` int(11) NOT NULL
@@ -51,10 +51,10 @@ CREATE TABLE `tblpendingfriendrequest` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblpendingpassword`
+-- Table structure for table `Tblpendingpassword`
 --
 
-CREATE TABLE `tblpendingpassword` (
+CREATE TABLE `Tblpendingpassword` (
   `Id` int(11) NOT NULL,
   `Code` int(11) NOT NULL,
   `Email` longtext NOT NULL,
@@ -64,10 +64,10 @@ CREATE TABLE `tblpendingpassword` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblpendingusers`
+-- Table structure for table `Tblpendingusers`
 --
 
-CREATE TABLE `tblpendingusers` (
+CREATE TABLE `Tblpendingusers` (
   `Id` int(11) NOT NULL,
   `UserName` longtext NOT NULL,
   `Email` longtext NOT NULL,
@@ -80,10 +80,10 @@ CREATE TABLE `tblpendingusers` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbltwofactorauth`
+-- Table structure for table `Tbltwofactorauth`
 --
 
-CREATE TABLE `tbltwofactorauth` (
+CREATE TABLE `Tbltwofactorauth` (
   `Id` int(11) NOT NULL,
   `UserId` int(11) NOT NULL,
   `Code` int(11) NOT NULL,
@@ -93,10 +93,10 @@ CREATE TABLE `tbltwofactorauth` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbluserfriends`
+-- Table structure for table `Tbluserfriends`
 --
 
-CREATE TABLE `tbluserfriends` (
+CREATE TABLE `Tbluserfriends` (
   `Id` int(11) NOT NULL,
   `UserId` int(11) NOT NULL,
   `FriendId` int(11) NOT NULL,
@@ -106,10 +106,10 @@ CREATE TABLE `tbluserfriends` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblusers`
+-- Table structure for table `Tblusers`
 --
 
-CREATE TABLE `tblusers` (
+CREATE TABLE `Tblusers` (
   `Id` int(11) NOT NULL,
   `UserName` longtext NOT NULL,
   `Password` longtext NOT NULL,
@@ -123,19 +123,19 @@ CREATE TABLE `tblusers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tblusers`
+-- Dumping data for table `Tblusers`
 --
 
-INSERT INTO `tblusers` (`Id`, `UserName`, `Password`, `Email`, `StoredSalt`, `AvatarSourceName`, `Bio`, `IsOnline`, `LastLogonTime`, `CreationDate`) VALUES
+INSERT INTO `Tblusers` (`Id`, `UserName`, `Password`, `Email`, `StoredSalt`, `AvatarSourceName`, `Bio`, `IsOnline`, `LastLogonTime`, `CreationDate`) VALUES
 (3, 'skrinal', 'o32t2xkWo8bzB37k37p2QynKApgMh7UFDKWuheADO6c=', 'skrinalghost@gmail.com', 0xd46b8f25b709ba2102dc7d3a9d224b56c00dd87eb0c16192c462aede2b766277, 'defaulticon.png', '', 0, '2025-02-17 02:01:10.898076', '2025-02-17 02:01:10.898164');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblusersettings`
+-- Table structure for table `Tblusersettings`
 --
 
-CREATE TABLE `tblusersettings` (
+CREATE TABLE `Tblusersettings` (
   `Id` int(11) NOT NULL,
   `UserId` int(11) NOT NULL,
   `TwoFactorEnabled` tinyint(1) NOT NULL,
@@ -144,10 +144,10 @@ CREATE TABLE `tblusersettings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tblusersettings`
+-- Dumping data for table `Tblusersettings`
 --
 
-INSERT INTO `tblusersettings` (`Id`, `UserId`, `TwoFactorEnabled`, `LoginAlertsEnabled`, `WhereIsUserLoggedIn`) VALUES
+INSERT INTO `Tblusersettings` (`Id`, `UserId`, `TwoFactorEnabled`, `LoginAlertsEnabled`, `WhereIsUserLoggedIn`) VALUES
 (3, 3, 0, 0, '');
 
 -- --------------------------------------------------------
@@ -173,58 +173,58 @@ INSERT INTO `__efmigrationshistory` (`MigrationId`, `ProductVersion`) VALUES
 --
 
 --
--- Indexes for table `tblmessages`
+-- Indexes for table `Tblmessages`
 --
-ALTER TABLE `tblmessages`
+ALTER TABLE `Tblmessages`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `IX_Tblmessages_FromUserId` (`FromUserId`),
   ADD KEY `IX_Tblmessages_ToUserId` (`ToUserId`);
 
 --
--- Indexes for table `tblpendingfriendrequest`
+-- Indexes for table `Tblpendingfriendrequest`
 --
-ALTER TABLE `tblpendingfriendrequest`
+ALTER TABLE `Tblpendingfriendrequest`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `IX_Tblpendingfriendrequest_FromUserId` (`FromUserId`),
   ADD KEY `IX_Tblpendingfriendrequest_ToUserId` (`ToUserId`);
 
 --
--- Indexes for table `tblpendingpassword`
+-- Indexes for table `Tblpendingpassword`
 --
-ALTER TABLE `tblpendingpassword`
+ALTER TABLE `Tblpendingpassword`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `tblpendingusers`
+-- Indexes for table `Tblpendingusers`
 --
-ALTER TABLE `tblpendingusers`
+ALTER TABLE `Tblpendingusers`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `tbltwofactorauth`
+-- Indexes for table `Tbltwofactorauth`
 --
-ALTER TABLE `tbltwofactorauth`
+ALTER TABLE `Tbltwofactorauth`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `IX_Tbltwofactorauth_UserId` (`UserId`);
 
 --
--- Indexes for table `tbluserfriends`
+-- Indexes for table `Tbluserfriends`
 --
-ALTER TABLE `tbluserfriends`
+ALTER TABLE `Tbluserfriends`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `IX_Tbluserfriends_FriendId` (`FriendId`),
   ADD KEY `IX_Tbluserfriends_UserId` (`UserId`);
 
 --
--- Indexes for table `tblusers`
+-- Indexes for table `Tblusers`
 --
-ALTER TABLE `tblusers`
+ALTER TABLE `Tblusers`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `tblusersettings`
+-- Indexes for table `Tblusersettings`
 --
-ALTER TABLE `tblusersettings`
+ALTER TABLE `Tblusersettings`
   ADD PRIMARY KEY (`Id`),
   ADD UNIQUE KEY `IX_Tblusersettings_UserId` (`UserId`);
 
@@ -239,51 +239,51 @@ ALTER TABLE `__efmigrationshistory`
 --
 
 --
--- AUTO_INCREMENT for table `tblmessages`
+-- AUTO_INCREMENT for table `Tblmessages`
 --
-ALTER TABLE `tblmessages`
+ALTER TABLE `Tblmessages`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tblpendingfriendrequest`
+-- AUTO_INCREMENT for table `Tblpendingfriendrequest`
 --
-ALTER TABLE `tblpendingfriendrequest`
+ALTER TABLE `Tblpendingfriendrequest`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tblpendingpassword`
+-- AUTO_INCREMENT for table `Tblpendingpassword`
 --
-ALTER TABLE `tblpendingpassword`
+ALTER TABLE `Tblpendingpassword`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tblpendingusers`
+-- AUTO_INCREMENT for table `Tblpendingusers`
 --
-ALTER TABLE `tblpendingusers`
+ALTER TABLE `Tblpendingusers`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tbltwofactorauth`
+-- AUTO_INCREMENT for table `Tbltwofactorauth`
 --
-ALTER TABLE `tbltwofactorauth`
+ALTER TABLE `Tbltwofactorauth`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbluserfriends`
+-- AUTO_INCREMENT for table `Tbluserfriends`
 --
-ALTER TABLE `tbluserfriends`
+ALTER TABLE `Tbluserfriends`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tblusers`
+-- AUTO_INCREMENT for table `Tblusers`
 --
-ALTER TABLE `tblusers`
+ALTER TABLE `Tblusers`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tblusersettings`
+-- AUTO_INCREMENT for table `Tblusersettings`
 --
-ALTER TABLE `tblusersettings`
+ALTER TABLE `Tblusersettings`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
@@ -291,37 +291,37 @@ ALTER TABLE `tblusersettings`
 --
 
 --
--- Constraints for table `tblmessages`
+-- Constraints for table `Tblmessages`
 --
-ALTER TABLE `tblmessages`
-  ADD CONSTRAINT `FK_Tblmessages_Tblusers_FromUserId` FOREIGN KEY (`FromUserId`) REFERENCES `tblusers` (`Id`),
-  ADD CONSTRAINT `FK_Tblmessages_Tblusers_ToUserId` FOREIGN KEY (`ToUserId`) REFERENCES `tblusers` (`Id`);
+ALTER TABLE `Tblmessages`
+  ADD CONSTRAINT `FK_Tblmessages_Tblusers_FromUserId` FOREIGN KEY (`FromUserId`) REFERENCES `Tblusers` (`Id`),
+  ADD CONSTRAINT `FK_Tblmessages_Tblusers_ToUserId` FOREIGN KEY (`ToUserId`) REFERENCES `Tblusers` (`Id`);
 
 --
--- Constraints for table `tblpendingfriendrequest`
+-- Constraints for table `Tblpendingfriendrequest`
 --
-ALTER TABLE `tblpendingfriendrequest`
-  ADD CONSTRAINT `FK_Tblpendingfriendrequest_Tblusers_FromUserId` FOREIGN KEY (`FromUserId`) REFERENCES `tblusers` (`Id`),
-  ADD CONSTRAINT `FK_Tblpendingfriendrequest_Tblusers_ToUserId` FOREIGN KEY (`ToUserId`) REFERENCES `tblusers` (`Id`);
+ALTER TABLE `Tblpendingfriendrequest`
+  ADD CONSTRAINT `FK_Tblpendingfriendrequest_Tblusers_FromUserId` FOREIGN KEY (`FromUserId`) REFERENCES `Tblusers` (`Id`),
+  ADD CONSTRAINT `FK_Tblpendingfriendrequest_Tblusers_ToUserId` FOREIGN KEY (`ToUserId`) REFERENCES `Tblusers` (`Id`);
 
 --
--- Constraints for table `tbltwofactorauth`
+-- Constraints for table `Tbltwofactorauth`
 --
-ALTER TABLE `tbltwofactorauth`
-  ADD CONSTRAINT `FK_Tbltwofactorauth_Tblusers_UserId` FOREIGN KEY (`UserId`) REFERENCES `tblusers` (`Id`) ON DELETE CASCADE;
+ALTER TABLE `Tbltwofactorauth`
+  ADD CONSTRAINT `FK_Tbltwofactorauth_Tblusers_UserId` FOREIGN KEY (`UserId`) REFERENCES `Tblusers` (`Id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `tbluserfriends`
+-- Constraints for table `Tbluserfriends`
 --
-ALTER TABLE `tbluserfriends`
-  ADD CONSTRAINT `FK_Tbluserfriends_Tblusers_FriendId` FOREIGN KEY (`FriendId`) REFERENCES `tblusers` (`Id`),
-  ADD CONSTRAINT `FK_Tbluserfriends_Tblusers_UserId` FOREIGN KEY (`UserId`) REFERENCES `tblusers` (`Id`);
+ALTER TABLE `Tbluserfriends`
+  ADD CONSTRAINT `FK_Tbluserfriends_Tblusers_FriendId` FOREIGN KEY (`FriendId`) REFERENCES `Tblusers` (`Id`),
+  ADD CONSTRAINT `FK_Tbluserfriends_Tblusers_UserId` FOREIGN KEY (`UserId`) REFERENCES `Tblusers` (`Id`);
 
 --
--- Constraints for table `tblusersettings`
+-- Constraints for table `Tblusersettings`
 --
-ALTER TABLE `tblusersettings`
-  ADD CONSTRAINT `FK_Tblusersettings_Tblusers_UserId` FOREIGN KEY (`UserId`) REFERENCES `tblusers` (`Id`) ON DELETE CASCADE;
+ALTER TABLE `Tblusersettings`
+  ADD CONSTRAINT `FK_Tblusersettings_Tblusers_UserId` FOREIGN KEY (`UserId`) REFERENCES `Tblusers` (`Id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

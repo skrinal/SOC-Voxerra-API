@@ -3752,11 +3752,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/skrinal/Desktop/SOC-Voxerra-API/Voxerra_API.csproj",
+      "projectUniqueName": "/home/skrinal/SOC-Voxerra-API/Voxerra_API.csproj",
       "projectName": "Voxerra_API",
-      "projectPath": "/home/skrinal/Desktop/SOC-Voxerra-API/Voxerra_API.csproj",
+      "projectPath": "/home/skrinal/SOC-Voxerra-API/Voxerra_API.csproj",
       "packagesPath": "/home/skrinal/.nuget/packages/",
-      "outputPath": "/home/skrinal/Desktop/SOC-Voxerra-API/obj/",
+      "outputPath": "/home/skrinal/SOC-Voxerra-API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/skrinal/.nuget/NuGet/NuGet.Config"
@@ -3765,7 +3765,6 @@
         "net8.0"
       ],
       "sources": {
-        "/usr/local/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3863,7 +3862,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

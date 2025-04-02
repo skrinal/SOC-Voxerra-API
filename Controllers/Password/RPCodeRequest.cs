@@ -1,8 +1,7 @@
 namespace Voxerra_API.Controllers.Password
 {
-    public class PasswordResetConfirmationRequest
+    public class RPCodeRequest
     {
-        public string NewPassword { get; set; } = null!;
         public string Email { get; set; } = null!;
         public int Code { get; set; }
 
