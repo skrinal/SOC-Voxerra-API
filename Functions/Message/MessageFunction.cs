@@ -117,7 +117,7 @@ namespace Voxerra_API.Functions.Message
                 ToUserId = x.ToUserId,
                 SendDateTime = x.SendDateTime,
                 IsRead = x.IsRead,
-            }).Reverse();
+            });
         }
     }
 }
