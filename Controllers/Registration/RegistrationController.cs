@@ -77,28 +77,28 @@ namespace Voxerra_API.Controllers.Registration
 
 
         [HttpPost("IsEmailUnique")]
-        public async Task<ActionResult> IsEmailUnique([FromBody] IsEmailUniqueRequest request)
+        public async Task<ActionResult> IsEmailUnique([FromBody] string email)
         {
-            var IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(request.Email);
+            var IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(email);
             
             if (IsEmailUnique == false)
             {
-                return BadRequest(new { message = "User email is not Unique" });
+                return BadRequest();
             }
 
             return Ok();
         }
 
         [HttpPost("IsUserNameUnique")]
-        public async Task<ActionResult> IsUserNameUnique([FromBody] IsUserNameUniqueRequest request)
+        public async Task<ActionResult> IsUserNameUnique([FromBody] string userName)
         {
-            var IsUserNameUnique = await _userRegistrationFunction.IsUserNameUnique(request.UserName);
+            var IsUserNameUnique = await _userRegistrationFunction.IsUserNameUnique(userName);
 
             if (IsUserNameUnique == false)
             {
-                return BadRequest(new { message = "UserName is not Unique" });
+                return BadRequest();
             }
-
+            
             return Ok();
         }
 

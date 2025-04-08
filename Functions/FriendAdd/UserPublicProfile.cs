@@ -6,4 +6,6 @@ public class UserPublicProfile
     public int FriendsCount { get; set; }
     public bool IsOnline { get; set; }
     public string CreationYear { get; set; }
+    public bool IsFriend { get; set; }
+    public bool IsFriendRequest { get; set; }
 }

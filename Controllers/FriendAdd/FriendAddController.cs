@@ -10,20 +10,24 @@ namespace Voxerra_API.Controllers.FriendAdd
 
 
         [HttpPost("Search")]
-        public async Task<ActionResult> SearchUsers([FromBody] FriendSearchRequest request)
+        public async Task<ActionResult> SearchUsers([FromBody] string searchQueary)
         {
+            if (CurrentUser == null) return Unauthorized();
+            
             var response = new FriendSearchResponse
             {
-                Users = await _friendAddFunction.SearchUsers(request.Search, request.IdOfUser)
+                Users = await _friendAddFunction.SearchUsers(searchQueary, CurrentUser.Id)
             }; 
 
             return Ok(response);
         }
 
         [HttpPost("PublicProfile")]
-        public async Task<ActionResult> PublicProfile([FromBody] int IdOfUser)
+        public async Task<ActionResult> PublicProfile([FromBody] int idOfUser)
         {
-            var result = await _friendAddFunction.PublicProfile(IdOfUser);
+            if (CurrentUser == null) return Unauthorized();
+            
+            var result = await _friendAddFunction.PublicProfile(idOfUser, CurrentUser.Id);
             
             return Ok(result);
         }
