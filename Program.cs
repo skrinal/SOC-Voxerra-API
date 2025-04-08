@@ -2,6 +2,7 @@ using AspNetCoreRateLimit;
 using Google;
 using Voxerra_API.Controllers.ChatHub;
 using Voxerra_API.Entities;
+using Voxerra_API.Functions.GroupChat;
 using Voxerra_API.Functions.Password;
 using Voxerra_API.Functions.Registration;
 
@@ -35,9 +36,9 @@ builder.Services.AddSwaggerGen();
 
 
 
-// var connectionString = "Server=localhost;port=3306;Database=Voxerra;user=root;password=Skrinal06;";
-var connectionString =
-    "Server=voxerra-database.cfa4asq6647s.eu-north-1.rds.amazonaws.com;port=3306;Database=Voxerra;Uid=root;Pwd=Skrinal06;";
+var connectionString = "Server=localhost;port=3306;Database=Voxerra;user=root;password=Skrinal06;";
+/*var connectionString =
+    "Server=voxerra-database.cfa4asq6647s.eu-north-1.rds.amazonaws.com;port=3306;Database=Voxerra;Uid=root;Pwd=Skrinal06;";*/
 if (string.IsNullOrEmpty(connectionString))
 {
     throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -54,6 +55,7 @@ builder.Services.AddTransient<IEmailFunction, EmailFunction>();
 builder.Services.AddTransient<IPasswordFunction, PasswordFunction>();
 builder.Services.AddTransient<IFriendAddFunction, FriendAddFunction>();
 builder.Services.AddTransient<ISettingFunction, SettingFunction>();
+builder.Services.AddTransient<IGroupChatFunction, GroupChatFunction>();
 builder.Services.AddScoped<UserOperator>();
 builder.Services.AddScoped<ChatHub>();
 

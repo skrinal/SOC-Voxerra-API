@@ -25,7 +25,7 @@ namespace Voxerra_API.Controllers.Registration
 
             var response = await _userRegistrationFunction.Registration(request.Username, request.Password, request.Email);
 
-            if (response == false)
+            if (!response)
             {
                 return StatusCode(500, new { message = "User registration failed due to server error" });
             }
@@ -72,7 +72,7 @@ namespace Voxerra_API.Controllers.Registration
             _chatAppContext.Tblpendingusers.Remove(pendingUser); 
             await _chatAppContext.SaveChangesAsync();
 
-            return Ok(new { message = "Registration confirmed successfully." });
+            return Ok();
         }
 
 
@@ -81,7 +81,7 @@ namespace Voxerra_API.Controllers.Registration
         {
             var IsEmailUnique = await _userRegistrationFunction.IsEmailUnique(email);
             
-            if (IsEmailUnique == false)
+            if (!IsEmailUnique)
             {
                 return BadRequest();
             }
@@ -94,7 +94,7 @@ namespace Voxerra_API.Controllers.Registration
         {
             var IsUserNameUnique = await _userRegistrationFunction.IsUserNameUnique(userName);
 
-            if (IsUserNameUnique == false)
+            if (!IsUserNameUnique)
             {
                 return BadRequest();
             }

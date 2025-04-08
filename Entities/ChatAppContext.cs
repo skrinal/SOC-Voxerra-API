@@ -12,7 +12,7 @@
         public virtual DbSet<TblTwoFactorAuth> Tbltwofactorauth { get; set; } = null!;
         public virtual DbSet<TblGroups> Tblgroups { get; set; } = null!;
         public virtual DbSet<TblGroupMembers> Tblgroupmembers { get; set; } = null!;
-        public virtual DbSet<TblGroupMembers> Tblgroupmessages { get; set; } = null!;
+        public virtual DbSet<TblGroupMessages> Tblgroupmessages { get; set; } = null!;
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

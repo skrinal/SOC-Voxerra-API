@@ -4,7 +4,7 @@ namespace Voxerra_API.Controllers.MessageCenter
     [ApiController]
     [Route("[controller]")]
     [Authorize]
-    public class MessageCenterController : MvcController
+    public class MessageCenterController : BaseController
     {
         IUserFunction _userFunction;
         IUserFriendFunction _userFriendFunction;
@@ -18,13 +18,14 @@ namespace Voxerra_API.Controllers.MessageCenter
         }
 
         [HttpPost("Initialize")]
-        public async Task<ActionResult> Initialize([FromBody] int userId)
+        public async Task<ActionResult> Initialize([FromBody] int idOfUser)
         {
+            
             var response = new MessageCenterInitializeResponse
             {
-                User = _userFunction.GetUserById(userId),
-                UserFriends = await _userFriendFunction.GetListUserFriend(userId),
-                LastestMessages = await _messageFunction.GetLatestMessage(userId)
+                User = _userFunction.GetUserById(idOfUser),
+                UserFriends = await _userFriendFunction.GetListUserFriend(idOfUser),
+                LastestMessages = await _messageFunction.GetLatestMessage(idOfUser),
             };
 
             return Ok(response);
