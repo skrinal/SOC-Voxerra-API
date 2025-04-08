@@ -6,7 +6,7 @@ namespace Voxerra_API.Controllers.Message
     [ApiController]
     [Route("[controller]")]
     [Authorize]
-    public class MessageController(IMessageFunction messageFunction, IUserFunction userFunction) : MvcController
+    public class MessageController(IMessageFunction messageFunction, IUserFunction userFunction) : BaseController
     {
         IMessageFunction _messageFunction = messageFunction;
         IUserFunction  _userFunction= userFunction;
@@ -14,6 +14,8 @@ namespace Voxerra_API.Controllers.Message
         [HttpPost("Initialize")]
         public async Task<ActionResult> Initialize([FromBody] MessageInitializeRequest request)
         {
+            if (CurrentUser == null) return Unauthorized();
+            
             var response = new MessageInitializeResponse
             {
                 FriendInfo = _userFunction.GetUserById(request.ToUserId),
@@ -26,9 +28,11 @@ namespace Voxerra_API.Controllers.Message
         [HttpPost("OldMessages")]
         public async Task<ActionResult> GetOldMessages([FromBody] OldMessagesRequest request)
         {
+            if (CurrentUser == null) return Unauthorized();
+            
             var response = new OldMessagesResponse
             {
-                Messages = await _messageFunction.GetOldMessages(request.FromUserId, request.ToUserId, request.LastMessageId)
+                Messages = await _messageFunction.GetOldMessages(CurrentUser.Id, request.ToUserId, request.LastMessageId)
             };
 
             return Ok(response);

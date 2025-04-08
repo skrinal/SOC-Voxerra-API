@@ -81,7 +81,7 @@ namespace Voxerra_API.Functions.Message
                 .Where(x => (x.FromUserId == fromUserId && x.ToUserId == toUserId)
                 || (x.FromUserId == toUserId && x.ToUserId == fromUserId))
                 .OrderByDescending(x => x.SendDateTime)
-                .Take(12)
+                .Take(10)
                 .ToListAsync();
 
             return entities
