@@ -103,7 +103,7 @@ namespace Voxerra_API.Functions.Message
                 .Where(x => ((x.FromUserId == fromUserId && x.ToUserId == toUserId)
                             || (x.FromUserId == toUserId && x.ToUserId == fromUserId))
                             && x.Id < lastMessageId)
-                .OrderBy(x => x.SendDateTime)
+                .OrderByDescending(x => x.SendDateTime)
                 .Take(10)
                 .ToListAsync();
 
