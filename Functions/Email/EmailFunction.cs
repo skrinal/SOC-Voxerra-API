@@ -23,7 +23,7 @@ namespace Voxerra_API.Functions.Email
             var emailMessage = new MimeMessage();
             emailMessage.From.Add(new MailboxAddress("Voxerra support", supportEmail));
             emailMessage.To.Add(new MailboxAddress("", emailDetails.ToEmail));
-            
+
 
             var bodyBuilder = new BodyBuilder();
 
@@ -153,6 +153,12 @@ namespace Voxerra_API.Functions.Email
                                             font-weight: 1000;
                                             font-size: 25px;
                                         }}
+                                        .code{{
+                                            color: rgb(132, 0, 255);
+                                            font-weight: 1000;
+                                            font-size: 35px;
+                                            text-align: center;
+                                        }}
                                     </style>
                                 </head>
                                 <body>
@@ -163,7 +169,8 @@ namespace Voxerra_API.Functions.Email
                                         <div class='content'>
                                             <h2>New sign in to Voxerra</h2>
                                             <p>From you account {emailDetails.UserName}</p>
-                                            <p class='location'>Location of sign in: <br> {emailDetails.Location} <br> {emailDetails.IpAdress}</p>
+                                            <p class='location'>Ip Adress: {emailDetails.IpAdress}</p> <br> 
+                                            <p class='code'>{emailDetails.Code}</p><br>
                                             <p>If this is your doing, you can safely ignor this email.</p>
                                             <p>Otherwise contant support on this email.</p>
                                         </div>
@@ -173,7 +180,6 @@ namespace Voxerra_API.Functions.Email
                                     </div>
                                 </body>
                                 </html>";
-            
             }
             else if (emailDetails.AlertEmail)
             {
@@ -248,9 +254,8 @@ namespace Voxerra_API.Functions.Email
                                     </div>
                                 </body>
                                 </html>";
-            
             }
-            else 
+            else
             {
                 // spravit email template -> ked sa zmeni heslo tak sa posle tento email
                 bodyBuilder.HtmlBody = $@"
@@ -324,7 +329,7 @@ namespace Voxerra_API.Functions.Email
                                 </html>";
             }
 
-            
+
             var logoPath = "Resources/logo_voxerra_whitev2.png";
             var logoAttachment = new MimePart("image", "png")
             {
@@ -335,7 +340,7 @@ namespace Voxerra_API.Functions.Email
                 Headers = { { "Content-ID", "<logo_voxerra_image>" } }
             };
 
-            
+
             //bodyBuilder.Attachments.Add(logoAttachment);
             bodyBuilder.LinkedResources.Add(logoAttachment);
 
@@ -344,13 +349,12 @@ namespace Voxerra_API.Functions.Email
 
             using (var smtpClient = new SmtpClient())
             {
-                await smtpClient.ConnectAsync(GmailSmtpServer, GmailSmtpPort, MailKit.Security.SecureSocketOptions.StartTls);
+                await smtpClient.ConnectAsync(GmailSmtpServer, GmailSmtpPort,
+                    MailKit.Security.SecureSocketOptions.StartTls);
                 await smtpClient.AuthenticateAsync(supportEmail, appPassword);
                 await smtpClient.SendAsync(emailMessage);
                 await smtpClient.DisconnectAsync(true);
             }
         }
-
-
     }
 }

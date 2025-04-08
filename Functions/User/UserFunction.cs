@@ -35,14 +35,15 @@ namespace Voxerra_API.Functions.User
                     {
                         ToEmail = entity.Email,
                         Code = AuthCode,
-                        TwoAuthEmail = true
-                        
+                        TwoAuthEmail = true,
+                        UserName = userName,
+                        IpAdress = ipAdress
                     };
                     _emailFunction.SendEmail(emailPrompt);
 
                     var AuthRequest = new TblTwoFactorAuth
                     {
-                        Id = entity.Id,
+                        UserId = entity.Id,
                         Code = AuthCode,
                         ExpireTime =  DateTime.UtcNow.AddMinutes(5)
                     };
