@@ -10,6 +10,9 @@
         public virtual DbSet<TblPendingFriendRequest> Tblpendingfriendrequest { get; set; } = null!;
         public virtual DbSet<TblUserSettings> Tblusersettings { get; set; } = null!;
         public virtual DbSet<TblTwoFactorAuth> Tbltwofactorauth { get; set; } = null!;
+        public virtual DbSet<TblGroups> Tblgroups { get; set; } = null!;
+        public virtual DbSet<TblGroupMembers> Tblgroupmembers { get; set; } = null!;
+        public virtual DbSet<TblGroupMembers> Tblgroupmessages { get; set; } = null!;
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -52,13 +55,44 @@
                 .HasOne(pfr => pfr.FromUser)
                 .WithMany(u => u.SentFriendRequests)
                 .HasForeignKey(pfr => pfr.FromUserId)
-                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<TblPendingFriendRequest>()
                 .HasOne(pfr => pfr.ToUser)
                 .WithMany(u => u.ReceivedFriendRequests)
                 .HasForeignKey(pfr => pfr.ToUserId)
                 .OnDelete(DeleteBehavior.Restrict);
+            
+            
+            modelBuilder.Entity<TblGroups>()
+                .HasOne(g => g.Creator)
+                .WithMany()
+                .HasForeignKey(g => g.CreatedBy)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TblGroupMembers>()
+                .HasOne(gm => gm.Group)
+                .WithMany(g => g.Members)
+                .HasForeignKey(gm => gm.GroupId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TblGroupMembers>()
+                .HasOne(gm => gm.User)
+                .WithMany()
+                .HasForeignKey(gm => gm.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TblGroupMessages>()
+                .HasOne(gm => gm.Group)
+                .WithMany(g => g.Messages)
+                .HasForeignKey(gm => gm.GroupId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TblGroupMessages>()
+                .HasOne(gm => gm.Sender)
+                .WithMany()
+                .HasForeignKey(gm => gm.SenderId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
